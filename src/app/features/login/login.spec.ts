@@ -78,6 +78,14 @@ describe('Formulario de ingreso', () => {
     expect(fixture.nativeElement.querySelector('#password').value).toBe('');
   });
 
+  it('vuelve a cursos cuando el router enlaza volver como undefined', () => {
+    const navegar = vi.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
+    fixture.componentRef.setInput('volver', undefined);
+    llenarFormulario();
+    respuesta.next({ accessToken: 'prueba', tokenType: 'Bearer', expiresIn: 3600, username: 'admin', roles: ['ADMIN'] });
+    expect(navegar).toHaveBeenCalledWith('/cursos');
+  });
+
   it('conserva una ruta interna de regreso', () => {
     const navegar = vi.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
     fixture.componentRef.setInput('volver', '/cursos?page=2');

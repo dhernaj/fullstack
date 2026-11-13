@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-8">
+    <h1 class="h3 nh-title mb-3">{{ esEdicion ? 'Editar curso' : 'Nuevo curso' }}</h1>
+    @if (errorGeneral()) {
+      <div class="alert alert-danger py-2" role="alert">{{ errorGeneral() }}</div>
+    }
+    @if (cargando()) {
+      <p role="status">Cargando curso…</p>
+    }
+    @if (cargado()) {
+      <form [formGroup]="form" (ngSubmit)="guardar()" novalidate class="card card-body border-0 shadow-sm" [attr.aria-busy]="guardando()">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label" for="codigo">Código</label>
+            <input id="codigo" class="form-control" formControlName="codigo" placeholder="SIS-101" required maxlength="7"
+              aria-describedby="codigo-error" [attr.aria-invalid]="invalido('codigo')" [class.is-invalid]="invalido('codigo')" />
+            <div id="codigo-error" class="invalid-feedback">{{ mensajeCampo('codigo') }}</div>
+          </div>
+          <div class="col-md-8">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input id="nombre" class="form-control" formControlName="nombre" required maxlength="100"
+              aria-describedby="nombre-error" [attr.aria-invalid]="invalido('nombre')" [class.is-invalid]="invalido('nombre')" />
+            <div id="nombre-error" class="invalid-feedback">{{ mensajeCampo('nombre') }}</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="docente">Docente</label>
+            <input id="docente" class="form-control" formControlName="docente" required maxlength="80"
+              aria-describedby="docente-error" [attr.aria-invalid]="invalido('docente')" [class.is-invalid]="invalido('docente')" />
+            <div id="docente-error" class="invalid-feedback">{{ mensajeCampo('docente') }}</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <label class="form-label" for="creditos">Créditos</label>
+            <input id="creditos" type="number" class="form-control" formControlName="creditos" required min="1" max="6" step="1"
+              aria-describedby="creditos-error" [attr.aria-invalid]="invalido('creditos')" [class.is-invalid]="invalido('creditos')" />
+            <div id="creditos-error" class="invalid-feedback">{{ mensajeCampo('creditos') }}</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <label class="form-label" for="cupos">Cupos</label>
+            <input id="cupos" type="number" class="form-control" formControlName="cupos" required min="1" max="60" step="1"
+              aria-describedby="cupos-error" [attr.aria-invalid]="invalido('cupos')" [class.is-invalid]="invalido('cupos')" />
+            <div id="cupos-error" class="invalid-feedback">{{ mensajeCampo('cupos') }}</div>
+          </div>
+        </div>
+        <div class="d-flex gap-2 justify-content-end mt-4">
+          <a class="btn btn-outline-secondary" routerLink="/cursos">Cancelar</a>
+          <button type="submit" class="btn btn-nh" [disabled]="guardando()">{{ guardando() ? 'Guardando…' : 'Guardar' }}</button>
+        </div>
+      </form>
+    } @else if (!cargando()) {
+      <a class="btn btn-outline-secondary" routerLink="/cursos">Volver a cursos</a>
+    }
+  </div>
+</div>

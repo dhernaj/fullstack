@@ -41,7 +41,7 @@ export class Login {
     ).subscribe({
       next: () => {
         this.form.controls.password.reset();
-        const volver = this.volver();
+        const volver = this.volver() ?? '/cursos';
         const destino = volver.startsWith('/') && !volver.startsWith('//') && !volver.startsWith('/login')
           ? volver : '/cursos';
         void this.router.navigateByUrl(destino);

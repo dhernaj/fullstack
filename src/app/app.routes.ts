@@ -16,6 +16,20 @@ export const routes: Routes = [
     loadComponent: () => import('./features/cursos/curso-list').then((m) => m.CursoList),
   },
   {
+    path: 'cursos/nuevo',
+    title: 'Nuevo curso · Academia UPN',
+    canActivate: [authGuard],
+    data: { roles: ['ADMIN'] },
+    loadComponent: () => import('./features/cursos/curso-form').then((m) => m.CursoForm),
+  },
+  {
+    path: 'cursos/:id/editar',
+    title: 'Editar curso · Academia UPN',
+    canActivate: [authGuard],
+    data: { roles: ['ADMIN'] },
+    loadComponent: () => import('./features/cursos/curso-form').then((m) => m.CursoForm),
+  },
+  {
     path: '**',
     title: 'Página no encontrada · Academia UPN',
     loadComponent: () => import('./features/not-found/not-found').then((m) => m.NotFound),
