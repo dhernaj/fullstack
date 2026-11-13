@@ -18,7 +18,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const peticion = token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }) : req;
 
   return next(peticion).pipe(catchError((error: HttpErrorResponse) => {
-    if (error.status === 401 && esNuestraApi && !esLogin) auth.logout();
+    // Un 401 atrasado de una sesión anterior no debe cerrar la sesión nueva.
+    if (error.status === 401 && esNuestraApi && !esLogin && auth.token() === token) auth.logout();
     return throwError(() => error);
   }));
 };

@@ -1,0 +1,8 @@
+    tabla    | count 
+-------------+-------
+ cursos      |     4
+ estudiantes |     2
+ matriculas  |     2
+ usuarios    |     3
+(4 rows)
+

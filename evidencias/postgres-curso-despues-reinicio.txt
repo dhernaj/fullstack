@@ -1,0 +1,10 @@
+ base_de_datos |                                                             version                                                             
+---------------+---------------------------------------------------------------------------------------------------------------------------------
+ academia_db   | PostgreSQL 17.11 (Homebrew) on x86_64-apple-darwin22.6.0, compiled by Apple clang version 14.0.3 (clang-1403.0.22.14.1), 64-bit
+(1 row)
+
+ id | codigo  |         nombre         | creditos |        docente         | cupos | activo 
+----+---------+------------------------+----------+------------------------+-------+--------
+  4 | SIS-500 | Pruebas de Software II |        3 | Docente de Laboratorio |    30 | t
+(1 row)
+

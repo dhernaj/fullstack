@@ -111,6 +111,15 @@ describe('Formulario de cursos', () => {
     expect(fixture.nativeElement.querySelector('button[type="submit"]').disabled).toBe(false);
   });
 
+  it('presenta el HTML de un error como texto sin insertarlo en el DOM', () => {
+    iniciar(); llenar(); guardar();
+    const detail = '<img src=x onerror=alert(1)>';
+    http.expectOne(base).flush({ detail }, { status: 409, statusText: 'Conflict' });
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('[role="alert"]').textContent).toContain(detail);
+    expect(fixture.nativeElement.querySelector('img')).toBeNull();
+  });
+
   it('carga los datos para editar y envía PUT al mismo id', () => {
     iniciar('7');
     expect(fixture.nativeElement.querySelector('form')).toBeNull();

@@ -139,6 +139,14 @@ describe('Listado de cursos', () => {
     req.flush(pagina());
   });
 
+  it('muestra un nombre con HTML como texto sin insertar elementos', () => {
+    const nombre = '<img src=x onerror=alert(1)>';
+    consulta().flush({ ...pagina(), contenido: [{ ...cursos[0], nombre }] });
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('tbody').textContent).toContain(nombre);
+    expect(fixture.nativeElement.querySelector('img')).toBeNull();
+  });
+
   it('informa cuando no hay resultados', () => {
     consulta().flush({ contenido: [], pagina: 0, tamanio: 5, totalElementos: 0, totalPaginas: 0, ultima: true });
     fixture.detectChanges();

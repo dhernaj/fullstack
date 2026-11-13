@@ -138,6 +138,18 @@ describe('Sesión e interceptor JWT', () => {
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
   });
 
+  it('no cierra una sesión nueva por un 401 de una petición anterior', () => {
+    const auth = ingresar();
+    http.get(`${environment.apiUrl}/cursos`).subscribe({ error: () => {} });
+    const antigua = peticiones.expectOne(`${environment.apiUrl}/cursos`);
+    auth.login('admin', 'clave-solo-de-prueba').subscribe();
+    peticiones.expectOne(`${environment.apiUrl}/auth/login`).flush({ ...respuesta, accessToken: 'token-nuevo' });
+    antigua.flush({}, { status: 401, statusText: 'Unauthorized' });
+    expect(auth.token()).toBe('token-nuevo');
+    expect(auth.autenticado()).toBe(true);
+    expect(router.navigate).not.toHaveBeenCalled();
+  });
+
   it('conserva la sesión ante un 403 y no adjunta el token al login', () => {
     const auth = ingresar();
     http.get(`${environment.apiUrl}/cursos`).subscribe({ error: () => {} });
