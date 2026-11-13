@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { Router, provideRouter, withComponentInputBinding } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { Subject } from 'rxjs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -68,16 +68,31 @@ describe('Formulario de ingreso', () => {
     expect(fixture.nativeElement.querySelector('[role="alert"]').textContent).toContain('No se pudo iniciar sesión');
   });
 
-  it('confirma el ingreso mientras el listado está pendiente y vacía la contraseña', () => {
+  it('vuelve a cursos tras el login y vacía la contraseña', () => {
+    const navegar = vi.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
     llenarFormulario();
-    auth.autenticado.set(true);
     respuesta.next({ accessToken: 'prueba', tokenType: 'Bearer', expiresIn: 3600, username: 'admin', roles: ['ADMIN'] });
     respuesta.complete();
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('[role="status"]').textContent).toContain('Sesión iniciada');
+    expect(navegar).toHaveBeenCalledWith('/cursos');
     expect(fixture.nativeElement.querySelector('#password').value).toBe('');
-    auth.autenticado.set(false);
-    fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('[role="status"]')).toBeNull();
   });
+
+  it('conserva una ruta interna de regreso', () => {
+    const navegar = vi.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
+    fixture.componentRef.setInput('volver', '/cursos?page=2');
+    llenarFormulario();
+    respuesta.next({ accessToken: 'prueba', tokenType: 'Bearer', expiresIn: 3600, username: 'admin', roles: ['ADMIN'] });
+    expect(navegar).toHaveBeenCalledWith('/cursos?page=2');
+  });
+
+  for (const volver of ['//externo.example', 'https://externo.example', '/login']) {
+    it(`descarta el regreso no permitido: ${volver}`, () => {
+      const navegar = vi.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
+      fixture.componentRef.setInput('volver', volver);
+      llenarFormulario();
+      respuesta.next({ accessToken: 'prueba', tokenType: 'Bearer', expiresIn: 3600, username: 'admin', roles: ['ADMIN'] });
+      expect(navegar).toHaveBeenCalledWith('/cursos');
+    });
+  }
 });

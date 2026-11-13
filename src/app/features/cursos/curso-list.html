@@ -1,0 +1,90 @@
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+  <h1 class="h3 mb-0 nh-title">Cursos</h1>
+  <a class="btn btn-nh" routerLink="/cursos/nuevo" *appHasRole="'ADMIN'">+ Nuevo curso</a>
+</div>
+<label for="buscar-docente" class="form-label">Buscar por docente</label>
+<input id="buscar-docente" type="search" class="form-control mb-3" placeholder="Nombre del docente…"
+  (input)="buscar($any($event.target).value)" />
+
+<div class="d-flex align-items-center gap-2 mb-3">
+  <label for="tamanio-pagina" class="form-label mb-0">Cursos por página</label>
+  <select id="tamanio-pagina" class="form-select w-auto" [value]="tamanio()"
+    (change)="cambiarTamanio(+$any($event.target).value)">
+    <option value="2">2</option><option value="5">5</option><option value="10">10</option>
+  </select>
+</div>
+@if (mensaje()) {
+  <div class="alert alert-info alert-dismissible py-2" role="status">
+    {{ mensaje() }}
+    <button type="button" class="btn-close" aria-label="Cerrar mensaje" (click)="mensaje.set(null)"></button>
+  </div>
+}
+@if (errorCarga()) {
+  <div class="alert alert-danger" role="alert">
+    {{ errorCarga() }}
+    <button class="btn btn-sm btn-outline-danger ms-2" type="button" (click)="cargar(0)">Reintentar</button>
+  </div>
+}
+@if (cargando()) {
+  <div class="text-center my-4" role="status" aria-live="polite">
+    <div class="spinner-border text-secondary" aria-hidden="true"></div>
+    <span class="visually-hidden">Cargando cursos…</span>
+  </div>
+} @else if (pagina(); as p) {
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <caption class="visually-hidden">Cursos disponibles</caption>
+      <thead class="nh-thead">
+        <tr>
+          <th scope="col">Código</th><th scope="col">Nombre</th><th scope="col" class="text-center">Créditos</th>
+          <th scope="col">Docente</th><th scope="col" class="text-center">Cupos</th><th scope="col" class="text-end">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (curso of p.contenido; track curso.id) {
+          <tr>
+            <td><span class="badge text-bg-light border">{{ curso.codigo }}</span></td>
+            <td>{{ curso.nombre }}</td>
+            <td class="text-center">{{ curso.creditos }}</td>
+            <td>{{ curso.docente }}</td>
+            <td class="text-center">{{ curso.cupos }}</td>
+            <td class="text-end">
+              <ng-container *appHasRole="'ADMIN'">
+                <a class="btn btn-sm btn-outline-primary me-1" [routerLink]="['/cursos', curso.id, 'editar']"
+                  [attr.aria-label]="'Editar ' + curso.codigo">Editar</a>
+                <button class="btn btn-sm btn-outline-danger" type="button" (click)="eliminar(curso)"
+                  [disabled]="eliminando() !== null" [attr.aria-label]="'Eliminar ' + curso.codigo">
+                  {{ eliminando() === curso.id ? 'Eliminando…' : 'Eliminar' }}
+                </button>
+              </ng-container>
+            </td>
+          </tr>
+        } @empty {
+          <tr><td colspan="6" class="text-center text-muted py-4">No se encontraron cursos.</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  @if (p.totalPaginas > 1) {
+    <nav aria-label="Paginación de cursos">
+      <ul class="pagination justify-content-center flex-wrap">
+        <li class="page-item" [class.disabled]="p.pagina === 0">
+          <button class="page-link" type="button" [disabled]="p.pagina === 0" (click)="cargar(p.pagina - 1)">Anterior</button>
+        </li>
+        @for (n of paginas(); track n) {
+          <li class="page-item" [class.active]="n === p.pagina">
+            <button class="page-link" type="button" [attr.aria-label]="'Página ' + (n + 1)"
+              [attr.aria-current]="n === p.pagina ? 'page' : null" (click)="cargar(n)">{{ n + 1 }}</button>
+          </li>
+        }
+        <li class="page-item" [class.disabled]="p.ultima">
+          <button class="page-link" type="button" [disabled]="p.ultima" (click)="cargar(p.pagina + 1)">Siguiente</button>
+        </li>
+      </ul>
+    </nav>
+  }
+  <p class="text-muted small text-center" role="status">
+    {{ p.totalElementos }} curso(s) en total
+    @if (p.totalPaginas > 0) { · Página {{ p.pagina + 1 }} de {{ p.totalPaginas }} }
+  </p>
+}

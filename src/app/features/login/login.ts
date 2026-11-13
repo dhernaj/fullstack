@@ -21,8 +21,6 @@ export class Login {
   readonly volver = input<string>('/cursos');
   protected readonly enviando = signal(false);
   protected readonly error = signal<string | null>(null);
-  protected readonly ingresoCorrecto = signal(false);
-  protected readonly sesionActiva = this.auth.autenticado;
   protected readonly form = this.fb.nonNullable.group({
     username: ['', [Validators.required, Validators.maxLength(50)]],
     password: ['', [Validators.required, Validators.maxLength(100)]],
@@ -36,7 +34,6 @@ export class Login {
     }
     this.enviando.set(true);
     this.error.set(null);
-    this.ingresoCorrecto.set(false);
     const { username, password } = this.form.getRawValue();
     this.auth.login(username, password).pipe(
       takeUntilDestroyed(this.destroyRef),
@@ -44,11 +41,6 @@ export class Login {
     ).subscribe({
       next: () => {
         this.form.controls.password.reset();
-        // Durante la Parte B todavía no existe el listado de la Parte D.
-        if (!this.router.config.some((ruta) => ruta.path === 'cursos')) {
-          this.ingresoCorrecto.set(true);
-          return;
-        }
         const volver = this.volver();
         const destino = volver.startsWith('/') && !volver.startsWith('//') && !volver.startsWith('/login')
           ? volver : '/cursos';

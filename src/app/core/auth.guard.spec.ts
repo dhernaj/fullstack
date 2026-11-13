@@ -25,7 +25,7 @@ describe('Acceso a rutas y página 404', () => {
     TestBed.configureTestingModule({ providers: [
       { provide: AuthService, useValue: auth },
       provideRouter([
-        // Estas pantallas de prueba permiten verificar el guard antes de las partes D y E.
+        // Estas pantallas aíslan las reglas del guard del contenido del listado y el formulario.
         { path: 'cursos/nuevo', component: FormularioPrueba, canActivate: [authGuard], data: { roles: ['ADMIN'] } },
         { path: 'cursos', component: ListadoPrueba, canActivate: [authGuard] },
         ...routes,
