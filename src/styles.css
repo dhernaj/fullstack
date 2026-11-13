@@ -1,0 +1,13 @@
+:root {
+  --nh-navy: #0f243e;
+  --nh-orange: #f57d30;
+  --nh-blue: #024b98;
+}
+body { background: #f4f6f9; }
+.nh-navbar { background: var(--nh-navy); border-bottom: 4px solid var(--nh-orange); }
+.text-nh-orange { color: var(--nh-orange); }
+.nh-title { color: var(--nh-navy); font-weight: 700; }
+.nh-thead th { background: var(--nh-navy); color: #fff; }
+.btn-nh { background: var(--nh-orange); border-color: var(--nh-orange); color: #fff; }
+.btn-nh:hover, .btn-nh:focus { background: #e36c09; border-color: #e36c09; color: #fff; }
+.page-item.active .page-link { background: var(--nh-blue); border-color: var(--nh-blue); }
