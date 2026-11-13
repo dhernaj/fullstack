@@ -1,0 +1,33 @@
+{
+  "entorno": "API local con perfil H2 de demostración",
+  "comprobaciones": [
+    {
+      "comprobacion": "Sin token: cursos responde 401",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Credenciales incorrectas: login responde 401",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login correcto: 200 y contrato del Laboratorio 2",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "CORS permite el origen de Angular",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Bearer emitido: cursos responde 200 con paginación",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Token inválido: cursos responde 401",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Preflight permite Authorization",
+      "resultado": "OK"
+    }
+  ]
+}
