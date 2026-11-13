@@ -24,7 +24,7 @@ Se conserva Node.js 24.21.0 instalado en la Mac Intel: es compatible con Angular
 
 El entorno de desarrollo apunta a http://localhost:8080/api/v1. Producción usa /api/v1 como ruta del mismo dominio hasta configurar el despliegue en el Módulo IV; no se utiliza el dominio de ejemplo de la guía como si estuviera desplegado. Los entornos no contienen contraseñas ni secretos JWT.
 
-Se mantendrá un commit por parte A–F. Las partes A y B están completadas; la parte C incorporará navegación y protección de rutas.
+Se mantendrá un commit por parte A–F. Las partes A, B y C están completadas; sigue la parte D con el listado de cursos.
 
 ## Parte B — pasos 7 a 12
 
@@ -43,3 +43,13 @@ python3 scripts/verificar-api.py
 ```
 
 Las evidencias de las partes A y B están en `evidencias/`. La integración de esta etapa se verificó con H2; no se ha ejecutado contra PostgreSQL en el Laboratorio 3.
+
+## Parte C — pasos 13 a 17
+
+Barra de navegación con usuario y rol, opción Nuevo curso exclusiva de ADMIN y botón Salir. La directiva appHasRole admite un rol o varios y reacciona a los cambios de sesión. El menú muestra solo los roles académicos; las autoridades internas que también envía Spring no se muestran como roles de la aplicación.
+
+La página 404 se carga bajo demanda para rutas desconocidas. Permite volver a cursos si hay sesión o al login en caso contrario.
+
+El guard authGuard conserva la URL solicitada en el parámetro volver cuando falta la sesión. Si la ruta exige roles y el usuario no los tiene, redirige a /cursos. Se comprobó con RouterTestingHarness y pantallas de prueba; los canActivate de las pantallas reales de cursos se registrarán al crearlas en las partes D y E, siguiendo la guía. Hasta entonces, los enlaces de cursos llegan al 404 porque esas pantallas aún no existen.
+
+Las comprobaciones de menú se repitieron en navegador con admin y estudiante, además de la salida de sesión y la ruta /xyz. Capturas y resultados en evidencias/parte-c.md.

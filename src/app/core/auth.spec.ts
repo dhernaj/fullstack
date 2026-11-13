@@ -12,7 +12,7 @@ import { TokenResponse } from './models';
 const clave = 'academia.sesion';
 const respuesta: TokenResponse = {
   accessToken: 'token-de-prueba', tokenType: 'Bearer', expiresIn: 3600,
-  username: 'admin', roles: ['ADMIN'],
+  username: 'admin', roles: ['ADMIN', 'FACTOR_PASSWORD'],
 };
 
 describe('Sesión e interceptor JWT', () => {
@@ -55,6 +55,8 @@ describe('Sesión e interceptor JWT', () => {
     expect(auth.autenticado()).toBe(true);
     expect(auth.tieneRol('ADMIN')).toBe(true);
     expect(auth.tieneRol('DOCENTE')).toBe(false);
+    expect(auth.roles()).toEqual(['ADMIN']);
+    expect(auth.tieneRol('FACTOR_PASSWORD')).toBe(false);
     const almacenado = JSON.parse(sessionStorage.getItem(clave)!);
     expect(almacenado.expiresIn).toBe(3600);
     expect(almacenado.expiraEn).toBeGreaterThan(Date.now());

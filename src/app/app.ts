@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { Navbar } from './shared/navbar';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Navbar],
   template: `
+    <app-navbar />
     <main class="container py-4">
-      <h1 class="nh-title">Academia UPN</h1>
       <router-outlet />
     </main>
   `,

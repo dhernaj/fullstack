@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 import { TokenResponse } from './models';
 
 const CLAVE = 'academia.sesion';
+const ROLES_APLICACION = ['ADMIN', 'DOCENTE', 'ESTUDIANTE'];
 type Sesion = TokenResponse & { expiraEn: number };
 
 function esToken(datos: unknown): datos is TokenResponse {
@@ -26,7 +27,7 @@ export class AuthService {
   private temporizador?: ReturnType<typeof setTimeout>;
 
   readonly usuario = computed(() => this.sesion()?.username ?? null);
-  readonly roles = computed(() => this.sesion()?.roles ?? []);
+  readonly roles = computed(() => (this.sesion()?.roles ?? []).filter((rol) => ROLES_APLICACION.includes(rol)));
   readonly autenticado = computed(() => this.sesion() !== null);
 
   constructor() {
