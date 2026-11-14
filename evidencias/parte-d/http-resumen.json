@@ -1,0 +1,70 @@
+{
+  "instancia": "http://127.0.0.1:8083",
+  "entorno": "H2 de demostración local, sin PostgreSQL",
+  "health": {
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "UP"
+  },
+  "cursoDePrueba": {
+    "id": 4,
+    "codigo": "DOC-402",
+    "nombre": "Comprobación OpenAPI",
+    "creditos": 3,
+    "docente": "Docente de demostración",
+    "cupos": 20,
+    "activo": true
+  },
+  "comprobaciones": [
+    {
+      "comprobacion": "Health público UP sin detalles internos",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Swagger UI público",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "OpenAPI público con metadatos",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Esquema HTTP Bearer JWT",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login documentado sin exigir JWT",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Secciones de los cuatro controladores",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Paginación y filtros documentados",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Errores 400 y 409 con ProblemDetail",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Cursos sin JWT devuelve 401",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de demostración",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Alta autorizada 201 con Location",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Otros endpoints de Actuator permanecen cerrados",
+      "resultado": "OK"
+    }
+  ]
+}

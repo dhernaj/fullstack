@@ -4,6 +4,8 @@
 
 En el monorepo, desde la parte B, la ejecución normal usa PostgreSQL y H2 queda con alcance test. `./mvnw verify` usa `src/test/resources/application.properties`, una base H2 en memoria y una clave JWT pública exclusiva de pruebas; no requiere `.env.local`. JaCoCo genera `target/site/jacoco/index.html` y exige al menos 50 % de líneas cubiertas. No se excluyen clases de negocio del análisis.
 
+La parte D incorpora Swagger en /swagger-ui.html, el contrato /v3/api-docs y el health check público /actuator/health. El lanzador de documentación de la raíz permite una vista H2 de demostración local; consultar el README del monorepo.
+
 Las secciones siguientes conservan el registro del Laboratorio 2 de origen; sus referencias al perfil H2 de desarrollo ya no describen la configuración de esta copia del Módulo IV. Los proyectos originales no se modificaron.
 
 API REST del laboratorio con Java 17, Spring Boot 4.1.2, Spring Data JPA, Hibernate y PostgreSQL 17. Los datos se conservan entre reinicios. La guía utilizada para esta versión es Modulo1_Laboratorio.docx, adaptada a macOS Intel.

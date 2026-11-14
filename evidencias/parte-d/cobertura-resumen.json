@@ -1,0 +1,7 @@
+{
+  "pruebas": 75,
+  "lineasCubiertas": 353,
+  "lineasSinCubrir": 52,
+  "coberturaLineasPorcentaje": 87.16,
+  "minimoExigido": 50
+}

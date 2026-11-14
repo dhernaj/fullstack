@@ -78,3 +78,25 @@ npm test -- --watch=false
 No se necesitan API, base de datos, contraseñas ni tokens reales: los HTTP se atienden con provideHttpClientTesting. Las dependencias ya se habían instalado desde package-lock.json en la parte A, por lo que no se repitió npm install ni se modificó el lockfile. La salida de esta parte está en evidencias/parte-c/vitest.txt.
 
 Resultado de la parte C: 97 pruebas aprobadas en nueve archivos, sin cambiar código de funcionamiento ni dependencias. La salida completa y el detalle de los casos están en evidencias/parte-c/. Sigue la parte D: OpenAPI y Actuator.
+
+## Parte D — OpenAPI, Swagger UI y estado de la API
+
+Se añadió springdoc-openapi 3.2.0, compatible con nuestro Spring Boot 4.1.2, y Actuator. La versión 3.0.3 del ejemplo corresponde a la línea Boot 4.0; se adaptó la dependencia según la matriz oficial de springdoc.
+
+- /swagger-ui.html: interfaz de documentación con secciones Cursos, Estudiantes, Matrículas y Autenticación.
+- /v3/api-docs: contrato JSON con Bearer JWT, paginación y filtros. El login se declara público.
+- /actuator/health: acceso sin token y estado UP, sin detalles de base de datos.
+
+Se documentaron las operaciones de cursos, incluida la eliminación lógica, el PATCH de cupos, las respuestas y los errores application/problem+json. Las reglas académicas previas y anyRequest().denyAll() se conservaron; solo se abrieron las rutas de documentación y health. Swagger no guarda la autorización al recargar.
+
+Para revisar la interfaz sin usar PostgreSQL ni claves privadas:
+
+```sh
+./scripts/iniciar-documentacion.command
+```
+
+Abrir http://127.0.0.1:8083/swagger-ui.html. Este lanzador incluye el classpath de test para H2, usa un perfil doc-preview y credenciales ficticias de demostración, y escucha únicamente en loopback. El usuario admin usa la clave de demostración declarada en ese script. No es una configuración de producción. Los datos de esta vista se descartan al reiniciar.
+
+La documentación se comprobó en Chrome: petición sin token 401, login, Authorize y POST con 201/Location. Se verificaron 75 pruebas del backend y 12 comprobaciones HTTP de documentación. Evidencias y contrato exportado en evidencias/parte-d/. También se completó en Chrome la revisión visual del login Angular del monorepo que había quedado pendiente en A.
+
+Sigue la parte E: Flyway, configuración de producción y Docker. La desactivación de Swagger en producción se configurará en esa etapa, como indica la guía.

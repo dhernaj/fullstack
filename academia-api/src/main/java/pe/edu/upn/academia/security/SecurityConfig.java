@@ -56,7 +56,8 @@ public class SecurityConfig {
             .exceptionHandling(ex -> ex.authenticationEntryPoint(errores).accessDeniedHandler(errores))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
-                .requestMatchers("/error").permitAll()
+                .requestMatchers("/error", "/actuator/health").permitAll()
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/cursos/*/matriculas", "/api/v1/cursos/resumen")
                     .hasAnyRole("ADMIN", "DOCENTE")
                 .requestMatchers(HttpMethod.GET, "/api/v1/cursos/**").authenticated()

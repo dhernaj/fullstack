@@ -1,5 +1,8 @@
 package pe.edu.upn.academia.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springdoc.core.annotations.ParameterObject;
+
 import java.net.URI;
 
 import org.springframework.data.domain.Pageable;
@@ -24,6 +27,7 @@ import pe.edu.upn.academia.dto.PaginaResponse;
 import pe.edu.upn.academia.service.EstudianteService;
 import pe.edu.upn.academia.service.MatriculaService;
 
+@Tag(name = "Estudiantes", description = "Registro de estudiantes y consulta de sus matrículas")
 @RestController
 @RequestMapping("/api/v1/estudiantes")
 public class EstudianteController {
@@ -47,7 +51,7 @@ public class EstudianteController {
     }
 
     @GetMapping
-    public PaginaResponse<EstudianteResponse> listar(@PageableDefault(size = 10, sort = "apellidos") Pageable pageable) {
+    public PaginaResponse<EstudianteResponse> listar(@ParameterObject @PageableDefault(size = 10, sort = "apellidos") Pageable pageable) {
         return service.listar(pageable);
     }
 

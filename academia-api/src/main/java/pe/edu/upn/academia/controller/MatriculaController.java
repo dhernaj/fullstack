@@ -1,5 +1,7 @@
 package pe.edu.upn.academia.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.net.URI;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import pe.edu.upn.academia.dto.MatriculaRequest;
 import pe.edu.upn.academia.dto.MatriculaResponse;
 import pe.edu.upn.academia.service.MatriculaService;
 
+@Tag(name = "Matrículas", description = "Inscripción y retiro de matrículas")
 @RestController
 @RequestMapping("/api/v1/matriculas")
 public class MatriculaController {

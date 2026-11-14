@@ -1,6 +1,8 @@
 package pe.edu.upn.academia.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.hasItems;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -107,6 +109,56 @@ class CursoApiIntegrationTest {
         mvc.perform(get("/api/v1/estudiantes/{id}/matriculas", propio).header("Authorization", "Bearer " + jwt))
                 .andExpect(status().isOk());
         mvc.perform(get("/api/v1/estudiantes/{id}/matriculas", otro).header("Authorization", "Bearer " + jwt))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    void healthEsPublicoYNoExponeDetallesInternos() throws Exception {
+        mvc.perform(get("/actuator/health"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.status").value("UP"))
+                .andExpect(jsonPath("$.components").doesNotExist())
+                .andExpect(jsonPath("$.details").doesNotExist());
+    }
+
+    @Test
+    void swaggerUiEsPublicoYSeSirveSuPagina() throws Exception {
+        mvc.perform(get("/swagger-ui.html")).andExpect(status().is3xxRedirection());
+        mvc.perform(get("/swagger-ui/index.html")).andExpect(status().isOk())
+                .andExpect(content().string(containsString("Swagger UI")));
+    }
+
+    @Test
+    void contratoPublicoDescribeJwtPaginacionYLoginSinToken() throws Exception {
+        mvc.perform(get("/v3/api-docs")).andExpect(status().isOk())
+                .andExpect(jsonPath("$.info.title").value("Academia UPN API"))
+                .andExpect(jsonPath("$.components.securitySchemes.bearerAuth.type").value("http"))
+                .andExpect(jsonPath("$.components.securitySchemes.bearerAuth.scheme").value("bearer"))
+                .andExpect(jsonPath("$.security[0].bearerAuth").isArray())
+                .andExpect(jsonPath("$.paths['/api/v1/auth/login'].post.security").isEmpty())
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].get.parameters[*].name")
+                        .value(hasItems("page", "size", "sort", "docente", "creditosMin")))
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].post.responses['201']").exists())
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].post.responses['400']").exists())
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].post.responses['409']").exists())
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].post.responses['400'].content['application/problem+json'].schema['$ref']")
+                        .value("#/components/schemas/ProblemDetail"))
+                .andExpect(jsonPath("$.paths['/api/v1/cursos'].post.responses['409'].content['application/problem+json'].schema['$ref']")
+                        .value("#/components/schemas/ProblemDetail"))
+                .andExpect(jsonPath("$.tags[*].name").value(hasItems("Cursos", "Estudiantes", "Matrículas", "Autenticación")));
+    }
+
+    @Test
+    void otrosEndpointsDeActuatorNoQuedanAbiertos() throws Exception {
+        mvc.perform(get("/actuator/env").header("Authorization", "Bearer " + token("admin-test")))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    void estudianteSigueSinAccesoAResumenNiMatriculasDeCurso() throws Exception {
+        String jwt = token("estudiante-test");
+        mvc.perform(get("/api/v1/cursos/resumen").header("Authorization", "Bearer " + jwt))
+                .andExpect(status().isForbidden());
+        mvc.perform(get("/api/v1/cursos/1/matriculas").header("Authorization", "Bearer " + jwt))
                 .andExpect(status().isForbidden());
     }
 
