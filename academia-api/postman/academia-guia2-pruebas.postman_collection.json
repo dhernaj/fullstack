@@ -1,0 +1,1157 @@
+{
+  "info": {
+    "name": "Academia UPN – Guía 2 – Pruebas completas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Casos 1–14 de la guía, valores límite adicionales y desactivación de registros creados. Se usan ids devueltos por POST. Elegir códigos libres antes de repetir; los inactivos conservan su código único."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8080/api/v1"
+    },
+    {
+      "key": "idInexistente",
+      "value": "9223372036854775807"
+    },
+    {
+      "key": "codigoPrincipal",
+      "value": "PRB-001"
+    },
+    {
+      "key": "codigoCredito1",
+      "value": "PRB-002"
+    },
+    {
+      "key": "codigoCredito6",
+      "value": "PRB-003"
+    },
+    {
+      "key": "codigoCupos60",
+      "value": "PRB-004"
+    },
+    {
+      "key": "codigoCupos1",
+      "value": "PRB-005"
+    },
+    {
+      "key": "codigoNombre100",
+      "value": "PRB-006"
+    },
+    {
+      "key": "codigoDocente80",
+      "value": "PRB-007"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - Crear curso válido",
+      "item": [
+        {
+          "name": "Crear curso válido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idPrincipal\", pm.response.json().id);",
+                  "pm.test(\"Location e identificador generado\", () => { const c=pm.response.json(); pm.expect(pm.response.headers.get(\"Location\")).to.match(new RegExp(\"/cursos/\"+c.id+\"$\")); pm.expect(c.activo).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "02 - Código duplicado",
+      "item": [
+        {
+          "name": "Repetir código",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 409\", () => pm.response.to.have.status(409));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "03 - Validación por campo",
+      "item": [
+        {
+          "name": "Nombre vacío y créditos 9",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"\", \"creditos\": 9, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });",
+                  "pm.test(\"Errores de nombre y créditos\", () => { const e=pm.response.json().errores; pm.expect(e).to.have.property(\"nombre\"); pm.expect(e).to.have.property(\"creditos\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "04 - Formato de código",
+      "item": [
+        {
+          "name": "Código sin formato",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"sis400\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "05 - JSON inválido",
+      "item": [
+        {
+          "name": "JSON incompleto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "06 - Actualizar curso",
+      "item": [
+        {
+          "name": "Cambiar cupos a 30",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos/{{idPrincipal}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 30}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Cupos actualizados\", () => pm.expect(pm.response.json().cupos).to.eql(30));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "07 - Actualizar inexistente",
+      "item": [
+        {
+          "name": "Id inexistente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos/{{idInexistente}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "08 - Identificador inválido",
+      "item": [
+        {
+          "name": "Id no numérico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/abc"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "09 - Eliminación lógica",
+      "item": [
+        {
+          "name": "Desactivar curso",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idPrincipal}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10 - DELETE idempotente",
+      "item": [
+        {
+          "name": "Repetir DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idPrincipal}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "11 - Créditos válidos en los límites",
+      "item": [
+        {
+          "name": "Créditos 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCredito1}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 1, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idCredito1\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Créditos 6",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCredito6}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 6, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idCredito6\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "12 - Créditos fuera de rango",
+      "item": [
+        {
+          "name": "Créditos 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 0, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Créditos 7",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 7, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "13 - Límite de cupos",
+      "item": [
+        {
+          "name": "Cupos 60",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCupos60}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 60}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idCupos60\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cupos 61",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 61}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "14 - Longitud de nombre",
+      "item": [
+        {
+          "name": "Nombre de 101 caracteres",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Límites adicionales",
+      "item": [
+        {
+          "name": "Nombre de 100 caracteres",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoNombre100}}\", \"nombre\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idNombre100\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cupos 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 0}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cupos 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCupos1}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idCupos1\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Docente de 80 caracteres",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoDocente80}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if (pm.response.code === 201) pm.collectionVariables.set(\"idDocente80\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Docente de 81 caracteres",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nombre solo espacios",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"   \", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Docente vacío",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoPrincipal}}\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Código vacío",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Código en minúsculas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"sis-400\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Código sin guion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"SIS400\", \"nombre\": \"Arquitectura de Software\", \"creditos\": 4, \"docente\": \"José Canchucaja\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Problem Details sin trazas\", () => { const p = pm.response.json(); pm.expect(p.status).to.eql(pm.response.code); pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\"); pm.expect(p).to.not.have.property(\"trace\"); pm.expect(p).to.not.have.property(\"exception\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verificación y cierre",
+      "item": [
+        {
+          "name": "Curso eliminado sigue en la base",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idPrincipal}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Estado inactivo y cupos conservados\", () => { const c=pm.response.json(); pm.expect(c.activo).to.eql(false); pm.expect(c.cupos).to.eql(30); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Credito1",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idCredito1}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Credito6",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idCredito6}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Cupos60",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idCupos60}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Cupos1",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idCupos1}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Nombre100",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idNombre100}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar prueba Docente80",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idDocente80}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Comprobar listado final",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Pruebas desactivadas\", () => { const ids=pm.response.json().map(c=>c.id); [\"Principal\",\"Credito1\",\"Credito6\",\"Cupos60\",\"Cupos1\",\"Nombre100\",\"Docente80\"].forEach(n=>pm.expect(ids).to.not.include(Number(pm.collectionVariables.get(\"id\"+n)))); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

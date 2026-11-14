@@ -1,0 +1,26 @@
+
+> academia-web@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+chunk-BcnVnBdv.js   | -             | 263.32 kB |                71.58 kB
+styles-2VG5FPJR.css | styles        | 231.64 kB |                22.75 kB
+main-YSFRBCTU.js    | main          |   5.89 kB |                 2.34 kB
+
+                    | Initial total | 500.85 kB |                96.67 kB
+
+Lazy chunk files    | Names         |  Raw size | Estimated transfer size
+chunk-C5r1FAim.js   | -             |  43.17 kB |                 9.35 kB
+chunk-6Zl_P89j.js   | curso-list    |   7.99 kB |                 2.77 kB
+chunk-CM7y5VKB.js   | curso-form    |   7.11 kB |                 2.44 kB
+chunk-CEPhdNRL.js   | login         |   3.60 kB |                 1.47 kB
+chunk-DCsm7sdz.js   | not-found     | 848 bytes |               848 bytes
+chunk-CLiJXdnO.js   | -             | 633 bytes |               633 bytes
+chunk-CTGJX8t9.js   | -             | 216 bytes |               216 bytes
+
+Application bundle generation complete. [30.377 seconds] - 2026-11-14T02:07:57.578Z
+
+Output location: /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-web/dist/academia-web
+

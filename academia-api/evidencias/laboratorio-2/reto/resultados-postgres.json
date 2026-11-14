@@ -1,0 +1,147 @@
+{
+  "perfil": "postgres",
+  "esquemaTemporal": "lab2_reto_fb9184004ac8",
+  "casos": {
+    "R1": {
+      "http": 200,
+      "matriculasPropias": 2
+    },
+    "R2": {
+      "http": 403
+    },
+    "R3": {
+      "http": 200
+    },
+    "R4": {
+      "http": 200,
+      "tamanio": 50
+    },
+    "R5": {
+      "rondas": 3,
+      "resultadoEnCadaRonda": [
+        201,
+        409
+      ],
+      "matriculasActivasPorCurso": 1
+    }
+  },
+  "rondasConcurrencia": [
+    {
+      "cursoId": 4,
+      "respuestas": [
+        {
+          "estudianteId": 1,
+          "status": 409,
+          "respuesta": {
+            "detail": "El curso no tiene cupos disponibles",
+            "instance": "/api/v1/matriculas",
+            "status": 409,
+            "title": "Conflicto de datos"
+          },
+          "inicioNs": 13026471311370,
+          "finNs": 13031508717546,
+          "duracionMs": 5037.41
+        },
+        {
+          "estudianteId": 2,
+          "status": 201,
+          "respuesta": {
+            "id": 3,
+            "estudianteId": 2,
+            "estudianteNombre": "Luis Pérez",
+            "cursoId": 4,
+            "cursoNombre": "Prueba de último cupo",
+            "fecha": "2026-11-11",
+            "estado": "ACTIVA"
+          },
+          "inicioNs": 13026466777810,
+          "finNs": 13031492597274,
+          "duracionMs": 5025.82
+        }
+      ],
+      "intervalosSolapados": true,
+      "matriculasActivasFinales": 1,
+      "sesionesEsperandoLockObservadas": 2,
+      "bloqueoDeCoordinacion": true
+    },
+    {
+      "cursoId": 5,
+      "respuestas": [
+        {
+          "estudianteId": 1,
+          "status": 409,
+          "respuesta": {
+            "detail": "El curso no tiene cupos disponibles",
+            "instance": "/api/v1/matriculas",
+            "status": 409,
+            "title": "Conflicto de datos"
+          },
+          "inicioNs": 13031661048209,
+          "finNs": 13031704797098,
+          "duracionMs": 43.75
+        },
+        {
+          "estudianteId": 2,
+          "status": 201,
+          "respuesta": {
+            "id": 4,
+            "estudianteId": 2,
+            "estudianteNombre": "Luis Pérez",
+            "cursoId": 5,
+            "cursoNombre": "Prueba de último cupo",
+            "fecha": "2026-11-11",
+            "estado": "ACTIVA"
+          },
+          "inicioNs": 13031661490369,
+          "finNs": 13031692854563,
+          "duracionMs": 31.36
+        }
+      ],
+      "intervalosSolapados": true,
+      "matriculasActivasFinales": 1,
+      "sesionesEsperandoLockObservadas": null,
+      "bloqueoDeCoordinacion": false
+    },
+    {
+      "cursoId": 6,
+      "respuestas": [
+        {
+          "estudianteId": 1,
+          "status": 201,
+          "respuesta": {
+            "id": 5,
+            "estudianteId": 1,
+            "estudianteNombre": "Ana Torres",
+            "cursoId": 6,
+            "cursoNombre": "Prueba de último cupo",
+            "fecha": "2026-11-11",
+            "estado": "ACTIVA"
+          },
+          "inicioNs": 13031851596673,
+          "finNs": 13031886350983,
+          "duracionMs": 34.75
+        },
+        {
+          "estudianteId": 2,
+          "status": 409,
+          "respuesta": {
+            "detail": "El curso no tiene cupos disponibles",
+            "instance": "/api/v1/matriculas",
+            "status": 409,
+            "title": "Conflicto de datos"
+          },
+          "inicioNs": 13031852030894,
+          "finNs": 13031894111883,
+          "duracionMs": 42.08
+        }
+      ],
+      "intervalosSolapados": true,
+      "matriculasActivasFinales": 1,
+      "sesionesEsperandoLockObservadas": null,
+      "bloqueoDeCoordinacion": false
+    }
+  ],
+  "restriccionesVerificadasEnSchema": "lab2_reto_fb9184004ac8",
+  "matriculasActivasPruebaSQL": 3,
+  "esquemaTemporalEliminado": true
+}

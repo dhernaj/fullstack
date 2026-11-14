@@ -1,0 +1,41 @@
+{
+  "newmanVersion": "6.2.1",
+  "casosGuia": 5,
+  "peticiones": 10,
+  "aserciones": 15,
+  "fallosNewman": 0,
+  "fallosBase": [],
+  "originalesConservados": true,
+  "cursosPrueba": [
+    {
+      "id": 69,
+      "activo": false,
+      "codigo": "RET-001",
+      "creditos": 4,
+      "cupos": 35,
+      "docente": "Prueba local",
+      "nombre": "Curso para verificar cupos"
+    },
+    {
+      "id": 70,
+      "activo": false,
+      "codigo": "RET-002",
+      "creditos": 3,
+      "cupos": 25,
+      "docente": "Prueba local",
+      "nombre": "Curso para verificar eliminación"
+    }
+  ],
+  "creados": [
+    {
+      "caso": "Crear curso para cupos",
+      "id": 69,
+      "codigo": "RET-001"
+    },
+    {
+      "caso": "Crear curso para eliminación",
+      "id": 70,
+      "codigo": "RET-002"
+    }
+  ]
+}

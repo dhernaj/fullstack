@@ -1,0 +1,18 @@
+{
+  "parte": "E — Seguridad",
+  "rama": "laboratorio-2",
+  "pruebasJavaH2": 52,
+  "pruebasJavaPostgres": 52,
+  "casosGuia": 12,
+  "peticionesNewman": 28,
+  "asercionesNewman": 39,
+  "fallos": 0,
+  "datosPostgresConservados": true,
+  "demoEnPruebaHttp": "H2 descartable",
+  "jwt": "HS256, firma, vencimiento y emisor",
+  "cors": "localhost:4200 permitido; origen ajeno rechazado",
+  "contraseñas": "BCrypt en la base; valores locales excluidos de Git",
+  "tokensOmitidosDeReportes": true,
+  "cookiesSesionAusentes": true,
+  "pendiente": "Revisión F y prueba real de matrículas simultáneas del reto"
+}

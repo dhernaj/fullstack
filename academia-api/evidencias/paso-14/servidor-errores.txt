@@ -1,0 +1,58 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-05T22:22:55.208-05:00  INFO 72574 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : Starting AcademiaApiApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 72574 (/Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/target/academia-api-0.0.1-SNAPSHOT.jar started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2)
+2026-11-05T22:22:55.215-05:00  INFO 72574 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : No active profile set, falling back to 1 default profile: "postgres"
+2026-11-05T22:22:56.086-05:00  INFO 72574 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-05T22:22:56.145-05:00  INFO 72574 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2026-11-05T22:22:57.166-05:00  INFO 72574 --- [academia-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 18080 (http)
+2026-11-05T22:22:57.190-05:00  INFO 72574 --- [academia-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-05T22:22:57.190-05:00  INFO 72574 --- [academia-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-05T22:22:57.242-05:00  INFO 72574 --- [academia-api] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1909 ms
+2026-11-05T22:22:57.525-05:00  INFO 72574 --- [academia-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-05T22:22:57.599-05:00  INFO 72574 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-05T22:22:58.187-05:00  INFO 72574 --- [academia-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-05T22:22:58.227-05:00  INFO 72574 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-05T22:22:58.553-05:00  INFO 72574 --- [academia-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@362a6aa5
+2026-11-05T22:22:58.555-05:00  INFO 72574 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-05T22:22:58.653-05:00  INFO 72574 --- [academia-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:5432/academia_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: academia_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-05T22:22:59.838-05:00  INFO 72574 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-05T22:22:59.908-05:00  INFO 72574 --- [academia-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-05T22:23:00.016-05:00  INFO 72574 --- [academia-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-05T22:23:00.933-05:00  INFO 72574 --- [academia-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 18080 (http) with context path '/'
+2026-11-05T22:23:00.950-05:00  INFO 72574 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : Started AcademiaApiApplication in 6.519 seconds (process running for 7.28)
+2026-11-05T22:23:01.290-05:00  INFO 72574 --- [academia-api] [.1-18080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-05T22:23:01.290-05:00  INFO 72574 --- [academia-api] [.1-18080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-05T22:23:01.292-05:00  INFO 72574 --- [academia-api] [.1-18080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-05T22:23:01.461-05:00 DEBUG 72574 --- [academia-api] [           main] org.hibernate.SQL                        : select count(*) from cursos c1_0
+2026-11-05T22:23:01.478-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-1] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:23:01.608-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:23:01.775-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:23:01.787-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:23:01.792-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:23:01.858-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:23:01.902-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:23:01.915-05:00  WARN 72574 --- [academia-api] [.1-18080-exec-4] o.s.web.servlet.PageNotFound             : Request method 'PATCH' is not supported
+2026-11-05T22:23:01.993-05:00  INFO 72574 --- [academia-api] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-05T22:23:01.995-05:00  INFO 72574 --- [academia-api] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-05T22:23:01.999-05:00  INFO 72574 --- [academia-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-05T22:23:02.002-05:00  INFO 72574 --- [academia-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-05T22:23:02.006-05:00  INFO 72574 --- [academia-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

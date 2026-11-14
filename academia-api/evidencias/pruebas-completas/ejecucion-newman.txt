@@ -1,0 +1,204 @@
+(node:72960) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Academia UPN – Guía 2 – Pruebas completas
+
+❏ 01 - Crear curso válido
+↳ Crear curso válido
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 350B, 205ms]
+  ✓  HTTP 201
+  ✓  Location e identificador generado
+
+❏ 02 - Código duplicado
+↳ Repetir código
+  POST http://127.0.0.1:8080/api/v1/cursos [409 Conflict, 299B, 11ms]
+  ✓  HTTP 409
+  ✓  Problem Details sin trazas
+
+❏ 03 - Validación por campo
+↳ Nombre vacío y créditos 9
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 356B, 15ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+  ✓  Errores de nombre y créditos
+
+❏ 04 - Formato de código
+↳ Código sin formato
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 326B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ 05 - JSON inválido
+↳ JSON incompleto
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 250B, 8ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ 06 - Actualizar curso
+↳ Cambiar cupos a 30
+  PUT http://127.0.0.1:8080/api/v1/cursos/61 [200 OK, 288B, 29ms]
+  ✓  HTTP 200
+  ✓  Cupos actualizados
+
+❏ 07 - Actualizar inexistente
+↳ Id inexistente
+  PUT http://127.0.0.1:8080/api/v1/cursos/9223372036854775807 [404 Not Found, 324B, 8ms]
+  ✓  HTTP 404
+  ✓  Problem Details sin trazas
+
+❏ 08 - Identificador inválido
+↳ Id no numérico
+  GET http://127.0.0.1:8080/api/v1/cursos/abc [400 Bad Request, 272B, 5ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ 09 - Eliminación lógica
+↳ Desactivar curso
+  DELETE http://127.0.0.1:8080/api/v1/cursos/61 [204 No Content, 112B, 16ms]
+  ✓  HTTP 204
+
+❏ 10 - DELETE idempotente
+↳ Repetir DELETE
+  DELETE http://127.0.0.1:8080/api/v1/cursos/61 [204 No Content, 112B, 8ms]
+  ✓  HTTP 204
+
+❏ 11 - Créditos válidos en los límites
+↳ Créditos 1
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 350B, 12ms]
+  ✓  HTTP 201
+
+↳ Créditos 6
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 350B, 12ms]
+  ✓  HTTP 201
+
+❏ 12 - Créditos fuera de rango
+↳ Créditos 0
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 319B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Créditos 7
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 320B, 11ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ 13 - Límite de cupos
+↳ Cupos 60
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 350B, 16ms]
+  ✓  HTTP 201
+
+↳ Cupos 61
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 314B, 5ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ 14 - Longitud de nombre
+↳ Nombre de 101 caracteres
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 338B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ Límites adicionales
+↳ Nombre de 100 caracteres
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 426B, 15ms]
+  ✓  HTTP 201
+
+↳ Cupos 0
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 312B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Cupos 1
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 349B, 16ms]
+  ✓  HTTP 201
+
+↳ Docente de 80 caracteres
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 414B, 8ms]
+  ✓  HTTP 201
+
+↳ Docente de 81 caracteres
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 339B, 5ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Nombre solo espacios
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 323B, 5ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Docente vacío
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 325B, 5ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Código vacío
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 324B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Código en minúsculas
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 326B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+↳ Código sin guion
+  POST http://127.0.0.1:8080/api/v1/cursos [400 Bad Request, 326B, 6ms]
+  ✓  HTTP 400
+  ✓  Problem Details sin trazas
+
+❏ Verificación y cierre
+↳ Curso eliminado sigue en la base
+  GET http://127.0.0.1:8080/api/v1/cursos/61 [200 OK, 289B, 6ms]
+  ✓  HTTP 200
+  ✓  Estado inactivo y cupos conservados
+
+↳ Desactivar prueba Credito1
+  DELETE http://127.0.0.1:8080/api/v1/cursos/62 [204 No Content, 112B, 12ms]
+  ✓  HTTP 204
+
+↳ Desactivar prueba Credito6
+  DELETE http://127.0.0.1:8080/api/v1/cursos/63 [204 No Content, 112B, 9ms]
+  ✓  HTTP 204
+
+↳ Desactivar prueba Cupos60
+  DELETE http://127.0.0.1:8080/api/v1/cursos/64 [204 No Content, 112B, 11ms]
+  ✓  HTTP 204
+
+↳ Desactivar prueba Cupos1
+  DELETE http://127.0.0.1:8080/api/v1/cursos/66 [204 No Content, 112B, 9ms]
+  ✓  HTTP 204
+
+↳ Desactivar prueba Nombre100
+  DELETE http://127.0.0.1:8080/api/v1/cursos/65 [204 No Content, 112B, 9ms]
+  ✓  HTTP 204
+
+↳ Desactivar prueba Docente80
+  DELETE http://127.0.0.1:8080/api/v1/cursos/67 [204 No Content, 112B, 9ms]
+  ✓  HTTP 204
+
+↳ Comprobar listado final
+  GET http://127.0.0.1:8080/api/v1/cursos [200 OK, 532B, 7ms]
+  ✓  HTTP 200
+  ✓  Pruebas desactivadas
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                35 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                35 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 0 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                57 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 2.8s                                       │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 4.45kB (approx)                           │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 15ms [min: 5ms, max: 205ms, s.d.: 32ms] │
+└────────────────────────────────────────────────────────────────┘
+OK: colección aprobada, originales conservados y siete cursos de prueba inactivos.

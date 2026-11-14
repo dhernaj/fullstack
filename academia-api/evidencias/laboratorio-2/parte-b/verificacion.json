@@ -1,0 +1,28 @@
+{
+  "parte": "B — Modelo de datos",
+  "rama": "laboratorio-2",
+  "pruebasH2": 26,
+  "pruebasPostgres": 26,
+  "fallos": 0,
+  "cursosAnterioresConservados": true,
+  "cantidadCursosConservados": 14,
+  "versionExistentesInicializadaEn": 0,
+  "nuevasTablas": [
+    "estudiantes",
+    "matriculas",
+    "usuarios"
+  ],
+  "pruebasDelModelo": [
+    "Relaciones y estados persistidos",
+    "Hash de prueba almacenado sin texto plano",
+    "Carga LAZY de curso y estudiante",
+    "Relaciones inversas mappedBy",
+    "Matrícula estudiante-curso única",
+    "Estudiante vinculado a una cuenta como máximo",
+    "Integridad referencial",
+    "Rechazo de versión obsoleta"
+  ],
+  "datosDePrueba": "Transacciones revertidas; tablas nuevas vacías",
+  "respaldo": "outputs/respaldo-laboratorio-2/antes-parte-b.dump",
+  "pendiente": "Repositorios y servicios nuevos, login y autorización por rol"
+}

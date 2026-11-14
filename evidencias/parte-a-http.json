@@ -1,0 +1,9 @@
+{
+  "api": "http://127.0.0.1:8082",
+  "perfil": "h2",
+  "sinToken": 401,
+  "login": 200,
+  "consultaCursos": 200,
+  "cursosDeDemostracion": 3,
+  "frontendHttp": 200
+}

@@ -1,0 +1,28 @@
+
+> academia-web@0.0.0 start
+> ng serve --host localhost --port 4201
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+styles.css          | styles        | 277.97 kB | 
+main.js             | main          |  10.85 kB | 
+chunk-5HTKEMOA.js   | -             |   3.96 kB | 
+chunk-UYJVFCNT.js   | -             |   1.51 kB | 
+chunk-RPK43IBV.js   | -             |   1.12 kB | 
+
+                    | Initial total | 295.40 kB
+
+Lazy chunk files    | Names         |  Raw size
+chunk-4A5J3EVL.js   | curso-list    |  24.61 kB | 
+chunk-DG7RSE3D.js   | curso-form    |  18.84 kB | 
+chunk-PG7HBRSQ.js   | login         |  10.39 kB | 
+chunk-B5SPT35Q.js   | not-found     |   3.42 kB | 
+chunk-JDLHRV2B.js   | -             |   1.53 kB | 
+
+Application bundle generation complete. [18.248 seconds] - 2026-11-14T02:09:04.924Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4201/
+9:09:10 PM [vite] (client) [optimizer] bundling dependencies...

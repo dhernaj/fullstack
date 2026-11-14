@@ -1,0 +1,21 @@
+{
+  "parte": "D — Excepciones",
+  "rama": "laboratorio-2",
+  "pruebasTotalesH2": 49,
+  "fallos": 0,
+  "pruebasMvcNuevas": 8,
+  "codigosVerificadosMvc": [
+    400,
+    401,
+    403,
+    405,
+    409,
+    500
+  ],
+  "tipoRespuesta": "Problem Details",
+  "usuarioDesconocidoYClaveIncorrecta": "Mismo mensaje genérico",
+  "controladorArtificialEnEjecutable": false,
+  "basePostgresModificadaEnEstaParte": false,
+  "alcance": "MockMvc standalone con el manejador real; sin filtros ni roles JWT",
+  "pendiente": "Integración de login, JWT y autorización con Spring Security en parte E"
+}

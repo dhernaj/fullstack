@@ -1,0 +1,5 @@
+evidencias/paso-14/servidor-errores.txt
+2026-11-05T22:23:01.858-05:00 DEBUG 72574 --- [academia-api] [.1-18080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+
+evidencias/paso-13/servidor-http.txt
+2026-11-05T22:19:53.216-05:00 DEBUG 72061 --- [academia-api] [.1-18080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)

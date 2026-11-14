@@ -1,0 +1,46 @@
+{
+  "GET lista": {
+    "status": 200,
+    "cursos": [
+      {
+        "id": 15,
+        "codigo": "SIS-101",
+        "nombre": "Fundamentos de Programación",
+        "creditos": 4,
+        "docente": "Ana Torres",
+        "cupos": 40,
+        "activo": true
+      },
+      {
+        "id": 16,
+        "codigo": "SIS-205",
+        "nombre": "Base de Datos",
+        "creditos": 4,
+        "docente": "Luis Pérez",
+        "cupos": 35,
+        "activo": true
+      },
+      {
+        "id": 17,
+        "codigo": "SIS-310",
+        "nombre": "Desarrollo Web Full Stack",
+        "creditos": 5,
+        "docente": "Carla Ramos",
+        "cupos": 30,
+        "activo": true
+      }
+    ]
+  },
+  "GET por id": {
+    "status": 200,
+    "curso": {
+      "id": 15,
+      "codigo": "SIS-101",
+      "nombre": "Fundamentos de Programación",
+      "creditos": 4,
+      "docente": "Ana Torres",
+      "cupos": 40,
+      "activo": true
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "peticiones": [
+    {
+      "query": "",
+      "conCredencialesTemporales": false,
+      "status": 401,
+      "respuesta": null
+    },
+    {
+      "query": "?size=100000&sort=creditos,desc",
+      "conCredencialesTemporales": true,
+      "status": 200,
+      "respuesta": {
+        "contenido": [
+          {
+            "id": 3,
+            "codigo": "SIS-310",
+            "nombre": "Desarrollo Web Full Stack",
+            "creditos": 5,
+            "docente": "Carla Ramos",
+            "cupos": 30,
+            "activo": true
+          },
+          {
+            "id": 1,
+            "codigo": "SIS-101",
+            "nombre": "Fundamentos de Programación",
+            "creditos": 4,
+            "docente": "Ana Torres",
+            "cupos": 40,
+            "activo": true
+          },
+          {
+            "id": 2,
+            "codigo": "SIS-205",
+            "nombre": "Base de Datos",
+            "creditos": 4,
+            "docente": "Luis Pérez",
+            "cupos": 35,
+            "activo": true
+          }
+        ],
+        "pagina": 0,
+        "tamanio": 50,
+        "totalElementos": 3,
+        "totalPaginas": 1,
+        "ultima": true
+      }
+    },
+    {
+      "query": "?docente=ANA&creditosMin=4",
+      "conCredencialesTemporales": true,
+      "status": 200,
+      "respuesta": {
+        "contenido": [
+          {
+            "id": 1,
+            "codigo": "SIS-101",
+            "nombre": "Fundamentos de Programación",
+            "creditos": 4,
+            "docente": "Ana Torres",
+            "cupos": 40,
+            "activo": true
+          }
+        ],
+        "pagina": 0,
+        "tamanio": 10,
+        "totalElementos": 1,
+        "totalPaginas": 1,
+        "ultima": true
+      }
+    },
+    {
+      "query": "?page=1&size=1&sort=creditos,desc",
+      "conCredencialesTemporales": true,
+      "status": 200,
+      "respuesta": {
+        "contenido": [
+          {
+            "id": 1,
+            "codigo": "SIS-101",
+            "nombre": "Fundamentos de Programación",
+            "creditos": 4,
+            "docente": "Ana Torres",
+            "cupos": 40,
+            "activo": true
+          }
+        ],
+        "pagina": 1,
+        "tamanio": 1,
+        "totalElementos": 3,
+        "totalPaginas": 3,
+        "ultima": false
+      }
+    },
+    {
+      "query": "?docente=%25",
+      "conCredencialesTemporales": true,
+      "status": 200,
+      "respuesta": {
+        "contenido": [],
+        "pagina": 0,
+        "tamanio": 10,
+        "totalElementos": 0,
+        "totalPaginas": 0,
+        "ultima": true
+      }
+    }
+  ],
+  "autenticacionUsada": "HTTP Basic temporal solo para esta prueba; JWT pendiente"
+}

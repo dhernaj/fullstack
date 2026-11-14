@@ -1,0 +1,460 @@
+{
+  "info": {
+    "_postman_id": "2ccd28fd-155a-4700-a471-8f06e6fc17d3",
+    "name": "Academia UPN – Módulo I",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59575735",
+    "_collection_link": "https://go.postman.co/collection/59575735-2ccd28fd-155a-4700-a471-8f06e6fc17d3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "00 Listar cursos",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 200 OK\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"La respuesta es una lista\", () => {\n    pm.expect(pm.response.json()).to.be.an(\"array\");\n});\n\npm.test(\"Incluye los tres cursos iniciales\", () => {\n    const codigos = pm.response.json().map(curso => curso.codigo);\n\n    pm.expect(codigos).to.include.members([\n        \"SIS-101\",\n        \"SIS-205\",\n        \"SIS-310\"\n    ]);\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        },
+        "description": "Generated from cURL: curl http://localhost:8080/api/v1/cursos"
+      },
+      "response": [
+        {
+          "name": "00 Listar cursos",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cursos"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "372"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 05 Nov 2026 03:54:50 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": 1,\n    \"codigo\": \"SIS-101\",\n    \"nombre\": \"Fundamentos de Programación\",\n    \"creditos\": 4,\n    \"docente\": \"Ana Torres\",\n    \"cupos\": 40,\n    \"activo\": true\n  },\n  {\n    \"id\": 2,\n    \"codigo\": \"SIS-205\",\n    \"nombre\": \"Base de Datos\",\n    \"creditos\": 4,\n    \"docente\": \"Luis Pérez\",\n    \"cupos\": 35,\n    \"activo\": true\n  },\n  {\n    \"id\": 3,\n    \"codigo\": \"SIS-310\",\n    \"nombre\": \"Desarrollo Web Full Stack\",\n    \"creditos\": 5,\n    \"docente\": \"Carla Ramos\",\n    \"cupos\": 30,\n    \"activo\": true\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "01 Crear curso",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 201 Created\", () => {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Incluye Location\", () => {\n    pm.expect(pm.response.headers.get(\"Location\"))\n        .to.be.a(\"string\").and.not.empty;\n});\n\nif (pm.response.code === 201) {\n    const curso = pm.response.json();\n\n    pm.collectionVariables.set(\"cursoId\", curso.id);\n\n    pm.test(\"El curso tiene los datos esperados\", () => {\n        pm.expect(curso.codigo).to.eql(\"SIS-400\");\n        pm.expect(curso.cupos).to.eql(25);\n        pm.expect(curso.activo).to.eql(true);\n    });\n}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"SIS-400\",\n  \"nombre\": \"Arquitectura de Software\",\n  \"creditos\": 4,\n  \"docente\": \"José Canchucaja\",\n  \"cupos\": 25\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 Código duplicado",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 409 Conflict\", () => {\n    pm.response.to.have.status(409);\n});\n\npm.test(\"Explica el conflicto\", () => {\n    const error = pm.response.json();\n\n    pm.expect(error.status).to.eql(409);\n    pm.expect(error.detail).to.include(\"SIS-400\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"SIS-400\",\n  \"nombre\": \"Arquitectura de Software\",\n  \"creditos\": 4,\n  \"docente\": \"José Canchucaja\",\n  \"cupos\": 25\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 Datos inválidos",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 400 Bad Request\", () => {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Identifica los campos inválidos\", () => {\n    const error = pm.response.json();\n\n    pm.expect(error.errores).to.have.property(\"nombre\");\n    pm.expect(error.errores).to.have.property(\"creditos\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"SIS-401\",\n  \"nombre\": \"\",\n  \"creditos\": 9,\n  \"docente\": \"Ana\",\n  \"cupos\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 Formato de código inválido",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 400\", () => {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Identifica el código inválido\", () => {\n    pm.expect(pm.response.json().errores)\n        .to.have.property(\"codigo\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"sis400\",\n  \"nombre\": \"Curso de prueba\",\n  \"creditos\": 4,\n  \"docente\": \"Ana\",\n  \"cupos\": 25\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 JSON mal formado",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 400 por JSON mal formado\", () => {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Devuelve un error estructurado\", () => {\n    const error = pm.response.json();\n\n    pm.expect(error.status).to.eql(400);\n    pm.expect(error).to.have.property(\"detail\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"codigo\":\"SIS-402\"",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 Actualizar curso",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 200 OK\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Actualiza los cupos del curso correcto\", () => {\n    const curso = pm.response.json();\n\n    pm.expect(curso.id).to.eql(\n        Number(pm.collectionVariables.get(\"cursoId\"))\n    );\n    pm.expect(curso.cupos).to.eql(30);\n    pm.expect(curso.codigo).to.eql(\"SIS-400\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"SIS-400\",\n  \"nombre\": \"Arquitectura de Software\",\n  \"creditos\": 4,\n  \"docente\": \"José Canchucaja\",\n  \"cupos\": 30\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos/{{cursoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos",
+            "{{cursoId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 Actualizar curso inexistente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 404 Not Found\", () => {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Identifica el curso inexistente\", () => {\n    const error = pm.response.json();\n\n    pm.expect(error.status).to.eql(404);\n    pm.expect(error.detail).to.include(\"Curso 99\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"SIS-400\",\n  \"nombre\": \"Arquitectura de Software\",\n  \"creditos\": 4,\n  \"docente\": \"José Canchucaja\",\n  \"cupos\": 30\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos",
+            "99"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 Identificador inválido",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 400 por identificador inválido\", () => {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"El error indica estado 400\", () => {\n    pm.expect(pm.response.json().status).to.eql(400);\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos/abc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 Eliminar curso",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 204 No Content\", () => {\n    pm.response.to.have.status(204);\n});\n\npm.test(\"La respuesta no tiene cuerpo\", () => {\n    pm.expect(pm.response.text()).to.eql(\"\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos/{{cursoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos",
+            "{{cursoId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 Eliminar nuevamente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Devuelve 404 al repetir la eliminación\", () => {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Identifica el curso eliminado\", () => {\n    const error = pm.response.json();\n    const id = pm.collectionVariables.get(\"cursoId\");\n\n    pm.expect(error.status).to.eql(404);\n    pm.expect(error.detail).to.include(\"Curso \" + id);\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cursos/{{cursoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cursos",
+            "{{cursoId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "cursoId",
+      "value": ""
+    }
+  ]
+}

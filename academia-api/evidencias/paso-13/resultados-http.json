@@ -1,0 +1,227 @@
+[
+  {
+    "metodo": "GET",
+    "ruta": "/",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": [
+      {
+        "id": 15,
+        "codigo": "SIS-101",
+        "nombre": "Fundamentos de Programación",
+        "creditos": 4,
+        "docente": "Ana Torres",
+        "cupos": 40,
+        "activo": true
+      },
+      {
+        "id": 16,
+        "codigo": "SIS-205",
+        "nombre": "Base de Datos",
+        "creditos": 4,
+        "docente": "Luis Pérez",
+        "cupos": 35,
+        "activo": true
+      },
+      {
+        "id": 17,
+        "codigo": "SIS-310",
+        "nombre": "Desarrollo Web Full Stack",
+        "creditos": 5,
+        "docente": "Carla Ramos",
+        "cupos": 30,
+        "activo": true
+      }
+    ],
+    "location": null
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/15",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": {
+      "id": 15,
+      "codigo": "SIS-101",
+      "nombre": "Fundamentos de Programación",
+      "creditos": 4,
+      "docente": "Ana Torres",
+      "cupos": 40,
+      "activo": true
+    },
+    "location": null
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/",
+    "esperado": 201,
+    "obtenido": 201,
+    "respuesta": {
+      "id": 46,
+      "codigo": "SIS-400",
+      "nombre": "Arquitectura de Software",
+      "creditos": 4,
+      "docente": "José Canchucaja",
+      "cupos": 25,
+      "activo": true
+    },
+    "location": "http://127.0.0.1:18080/api/v1/cursos/46"
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/46",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": {
+      "id": 46,
+      "codigo": "SIS-400",
+      "nombre": "Arquitectura de Software",
+      "creditos": 4,
+      "docente": "José Canchucaja",
+      "cupos": 30,
+      "activo": true
+    },
+    "location": null
+  },
+  {
+    "metodo": "PATCH",
+    "ruta": "/46/cupos",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": {
+      "id": 46,
+      "codigo": "SIS-400",
+      "nombre": "Arquitectura de Software",
+      "creditos": 4,
+      "docente": "José Canchucaja",
+      "cupos": 35,
+      "activo": true
+    },
+    "location": null
+  },
+  {
+    "metodo": "PATCH",
+    "ruta": "/46/cupos",
+    "esperado": 400,
+    "obtenido": 400,
+    "respuesta": {
+      "timestamp": "2026-11-06T03:19:53.388Z",
+      "status": 400,
+      "error": "Bad Request",
+      "path": "/api/v1/cursos/46/cupos"
+    },
+    "location": null
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/",
+    "esperado": 400,
+    "obtenido": 400,
+    "respuesta": {
+      "timestamp": "2026-11-06T03:19:53.403Z",
+      "status": 400,
+      "error": "Bad Request",
+      "path": "/api/v1/cursos"
+    },
+    "location": null
+  },
+  {
+    "metodo": "GET",
+    "ruta": "?docente=Canchucaja&creditosMin=4",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": [
+      {
+        "id": 46,
+        "codigo": "SIS-400",
+        "nombre": "Arquitectura de Software",
+        "creditos": 4,
+        "docente": "José Canchucaja",
+        "cupos": 35,
+        "activo": true
+      }
+    ],
+    "location": null
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/abc",
+    "esperado": 400,
+    "obtenido": 400,
+    "respuesta": {
+      "timestamp": "2026-11-06T03:19:53.430Z",
+      "status": 400,
+      "error": "Bad Request",
+      "path": "/api/v1/cursos/abc"
+    },
+    "location": null
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/46",
+    "esperado": 204,
+    "obtenido": 204,
+    "respuesta": null,
+    "location": null
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/46",
+    "esperado": 204,
+    "obtenido": 204,
+    "respuesta": null,
+    "location": null
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/46",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": {
+      "id": 46,
+      "codigo": "SIS-400",
+      "nombre": "Arquitectura de Software",
+      "creditos": 4,
+      "docente": "José Canchucaja",
+      "cupos": 35,
+      "activo": false
+    },
+    "location": null
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/",
+    "esperado": 200,
+    "obtenido": 200,
+    "respuesta": [
+      {
+        "id": 15,
+        "codigo": "SIS-101",
+        "nombre": "Fundamentos de Programación",
+        "creditos": 4,
+        "docente": "Ana Torres",
+        "cupos": 40,
+        "activo": true
+      },
+      {
+        "id": 16,
+        "codigo": "SIS-205",
+        "nombre": "Base de Datos",
+        "creditos": 4,
+        "docente": "Luis Pérez",
+        "cupos": 35,
+        "activo": true
+      },
+      {
+        "id": 17,
+        "codigo": "SIS-310",
+        "nombre": "Desarrollo Web Full Stack",
+        "creditos": 5,
+        "docente": "Carla Ramos",
+        "cupos": 30,
+        "activo": true
+      }
+    ],
+    "location": null
+  }
+]

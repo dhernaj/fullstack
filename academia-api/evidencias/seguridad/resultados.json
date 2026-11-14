@@ -1,0 +1,86 @@
+{
+  "comprobaciones_http": [
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 201,
+      "obtenido": 201,
+      "respuesta": {
+        "id": 68,
+        "codigo": "SEC-001",
+        "nombre": "Comprobación de seguridad",
+        "creditos": 4,
+        "docente": "Prueba local",
+        "cupos": 25,
+        "activo": true
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 400,
+      "obtenido": 400,
+      "respuesta": {
+        "detail": "La solicitud contiene datos inválidos",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Error de validación",
+        "errores": {
+          "nombre": "El nombre admite máximo 100 caracteres"
+        }
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/abc",
+      "esperado": 400,
+      "obtenido": 400,
+      "respuesta": {
+        "detail": "Failed to convert 'id' with value: 'abc'",
+        "instance": "/api/v1/cursos/abc",
+        "status": 400,
+        "title": "Bad Request"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "?docente=.%2A",
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": []
+    },
+    {
+      "metodo": "GET",
+      "ruta": "?docente=%27+OR+1%3D1+--",
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": []
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/68",
+      "esperado": 204,
+      "obtenido": 204,
+      "respuesta": null
+    }
+  ],
+  "asignacion_masiva_bloqueada": true,
+  "curso_temporal": {
+    "id": 68,
+    "codigo": "SEC-001",
+    "estado_final": "inactivo"
+  },
+  "originales_conservados": true,
+  "autenticacion": "pendiente: POST sin credenciales respondió 201",
+  "rol_postgresql": {
+    "usuario": "academia_app",
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false,
+    "rolreplication": false,
+    "rolbypassrls": false
+  },
+  "controlador_inseguro_ausente": true,
+  "secreto_local_no_versionado": true,
+  "filtro_sin_regex_usuario": true
+}

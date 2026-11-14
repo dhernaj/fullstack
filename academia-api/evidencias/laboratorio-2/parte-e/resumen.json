@@ -1,0 +1,334 @@
+{
+  "casosGuia": 12,
+  "peticiones": 28,
+  "aserciones": 39,
+  "fallos": 0,
+  "secretosYTokensOmitidos": true,
+  "resultados": [
+    {
+      "caso": "Login Admin",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Token Bearer",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Login Docente",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Token Bearer",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Login Estudiante",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Token Bearer",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Listar sin autenticación",
+      "status": 401,
+      "aserciones": [
+        {
+          "nombre": "HTTP 401",
+          "aprobada": true
+        },
+        {
+          "nombre": "Challenge Bearer",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar contraseña incorrecta",
+      "status": 401,
+      "aserciones": [
+        {
+          "nombre": "HTTP 401",
+          "aprobada": true
+        },
+        {
+          "nombre": "Mensaje genérico",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Listar y ordenar cursos",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Página de tres y SIS-310 primero",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Crear como estudiante",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Crear como administrador",
+      "status": 201,
+      "aserciones": [
+        {
+          "nombre": "HTTP 201",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Consultar matrículas ajenas por curso",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Consultar estudiantes",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Ocupar la única plaza",
+      "status": 201,
+      "aserciones": [
+        {
+          "nombre": "HTTP 201",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar matrícula en curso lleno",
+      "status": 409,
+      "aserciones": [
+        {
+          "nombre": "HTTP 409",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar duplicado",
+      "status": 409,
+      "aserciones": [
+        {
+          "nombre": "HTTP 409",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Retirar como docente",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar eliminación de curso matriculado",
+      "status": 409,
+      "aserciones": [
+        {
+          "nombre": "HTTP 409",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Preflight Angular local",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Origen permitido",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Preflight origen desconocido",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        },
+        {
+          "nombre": "Origen rechazado",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Usuario desconocido tiene mensaje genérico",
+      "status": 401,
+      "aserciones": [
+        {
+          "nombre": "HTTP 401",
+          "aprobada": true
+        },
+        {
+          "nombre": "Mismo mensaje",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar token mal formado",
+      "status": 401,
+      "aserciones": [
+        {
+          "nombre": "HTTP 401",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Rechazar firma alterada",
+      "status": 401,
+      "aserciones": [
+        {
+          "nombre": "HTTP 401",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Login con campos vacíos",
+      "status": 400,
+      "aserciones": [
+        {
+          "nombre": "HTTP 400",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Matrículas propias",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Solo matrículas propias",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Bloquear acceso a otro estudiante",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Docente consulta estudiante",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Retiro como administrador",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        },
+        {
+          "nombre": "Matrícula retirada",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Docente usa la plaza liberada",
+      "status": 201,
+      "aserciones": [
+        {
+          "nombre": "HTTP 201",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Resumen permitido al docente",
+      "status": 200,
+      "aserciones": [
+        {
+          "nombre": "HTTP 200",
+          "aprobada": true
+        }
+      ]
+    },
+    {
+      "caso": "Resumen denegado al estudiante",
+      "status": 403,
+      "aserciones": [
+        {
+          "nombre": "HTTP 403",
+          "aprobada": true
+        }
+      ]
+    }
+  ],
+  "sinCookiesDeSesion": true
+}

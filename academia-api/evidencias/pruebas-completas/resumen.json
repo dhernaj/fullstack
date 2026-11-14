@@ -1,0 +1,111 @@
+{
+  "newmanVersion": "6.2.1",
+  "casosGuia": 14,
+  "peticiones": 35,
+  "aserciones": 57,
+  "fallosNewman": 0,
+  "fallosBase": [],
+  "originalesConservados": true,
+  "cursosPrueba": [
+    {
+      "id": 61,
+      "activo": false,
+      "codigo": "PRB-001",
+      "creditos": 4,
+      "cupos": 30,
+      "docente": "José Canchucaja",
+      "nombre": "Arquitectura de Software"
+    },
+    {
+      "id": 62,
+      "activo": false,
+      "codigo": "PRB-002",
+      "creditos": 1,
+      "cupos": 25,
+      "docente": "José Canchucaja",
+      "nombre": "Arquitectura de Software"
+    },
+    {
+      "id": 63,
+      "activo": false,
+      "codigo": "PRB-003",
+      "creditos": 6,
+      "cupos": 25,
+      "docente": "José Canchucaja",
+      "nombre": "Arquitectura de Software"
+    },
+    {
+      "id": 64,
+      "activo": false,
+      "codigo": "PRB-004",
+      "creditos": 4,
+      "cupos": 60,
+      "docente": "José Canchucaja",
+      "nombre": "Arquitectura de Software"
+    },
+    {
+      "id": 65,
+      "activo": false,
+      "codigo": "PRB-006",
+      "creditos": 4,
+      "cupos": 25,
+      "docente": "José Canchucaja",
+      "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    {
+      "id": 66,
+      "activo": false,
+      "codigo": "PRB-005",
+      "creditos": 4,
+      "cupos": 1,
+      "docente": "José Canchucaja",
+      "nombre": "Arquitectura de Software"
+    },
+    {
+      "id": 67,
+      "activo": false,
+      "codigo": "PRB-007",
+      "creditos": 4,
+      "cupos": 25,
+      "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "nombre": "Arquitectura de Software"
+    }
+  ],
+  "creados": [
+    {
+      "caso": "Crear curso válido",
+      "id": 61,
+      "codigo": "PRB-001"
+    },
+    {
+      "caso": "Créditos 1",
+      "id": 62,
+      "codigo": "PRB-002"
+    },
+    {
+      "caso": "Créditos 6",
+      "id": 63,
+      "codigo": "PRB-003"
+    },
+    {
+      "caso": "Cupos 60",
+      "id": 64,
+      "codigo": "PRB-004"
+    },
+    {
+      "caso": "Nombre de 100 caracteres",
+      "id": 65,
+      "codigo": "PRB-006"
+    },
+    {
+      "caso": "Cupos 1",
+      "id": 66,
+      "codigo": "PRB-005"
+    },
+    {
+      "caso": "Docente de 80 caracteres",
+      "id": 67,
+      "codigo": "PRB-007"
+    }
+  ]
+}

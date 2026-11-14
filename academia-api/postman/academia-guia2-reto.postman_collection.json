@@ -1,0 +1,312 @@
+{
+  "info": {
+    "name": "Academia UPN – Guía 2 – Reto",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Cinco casos del reto, con preparación y cierre. No modifica los cursos iniciales. Seleccionar dos códigos nuevos antes de repetir."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8080/api/v1"
+    },
+    {
+      "key": "codigoCupos",
+      "value": "RET-001"
+    },
+    {
+      "key": "codigoEliminar",
+      "value": "RET-002"
+    }
+  ],
+  "item": [
+    {
+      "name": "Preparación",
+      "item": [
+        {
+          "name": "Crear curso para cupos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCupos}}\", \"nombre\": \"Curso para verificar cupos\", \"creditos\": 4, \"docente\": \"Prueba local\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if(pm.response.code===201) pm.collectionVariables.set(\"idCupos\",pm.response.json().id);",
+                  "pm.collectionVariables.set(\"cursoAntes\",JSON.stringify(pm.response.json()));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Crear curso para eliminación",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoEliminar}}\", \"nombre\": \"Curso para verificar eliminación\", \"creditos\": 3, \"docente\": \"Prueba local\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if(pm.response.code===201) pm.collectionVariables.set(\"idEliminar\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R1 - PATCH válido",
+      "item": [
+        {
+          "name": "Actualizar cupos a 35",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos/{{idCupos}}/cupos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cupos\": 35}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Solo cambian los cupos\",()=>{const esperado=JSON.parse(pm.collectionVariables.get(\"cursoAntes\")); esperado.cupos=35; pm.expect(pm.response.json()).to.deep.equal(esperado);});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R2 - PATCH fuera de rango",
+      "item": [
+        {
+          "name": "Rechazar cupos 80",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/cursos/{{idCupos}}/cupos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cupos\": 80}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Validación de cupos\",()=>{pm.expect(pm.response.json().errores).to.have.property(\"cupos\");pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\");});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R3 - Filtro por créditos",
+      "item": [
+        {
+          "name": "Consultar créditos mínimos 5",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos?creditosMin=5"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Solo SIS-310\",()=>{const cursos=pm.response.json();pm.expect(cursos.map(c=>c.codigo)).to.deep.equal([\"SIS-310\"]);pm.expect(cursos.every(c=>c.creditos>=5)).to.eql(true);});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R4 - DELETE idempotente",
+      "item": [
+        {
+          "name": "Desactivar curso",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idEliminar}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Repetir desactivación",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idEliminar}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R5 - Consultar curso inactivo",
+      "item": [
+        {
+          "name": "Obtener registro conservado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idEliminar}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Registro conservado inactivo\",()=>{const c=pm.response.json();pm.expect(c.id).to.eql(Number(pm.collectionVariables.get(\"idEliminar\")));pm.expect(c.activo).to.eql(false);});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verificación y cierre",
+      "item": [
+        {
+          "name": "Excluir inactivo del listado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cursos"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"El curso desactivado no aparece\",()=>pm.expect(pm.response.json().map(c=>c.id)).to.not.include(Number(pm.collectionVariables.get(\"idEliminar\"))));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Desactivar curso de cupos",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cursos/{{idCupos}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

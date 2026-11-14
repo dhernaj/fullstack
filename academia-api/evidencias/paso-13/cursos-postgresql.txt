@@ -1,0 +1,8 @@
+ id | codigo  |           nombre            | creditos | cupos | activo 
+----+---------+-----------------------------+----------+-------+--------
+ 15 | SIS-101 | Fundamentos de Programación |        4 |    40 | t
+ 16 | SIS-205 | Base de Datos               |        4 |    35 | t
+ 17 | SIS-310 | Desarrollo Web Full Stack   |        5 |    30 | t
+ 46 | SIS-400 | Arquitectura de Software    |        4 |    35 | f
+(4 rows)
+

@@ -1,0 +1,23 @@
+{
+  "parte": "C — Repositorios, consultas y servicios",
+  "rama": "laboratorio-2",
+  "pruebasH2": 41,
+  "pruebasPostgres": 41,
+  "fallos": 0,
+  "consultasMatriculas": {
+    "h2": {
+      "sinFetch": 5,
+      "conFetch": 2
+    },
+    "postgres": {
+      "sinFetch": 5,
+      "conFetch": 2
+    }
+  },
+  "peticionesPaginacion": 5,
+  "limitePagina": 50,
+  "cursosAnterioresConservados": true,
+  "tablasNuevasVaciasDespuesDePruebas": true,
+  "autenticacionPruebaHttp": "Basic temporal, solo en el servidor de prueba; no JWT",
+  "pendiente": "Excepciones ampliadas, controladores nuevos, roles JWT y prueba de concurrencia real"
+}

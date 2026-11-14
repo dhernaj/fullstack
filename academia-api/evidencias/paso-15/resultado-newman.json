@@ -1,0 +1,3456 @@
+{
+  "collection": {
+    "item": [
+      {
+        "id": "fdea9bf3-d73f-4bae-ab86-d4f90e99b254",
+        "name": "Preparación",
+        "item": [
+          {
+            "id": "4c4a560a-f35e-4c69-af40-e0637dbbdc74",
+            "name": "Crear curso para cupos",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"codigo\": \"{{codigoCupos}}\", \"nombre\": \"Curso para verificar cupos\", \"creditos\": 4, \"docente\": \"Prueba local\", \"cupos\": 25}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "cd701deb-cbb7-4205-b014-3ff8d4fbfa7d",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                    "if(pm.response.code===201) pm.collectionVariables.set(\"idCupos\",pm.response.json().id);",
+                    "pm.collectionVariables.set(\"cursoAntes\",JSON.stringify(pm.response.json()));"
+                  ],
+                  "_lastExecutionId": "08cfa974-0c32-4b3d-886c-511a926abb75"
+                }
+              }
+            ]
+          },
+          {
+            "id": "f8336af5-a4c9-43ba-ab60-6371ebb1bd44",
+            "name": "Crear curso para eliminación",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"codigo\": \"{{codigoEliminar}}\", \"nombre\": \"Curso para verificar eliminación\", \"creditos\": 3, \"docente\": \"Prueba local\", \"cupos\": 25}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "f6df0d44-a4da-4267-9c97-8b8f99d3ff2f",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                    "if(pm.response.code===201) pm.collectionVariables.set(\"idEliminar\",pm.response.json().id);"
+                  ],
+                  "_lastExecutionId": "d0eb7001-fbf1-4721-9d17-746388e25bc8"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "640a27a0-06a8-46f7-97a7-bc9c934e03dc",
+        "name": "R1 - PATCH válido",
+        "item": [
+          {
+            "id": "7f6d3437-e264-4e12-9d40-6bc7c45aad1f",
+            "name": "Actualizar cupos a 35",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idCupos}}",
+                  "cupos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "PATCH",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"cupos\": 35}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "da918256-4353-410f-8864-c0ee6de50056",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                    "pm.test(\"Solo cambian los cupos\",()=>{const esperado=JSON.parse(pm.collectionVariables.get(\"cursoAntes\")); esperado.cupos=35; pm.expect(pm.response.json()).to.deep.equal(esperado);});"
+                  ],
+                  "_lastExecutionId": "f5ad9e62-a5c3-4759-ae43-dd8ca75ee6e5"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "c0b8f2c7-d971-4740-b246-bcec70fb7d55",
+        "name": "R2 - PATCH fuera de rango",
+        "item": [
+          {
+            "id": "91862821-efbc-44e5-a9df-bfc48332fb6d",
+            "name": "Rechazar cupos 80",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idCupos}}",
+                  "cupos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "PATCH",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"cupos\": 80}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "1a9be475-696d-47ed-8ec6-6734fd5c65ae",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                    "pm.test(\"Validación de cupos\",()=>{pm.expect(pm.response.json().errores).to.have.property(\"cupos\");pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\");});"
+                  ],
+                  "_lastExecutionId": "4c6eb7a1-569a-4806-aa4e-2148b3bc818b"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "332a3477-b666-439f-91f8-ea55787b5901",
+        "name": "R3 - Filtro por créditos",
+        "item": [
+          {
+            "id": "efddb507-22d7-48b0-b4f1-b1d48d2770ec",
+            "name": "Consultar créditos mínimos 5",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [
+                  {
+                    "key": "creditosMin",
+                    "value": "5"
+                  }
+                ],
+                "variable": []
+              },
+              "method": "GET"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "7fd5a1f2-e3c0-4f18-970c-9c2489b4dd38",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                    "pm.test(\"Solo SIS-310\",()=>{const cursos=pm.response.json();pm.expect(cursos.map(c=>c.codigo)).to.deep.equal([\"SIS-310\"]);pm.expect(cursos.every(c=>c.creditos>=5)).to.eql(true);});"
+                  ],
+                  "_lastExecutionId": "afd263c8-6c67-4dc0-b813-e200bcd37dfd"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "c7342e02-0d64-4aaf-ae90-678b2188b8a8",
+        "name": "R4 - DELETE idempotente",
+        "item": [
+          {
+            "id": "3f1f6c8a-c1c1-47fa-a4bd-a3e68757d532",
+            "name": "Desactivar curso",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idEliminar}}"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "DELETE"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "c014ffbc-de95-4bef-a66b-c1ce1ea73377",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                  ],
+                  "_lastExecutionId": "96995cf6-7d1a-4ae8-afb5-37198b8dbd86"
+                }
+              }
+            ]
+          },
+          {
+            "id": "6cbbe589-0994-4f36-ba06-f341f6fd2f90",
+            "name": "Repetir desactivación",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idEliminar}}"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "DELETE"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "8cf321e3-ae48-4a0e-9587-4761a9a6f8ea",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                  ],
+                  "_lastExecutionId": "675b7f4e-c5d0-482a-bb8e-9fbfb7943abe"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "d755e521-f84a-4c31-bd06-0977c0e4c8f1",
+        "name": "R5 - Consultar curso inactivo",
+        "item": [
+          {
+            "id": "8fbdcde6-5a9b-4c7d-b4a0-afb5252e3ff0",
+            "name": "Obtener registro conservado",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idEliminar}}"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "7ec50fae-207e-4036-b1f7-93309ed515dd",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                    "pm.test(\"Registro conservado inactivo\",()=>{const c=pm.response.json();pm.expect(c.id).to.eql(Number(pm.collectionVariables.get(\"idEliminar\")));pm.expect(c.activo).to.eql(false);});"
+                  ],
+                  "_lastExecutionId": "6877de8d-405f-408e-aafb-164dac9820ec"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "66c241df-8c7b-4f34-b5a3-8c1c7f63db2a",
+        "name": "Verificación y cierre",
+        "item": [
+          {
+            "id": "69eb109e-1ffe-4e21-b0d1-362ff4be5b50",
+            "name": "Excluir inactivo del listado",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "8668f779-dcf8-47f5-aa2e-9b2a2e5fa868",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                    "pm.test(\"El curso desactivado no aparece\",()=>pm.expect(pm.response.json().map(c=>c.id)).to.not.include(Number(pm.collectionVariables.get(\"idEliminar\"))));"
+                  ],
+                  "_lastExecutionId": "47c4c364-e175-4a88-9226-67f9e1ca0c84"
+                }
+              }
+            ]
+          },
+          {
+            "id": "9bae3ab6-762a-4195-b401-c28719002862",
+            "name": "Desactivar curso de cupos",
+            "request": {
+              "url": {
+                "path": [
+                  "cursos",
+                  "{{idCupos}}"
+                ],
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "DELETE"
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "7643dd07-cfef-4d96-98d2-80c40cf44b87",
+                  "type": "text/javascript",
+                  "exec": [
+                    "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                  ],
+                  "_lastExecutionId": "5d0c9722-df3d-4434-8c1f-212aec5094e5"
+                }
+              }
+            ]
+          }
+        ],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [
+      {
+        "type": "any",
+        "value": "http://127.0.0.1:8080/api/v1",
+        "key": "baseUrl"
+      },
+      {
+        "type": "any",
+        "value": "RET-001",
+        "key": "codigoCupos"
+      },
+      {
+        "type": "any",
+        "value": "RET-002",
+        "key": "codigoEliminar"
+      }
+    ],
+    "info": {
+      "_postman_id": "ba7c1b31-2e30-491b-a22e-aaa87d2bd500",
+      "name": "Academia UPN – Guía 2 – Reto",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "Cinco casos del reto, con preparación y cierre. No modifica los cursos iniciales. Seleccionar dos códigos nuevos antes de repetir.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "cfa3c44b-2d1d-4780-91d3-cfddee300007",
+    "values": []
+  },
+  "globals": {
+    "id": "457d9e03-3c90-431e-ac84-dc3f5455e885",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 15,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 13.6,
+      "responseMin": 6,
+      "responseMax": 48,
+      "responseSd": 12.051555916146267,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1793936021383,
+      "completed": 1793936022223
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 10,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "6640d94d-a475-4989-9018-3ad8c4d63c6b",
+          "httpRequestId": "def66198-d830-432a-90da-585dec4070fe"
+        },
+        "item": {
+          "id": "4c4a560a-f35e-4c69-af40-e0637dbbdc74",
+          "name": "Crear curso para cupos",
+          "request": {
+            "url": {
+              "path": [
+                "cursos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoCupos}}\", \"nombre\": \"Curso para verificar cupos\", \"creditos\": 4, \"docente\": \"Prueba local\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cd701deb-cbb7-4205-b014-3ff8d4fbfa7d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if(pm.response.code===201) pm.collectionVariables.set(\"idCupos\",pm.response.json().id);",
+                  "pm.collectionVariables.set(\"cursoAntes\",JSON.stringify(pm.response.json()));"
+                ],
+                "_lastExecutionId": "08cfa974-0c32-4b3d-886c-511a926abb75"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "8823456c-16c4-467d-a998-f006892aab76",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "116",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"codigo\": \"RET-001\", \"nombre\": \"Curso para verificar cupos\", \"creditos\": 4, \"docente\": \"Prueba local\", \"cupos\": 25}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "e2b135de-a181-402c-a96c-8fa05bce7dc9",
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Location",
+              "value": "http://127.0.0.1:8080/api/v1/cursos/69"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              54,
+              57,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              82,
+              69,
+              84,
+              45,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              67,
+              117,
+              114,
+              115,
+              111,
+              32,
+              112,
+              97,
+              114,
+              97,
+              32,
+              118,
+              101,
+              114,
+              105,
+              102,
+              105,
+              99,
+              97,
+              114,
+              32,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              52,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              80,
+              114,
+              117,
+              101,
+              98,
+              97,
+              32,
+              108,
+              111,
+              99,
+              97,
+              108,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              50,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 48,
+          "responseSize": 129
+        },
+        "id": "4c4a560a-f35e-4c69-af40-e0637dbbdc74",
+        "assertions": [
+          {
+            "assertion": "HTTP 201",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "c0c0b227-2f86-490e-9022-6045d13b6f59",
+          "length": 10,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "11617540-981f-4b9f-affd-99839228f876"
+        },
+        "item": {
+          "id": "f8336af5-a4c9-43ba-ab60-6371ebb1bd44",
+          "name": "Crear curso para eliminación",
+          "request": {
+            "url": {
+              "path": [
+                "cursos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigo\": \"{{codigoEliminar}}\", \"nombre\": \"Curso para verificar eliminación\", \"creditos\": 3, \"docente\": \"Prueba local\", \"cupos\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "f6df0d44-a4da-4267-9c97-8b8f99d3ff2f",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "if(pm.response.code===201) pm.collectionVariables.set(\"idEliminar\",pm.response.json().id);"
+                ],
+                "_lastExecutionId": "d0eb7001-fbf1-4721-9d17-746388e25bc8"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "7676aaa5-098c-41fc-b3fc-7247e7b12c45",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "123",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"codigo\": \"RET-002\", \"nombre\": \"Curso para verificar eliminación\", \"creditos\": 3, \"docente\": \"Prueba local\", \"cupos\": 25}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "ebe9061c-d81c-4403-bd28-eecda4516fae",
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Location",
+              "value": "http://127.0.0.1:8080/api/v1/cursos/70"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              48,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              82,
+              69,
+              84,
+              45,
+              48,
+              48,
+              50,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              67,
+              117,
+              114,
+              115,
+              111,
+              32,
+              112,
+              97,
+              114,
+              97,
+              32,
+              118,
+              101,
+              114,
+              105,
+              102,
+              105,
+              99,
+              97,
+              114,
+              32,
+              101,
+              108,
+              105,
+              109,
+              105,
+              110,
+              97,
+              99,
+              105,
+              195,
+              179,
+              110,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              51,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              80,
+              114,
+              117,
+              101,
+              98,
+              97,
+              32,
+              108,
+              111,
+              99,
+              97,
+              108,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              50,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 17,
+          "responseSize": 136
+        },
+        "id": "f8336af5-a4c9-43ba-ab60-6371ebb1bd44",
+        "assertions": [
+          {
+            "assertion": "HTTP 201",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "5d09cfd8-c319-4fe7-981b-8309d7cf1939",
+          "length": 10,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "bec06148-06bb-4ef4-9a94-89636cd3e3e2"
+        },
+        "item": {
+          "id": "7f6d3437-e264-4e12-9d40-6bc7c45aad1f",
+          "name": "Actualizar cupos a 35",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idCupos}}",
+                "cupos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cupos\": 35}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "da918256-4353-410f-8864-c0ee6de50056",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Solo cambian los cupos\",()=>{const esperado=JSON.parse(pm.collectionVariables.get(\"cursoAntes\")); esperado.cupos=35; pm.expect(pm.response.json()).to.deep.equal(esperado);});"
+                ],
+                "_lastExecutionId": "f5ad9e62-a5c3-4759-ae43-dd8ca75ee6e5"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "69",
+              "cupos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "d2019908-01fd-4deb-b297-32c5867abbae",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "13",
+              "system": true
+            }
+          ],
+          "method": "PATCH",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"cupos\": 35}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "e6187412-41ac-4ae0-8f96-be1aec9d6a9a",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "129"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              54,
+              57,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              82,
+              69,
+              84,
+              45,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              67,
+              117,
+              114,
+              115,
+              111,
+              32,
+              112,
+              97,
+              114,
+              97,
+              32,
+              118,
+              101,
+              114,
+              105,
+              102,
+              105,
+              99,
+              97,
+              114,
+              32,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              52,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              80,
+              114,
+              117,
+              101,
+              98,
+              97,
+              32,
+              108,
+              111,
+              99,
+              97,
+              108,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              51,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 15,
+          "responseSize": 129
+        },
+        "id": "7f6d3437-e264-4e12-9d40-6bc7c45aad1f",
+        "assertions": [
+          {
+            "assertion": "HTTP 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Solo cambian los cupos",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "dd36df5e-613c-4c73-b1f6-610af5bb063c",
+          "length": 10,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "e1eb8c91-b9bb-463a-b7bb-bbe92d4f1177"
+        },
+        "item": {
+          "id": "91862821-efbc-44e5-a9df-bfc48332fb6d",
+          "name": "Rechazar cupos 80",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idCupos}}",
+                "cupos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cupos\": 80}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1a9be475-696d-47ed-8ec6-6734fd5c65ae",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"Validación de cupos\",()=>{pm.expect(pm.response.json().errores).to.have.property(\"cupos\");pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\");});"
+                ],
+                "_lastExecutionId": "4c6eb7a1-569a-4806-aa4e-2148b3bc818b"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "69",
+              "cupos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "368b7fec-8604-45a1-88a0-64692a0aa77a",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "13",
+              "system": true
+            }
+          ],
+          "method": "PATCH",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"cupos\": 80}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "32333f31-5181-4fce-84cc-4600aefd1342",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/problem+json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              76,
+              97,
+              32,
+              115,
+              111,
+              108,
+              105,
+              99,
+              105,
+              116,
+              117,
+              100,
+              32,
+              99,
+              111,
+              110,
+              116,
+              105,
+              101,
+              110,
+              101,
+              32,
+              100,
+              97,
+              116,
+              111,
+              115,
+              32,
+              105,
+              110,
+              118,
+              195,
+              161,
+              108,
+              105,
+              100,
+              111,
+              115,
+              34,
+              44,
+              34,
+              105,
+              110,
+              115,
+              116,
+              97,
+              110,
+              99,
+              101,
+              34,
+              58,
+              34,
+              47,
+              97,
+              112,
+              105,
+              47,
+              118,
+              49,
+              47,
+              99,
+              117,
+              114,
+              115,
+              111,
+              115,
+              47,
+              54,
+              57,
+              47,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              52,
+              48,
+              48,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              69,
+              114,
+              114,
+              111,
+              114,
+              32,
+              100,
+              101,
+              32,
+              118,
+              97,
+              108,
+              105,
+              100,
+              97,
+              99,
+              105,
+              195,
+              179,
+              110,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              101,
+              115,
+              34,
+              58,
+              123,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              34,
+              77,
+              195,
+              161,
+              120,
+              105,
+              109,
+              111,
+              32,
+              54,
+              48,
+              32,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 6,
+          "responseSize": 171
+        },
+        "id": "91862821-efbc-44e5-a9df-bfc48332fb6d",
+        "assertions": [
+          {
+            "assertion": "HTTP 400",
+            "skipped": false
+          },
+          {
+            "assertion": "Validación de cupos",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "d3f7f95e-d239-45b8-a03b-d11e66f2e7ec",
+          "length": 10,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "9ed6633a-169d-4b38-8208-64052aae8735"
+        },
+        "item": {
+          "id": "efddb507-22d7-48b0-b4f1-b1d48d2770ec",
+          "name": "Consultar créditos mínimos 5",
+          "request": {
+            "url": {
+              "path": [
+                "cursos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "creditosMin",
+                  "value": "5"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7fd5a1f2-e3c0-4f18-970c-9c2489b4dd38",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Solo SIS-310\",()=>{const cursos=pm.response.json();pm.expect(cursos.map(c=>c.codigo)).to.deep.equal([\"SIS-310\"]);pm.expect(cursos.every(c=>c.creditos>=5)).to.eql(true);});"
+                ],
+                "_lastExecutionId": "afd263c8-6c67-4dc0-b813-e200bcd37dfd"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [
+              {
+                "key": "creditosMin",
+                "value": "5"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0d4365d2-01d5-4752-815f-6af0080d3e98",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "0707eca3-83f5-4304-90db-2ecf2ecaca53",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "129"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              55,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              83,
+              73,
+              83,
+              45,
+              51,
+              49,
+              48,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              68,
+              101,
+              115,
+              97,
+              114,
+              114,
+              111,
+              108,
+              108,
+              111,
+              32,
+              87,
+              101,
+              98,
+              32,
+              70,
+              117,
+              108,
+              108,
+              32,
+              83,
+              116,
+              97,
+              99,
+              107,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              53,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              67,
+              97,
+              114,
+              108,
+              97,
+              32,
+              82,
+              97,
+              109,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              51,
+              48,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 8,
+          "responseSize": 129
+        },
+        "id": "efddb507-22d7-48b0-b4f1-b1d48d2770ec",
+        "assertions": [
+          {
+            "assertion": "HTTP 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Solo SIS-310",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "73a51c75-6c7e-4a49-935f-6f43f9c557a9",
+          "length": 10,
+          "cycles": 1,
+          "position": 5,
+          "iteration": 0,
+          "httpRequestId": "ec699a06-7dd4-4836-b62d-bc64f302dff9"
+        },
+        "item": {
+          "id": "3f1f6c8a-c1c1-47fa-a4bd-a3e68757d532",
+          "name": "Desactivar curso",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idEliminar}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c014ffbc-de95-4bef-a66b-c1ce1ea73377",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ],
+                "_lastExecutionId": "96995cf6-7d1a-4ae8-afb5-37198b8dbd86"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "70"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "996b1495-6280-436d-86a4-232a31f54758",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE"
+        },
+        "response": {
+          "id": "c8e08ba7-91da-4df8-ae2c-829a0c80dd30",
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": []
+          },
+          "cookie": [],
+          "responseTime": 9,
+          "responseSize": 0
+        },
+        "id": "3f1f6c8a-c1c1-47fa-a4bd-a3e68757d532",
+        "assertions": [
+          {
+            "assertion": "HTTP 204",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "5443077a-5d13-447d-aa20-f03149e9ee59",
+          "length": 10,
+          "cycles": 1,
+          "position": 6,
+          "iteration": 0,
+          "httpRequestId": "6edf453c-ceff-44c7-badd-84b839f621fa"
+        },
+        "item": {
+          "id": "6cbbe589-0994-4f36-ba06-f341f6fd2f90",
+          "name": "Repetir desactivación",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idEliminar}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8cf321e3-ae48-4a0e-9587-4761a9a6f8ea",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ],
+                "_lastExecutionId": "675b7f4e-c5d0-482a-bb8e-9fbfb7943abe"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "70"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "692af6df-6d6a-4781-805a-c7bfeaa1c403",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE"
+        },
+        "response": {
+          "id": "cf8929ef-8376-474d-b8ec-3f5b792832a5",
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": []
+          },
+          "cookie": [],
+          "responseTime": 7,
+          "responseSize": 0
+        },
+        "id": "6cbbe589-0994-4f36-ba06-f341f6fd2f90",
+        "assertions": [
+          {
+            "assertion": "HTTP 204",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "fa1b0e9f-670a-4476-8d87-ecdb0ac6be6f",
+          "length": 10,
+          "cycles": 1,
+          "position": 7,
+          "iteration": 0,
+          "httpRequestId": "53e3616e-d7ab-4640-bfd6-644454d39886"
+        },
+        "item": {
+          "id": "8fbdcde6-5a9b-4c7d-b4a0-afb5252e3ff0",
+          "name": "Obtener registro conservado",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idEliminar}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7ec50fae-207e-4036-b1f7-93309ed515dd",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Registro conservado inactivo\",()=>{const c=pm.response.json();pm.expect(c.id).to.eql(Number(pm.collectionVariables.get(\"idEliminar\")));pm.expect(c.activo).to.eql(false);});"
+                ],
+                "_lastExecutionId": "6877de8d-405f-408e-aafb-164dac9820ec"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "70"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "ccfdcf6f-2a1f-4869-8a93-22a0745c61ce",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "662010dc-ae89-4c80-96bc-d91c4e4855b2",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "137"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              48,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              82,
+              69,
+              84,
+              45,
+              48,
+              48,
+              50,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              67,
+              117,
+              114,
+              115,
+              111,
+              32,
+              112,
+              97,
+              114,
+              97,
+              32,
+              118,
+              101,
+              114,
+              105,
+              102,
+              105,
+              99,
+              97,
+              114,
+              32,
+              101,
+              108,
+              105,
+              109,
+              105,
+              110,
+              97,
+              99,
+              105,
+              195,
+              179,
+              110,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              51,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              80,
+              114,
+              117,
+              101,
+              98,
+              97,
+              32,
+              108,
+              111,
+              99,
+              97,
+              108,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              50,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              102,
+              97,
+              108,
+              115,
+              101,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 6,
+          "responseSize": 137
+        },
+        "id": "8fbdcde6-5a9b-4c7d-b4a0-afb5252e3ff0",
+        "assertions": [
+          {
+            "assertion": "HTTP 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Registro conservado inactivo",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "f9e123da-e377-4185-ad4d-6c23230bd0a5",
+          "length": 10,
+          "cycles": 1,
+          "position": 8,
+          "iteration": 0,
+          "httpRequestId": "ce9cd10a-3dfd-443c-a327-04c8d940e7f8"
+        },
+        "item": {
+          "id": "69eb109e-1ffe-4e21-b0d1-362ff4be5b50",
+          "name": "Excluir inactivo del listado",
+          "request": {
+            "url": {
+              "path": [
+                "cursos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8668f779-dcf8-47f5-aa2e-9b2a2e5fa868",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"El curso desactivado no aparece\",()=>pm.expect(pm.response.json().map(c=>c.id)).to.not.include(Number(pm.collectionVariables.get(\"idEliminar\"))));"
+                ],
+                "_lastExecutionId": "47c4c364-e175-4a88-9226-67f9e1ca0c84"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "325b0b65-ef91-482e-8df1-9de63d0978ee",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "a9a1fb27-e290-42c6-9c4e-0d6db28952a5",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "505"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              53,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              83,
+              73,
+              83,
+              45,
+              49,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              70,
+              117,
+              110,
+              100,
+              97,
+              109,
+              101,
+              110,
+              116,
+              111,
+              115,
+              32,
+              100,
+              101,
+              32,
+              80,
+              114,
+              111,
+              103,
+              114,
+              97,
+              109,
+              97,
+              99,
+              105,
+              195,
+              179,
+              110,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              52,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              65,
+              110,
+              97,
+              32,
+              84,
+              111,
+              114,
+              114,
+              101,
+              115,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              52,
+              48,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              54,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              83,
+              73,
+              83,
+              45,
+              50,
+              48,
+              53,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              66,
+              97,
+              115,
+              101,
+              32,
+              100,
+              101,
+              32,
+              68,
+              97,
+              116,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              52,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              76,
+              117,
+              105,
+              115,
+              32,
+              80,
+              195,
+              169,
+              114,
+              101,
+              122,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              51,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              55,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              83,
+              73,
+              83,
+              45,
+              51,
+              49,
+              48,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              68,
+              101,
+              115,
+              97,
+              114,
+              114,
+              111,
+              108,
+              108,
+              111,
+              32,
+              87,
+              101,
+              98,
+              32,
+              70,
+              117,
+              108,
+              108,
+              32,
+              83,
+              116,
+              97,
+              99,
+              107,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              53,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              67,
+              97,
+              114,
+              108,
+              97,
+              32,
+              82,
+              97,
+              109,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              51,
+              48,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              54,
+              57,
+              44,
+              34,
+              99,
+              111,
+              100,
+              105,
+              103,
+              111,
+              34,
+              58,
+              34,
+              82,
+              69,
+              84,
+              45,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              111,
+              109,
+              98,
+              114,
+              101,
+              34,
+              58,
+              34,
+              67,
+              117,
+              114,
+              115,
+              111,
+              32,
+              112,
+              97,
+              114,
+              97,
+              32,
+              118,
+              101,
+              114,
+              105,
+              102,
+              105,
+              99,
+              97,
+              114,
+              32,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              100,
+              105,
+              116,
+              111,
+              115,
+              34,
+              58,
+              52,
+              44,
+              34,
+              100,
+              111,
+              99,
+              101,
+              110,
+              116,
+              101,
+              34,
+              58,
+              34,
+              80,
+              114,
+              117,
+              101,
+              98,
+              97,
+              32,
+              108,
+              111,
+              99,
+              97,
+              108,
+              34,
+              44,
+              34,
+              99,
+              117,
+              112,
+              111,
+              115,
+              34,
+              58,
+              51,
+              53,
+              44,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              111,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 7,
+          "responseSize": 505
+        },
+        "id": "69eb109e-1ffe-4e21-b0d1-362ff4be5b50",
+        "assertions": [
+          {
+            "assertion": "HTTP 200",
+            "skipped": false
+          },
+          {
+            "assertion": "El curso desactivado no aparece",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "0320ce66-db71-4aea-96cb-430e971a9a6b",
+          "length": 10,
+          "cycles": 1,
+          "position": 9,
+          "iteration": 0,
+          "httpRequestId": "c0623da7-d8af-4325-a480-11e1aa929a7f"
+        },
+        "item": {
+          "id": "9bae3ab6-762a-4195-b401-c28719002862",
+          "name": "Desactivar curso de cupos",
+          "request": {
+            "url": {
+              "path": [
+                "cursos",
+                "{{idCupos}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7643dd07-cfef-4d96-98d2-80c40cf44b87",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 204\", () => pm.response.to.have.status(204));"
+                ],
+                "_lastExecutionId": "5d0c9722-df3d-4434-8c1f-212aec5094e5"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "cursos",
+              "69"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0f886703-1992-4a85-89be-446234e64f47",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE"
+        },
+        "response": {
+          "id": "128ba692-e009-46bf-b4f8-2da0405f7c0d",
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Fri, 06 Nov 2026 03:33:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": []
+          },
+          "cookie": [],
+          "responseTime": 13,
+          "responseSize": 0
+        },
+        "id": "9bae3ab6-762a-4195-b401-c28719002862",
+        "assertions": [
+          {
+            "assertion": "HTTP 204",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 1336
+    },
+    "failures": [],
+    "error": null
+  }
+}

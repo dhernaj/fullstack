@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Academia UPN – Guía 2 – Pruebas completas" tests="35" time="0.529">
+  <testsuite name="01 - Crear curso válido / Crear curso válido" id="56b68d19-195f-4d82-a9d6-daa43a4b211f" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.205">
+    <testcase name="HTTP 201" time="0.205" classname="01CrearCursoValidoCrearCursoValido"/>
+    <testcase name="Location e identificador generado" time="0.205" classname="01CrearCursoValidoCrearCursoValido"/>
+  </testsuite>
+  <testsuite name="02 - Código duplicado / Repetir código" id="b2366778-fcfa-41a9-9d78-49cf9df07b52" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.011">
+    <testcase name="HTTP 409" time="0.011" classname="02CodigoDuplicadoRepetirCodigo"/>
+    <testcase name="Problem Details sin trazas" time="0.011" classname="02CodigoDuplicadoRepetirCodigo"/>
+  </testsuite>
+  <testsuite name="03 - Validación por campo / Nombre vacío y créditos 9" id="b95e1395-278d-495b-92d0-ebaf981a7c6c" timestamp="2026-11-06T03:26:25.761Z" tests="3" failures="0" errors="0" time="0.015">
+    <testcase name="HTTP 400" time="0.015" classname="03ValidacionPorCampoNombreVacioYCreditos9"/>
+    <testcase name="Problem Details sin trazas" time="0.015" classname="03ValidacionPorCampoNombreVacioYCreditos9"/>
+    <testcase name="Errores de nombre y créditos" time="0.015" classname="03ValidacionPorCampoNombreVacioYCreditos9"/>
+  </testsuite>
+  <testsuite name="04 - Formato de código / Código sin formato" id="42331588-ec8e-4dee-9737-df6006d29f07" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="04FormatoDeCodigoCodigoSinFormato"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="04FormatoDeCodigoCodigoSinFormato"/>
+  </testsuite>
+  <testsuite name="05 - JSON inválido / JSON incompleto" id="522dbb4b-22b7-476a-a5f6-4fd25d831fda" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 400" time="0.008" classname="05JsonInvalidoJsonIncompleto"/>
+    <testcase name="Problem Details sin trazas" time="0.008" classname="05JsonInvalidoJsonIncompleto"/>
+  </testsuite>
+  <testsuite name="06 - Actualizar curso / Cambiar cupos a 30" id="bbf09f1e-3a67-4f99-baa8-00e01a605264" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.029">
+    <testcase name="HTTP 200" time="0.029" classname="06ActualizarCursoCambiarCuposA30"/>
+    <testcase name="Cupos actualizados" time="0.029" classname="06ActualizarCursoCambiarCuposA30"/>
+  </testsuite>
+  <testsuite name="07 - Actualizar inexistente / Id inexistente" id="448f6f04-91bb-4bfc-b696-ebe4fe021c3d" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 404" time="0.008" classname="07ActualizarInexistenteIdInexistente"/>
+    <testcase name="Problem Details sin trazas" time="0.008" classname="07ActualizarInexistenteIdInexistente"/>
+  </testsuite>
+  <testsuite name="08 - Identificador inválido / Id no numérico" id="59513146-17b6-4f15-8b65-f4a9e991052f" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 400" time="0.005" classname="08IdentificadorInvalidoIdNoNumerico"/>
+    <testcase name="Problem Details sin trazas" time="0.005" classname="08IdentificadorInvalidoIdNoNumerico"/>
+  </testsuite>
+  <testsuite name="09 - Eliminación lógica / Desactivar curso" id="a99d835c-6937-4839-ae28-079ca2fa9258" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.016">
+    <testcase name="HTTP 204" time="0.016" classname="09EliminacionLogicaDesactivarCurso"/>
+  </testsuite>
+  <testsuite name="10 - DELETE idempotente / Repetir DELETE" id="54043593-b37b-4f03-b1c2-9175876ea7b5" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 204" time="0.008" classname="10DeleteIdempotenteRepetirDelete"/>
+  </testsuite>
+  <testsuite name="11 - Créditos válidos en los límites / Créditos 1" id="fc0fdb2c-f020-4610-9a71-5b39266df05a" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.012">
+    <testcase name="HTTP 201" time="0.012" classname="11CreditosValidosEnLosLimitesCreditos1"/>
+  </testsuite>
+  <testsuite name="11 - Créditos válidos en los límites / Créditos 6" id="d02dc60b-62fd-4c99-a05c-9975a1b1348a" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.012">
+    <testcase name="HTTP 201" time="0.012" classname="11CreditosValidosEnLosLimitesCreditos6"/>
+  </testsuite>
+  <testsuite name="12 - Créditos fuera de rango / Créditos 0" id="ab8b1c9d-b593-4e60-b98a-ccc3c66323df" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="12CreditosFueraDeRangoCreditos0"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="12CreditosFueraDeRangoCreditos0"/>
+  </testsuite>
+  <testsuite name="12 - Créditos fuera de rango / Créditos 7" id="4ca356cb-9643-4ddc-b36b-0643c6b4ed47" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.011">
+    <testcase name="HTTP 400" time="0.011" classname="12CreditosFueraDeRangoCreditos7"/>
+    <testcase name="Problem Details sin trazas" time="0.011" classname="12CreditosFueraDeRangoCreditos7"/>
+  </testsuite>
+  <testsuite name="13 - Límite de cupos / Cupos 60" id="bc469d70-50e3-4cef-bec0-f273f9affe96" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.016">
+    <testcase name="HTTP 201" time="0.016" classname="13LimiteDeCuposCupos60"/>
+  </testsuite>
+  <testsuite name="13 - Límite de cupos / Cupos 61" id="1da7ae25-4601-4ce2-931f-b9cf356f27cc" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 400" time="0.005" classname="13LimiteDeCuposCupos61"/>
+    <testcase name="Problem Details sin trazas" time="0.005" classname="13LimiteDeCuposCupos61"/>
+  </testsuite>
+  <testsuite name="14 - Longitud de nombre / Nombre de 101 caracteres" id="9f887a17-d033-4de6-b36e-97da1ea78994" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="14LongitudDeNombreNombreDe101Caracteres"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="14LongitudDeNombreNombreDe101Caracteres"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Nombre de 100 caracteres" id="35fa8993-6369-4a30-83a0-0de1b7ba08ab" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.015">
+    <testcase name="HTTP 201" time="0.015" classname="LimitesAdicionalesNombreDe100Caracteres"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Cupos 0" id="55634e7a-d1af-4d53-8d86-f7ebf4336647" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="LimitesAdicionalesCupos0"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="LimitesAdicionalesCupos0"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Cupos 1" id="fc210a77-32a6-4e22-b51d-21b49ef6ad31" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.016">
+    <testcase name="HTTP 201" time="0.016" classname="LimitesAdicionalesCupos1"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Docente de 80 caracteres" id="86cf0c99-a311-4955-9420-f8a99fa565e8" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 201" time="0.008" classname="LimitesAdicionalesDocenteDe80Caracteres"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Docente de 81 caracteres" id="3d80b82f-57ad-43a6-9b00-53435bdca87b" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 400" time="0.005" classname="LimitesAdicionalesDocenteDe81Caracteres"/>
+    <testcase name="Problem Details sin trazas" time="0.005" classname="LimitesAdicionalesDocenteDe81Caracteres"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Nombre solo espacios" id="16d0844e-76f3-4693-b639-191b65ba92f6" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 400" time="0.005" classname="LimitesAdicionalesNombreSoloEspacios"/>
+    <testcase name="Problem Details sin trazas" time="0.005" classname="LimitesAdicionalesNombreSoloEspacios"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Docente vacío" id="d57a99b6-239c-4237-811a-7bd11e2e1f40" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 400" time="0.005" classname="LimitesAdicionalesDocenteVacio"/>
+    <testcase name="Problem Details sin trazas" time="0.005" classname="LimitesAdicionalesDocenteVacio"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Código vacío" id="f902331b-07de-4b08-8bab-8b44c154696d" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="LimitesAdicionalesCodigoVacio"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="LimitesAdicionalesCodigoVacio"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Código en minúsculas" id="7c3d211d-dfc6-4a71-9f15-8501b525e18f" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="LimitesAdicionalesCodigoEnMinusculas"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="LimitesAdicionalesCodigoEnMinusculas"/>
+  </testsuite>
+  <testsuite name="Límites adicionales / Código sin guion" id="67653e4a-339e-4aae-b7da-4e286c95e21b" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="LimitesAdicionalesCodigoSinGuion"/>
+    <testcase name="Problem Details sin trazas" time="0.006" classname="LimitesAdicionalesCodigoSinGuion"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Curso eliminado sigue en la base" id="ca6006e7-a0b0-4c49-8af5-da18a196a6f1" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="VerificacionYCierreCursoEliminadoSigueEnLaBase"/>
+    <testcase name="Estado inactivo y cupos conservados" time="0.006" classname="VerificacionYCierreCursoEliminadoSigueEnLaBase"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Credito1" id="3ccb2a42-fc20-4523-b957-ef099170fb24" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.012">
+    <testcase name="HTTP 204" time="0.012" classname="VerificacionYCierreDesactivarPruebaCredito1"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Credito6" id="a1d504ab-bdd3-4b45-a20e-3d87bd3259da" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 204" time="0.009" classname="VerificacionYCierreDesactivarPruebaCredito6"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Cupos60" id="a93aad3f-7497-4479-9039-5a000e2b898a" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="HTTP 204" time="0.011" classname="VerificacionYCierreDesactivarPruebaCupos60"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Cupos1" id="79be3b2c-57b3-49ad-a736-8806ce9450ca" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 204" time="0.009" classname="VerificacionYCierreDesactivarPruebaCupos1"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Nombre100" id="d52c67ba-7b8b-4554-bc57-a812dcb1e381" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 204" time="0.009" classname="VerificacionYCierreDesactivarPruebaNombre100"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar prueba Docente80" id="d7fcda59-6a78-4d39-a9a1-a77a90f13c30" timestamp="2026-11-06T03:26:25.761Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 204" time="0.009" classname="VerificacionYCierreDesactivarPruebaDocente80"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Comprobar listado final" id="f261bccd-7910-4e80-921b-74b3c0d90e6d" timestamp="2026-11-06T03:26:25.761Z" tests="2" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 200" time="0.007" classname="VerificacionYCierreComprobarListadoFinal"/>
+    <testcase name="Pruebas desactivadas" time="0.007" classname="VerificacionYCierreComprobarListadoFinal"/>
+  </testsuite>
+</testsuites>

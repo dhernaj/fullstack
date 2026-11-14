@@ -1,0 +1,125 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24373 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< pe.edu.upn:academia-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ academia-api ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ academia-api ---
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ academia-api ---
+[INFO] skip non existing resourceDirectory /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ academia-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ academia-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.upn.academia_api.CursoServiceTests
+22:13:46.938 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:13:47.133 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+22:13:47.253 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:13:47.256 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+22:13:47.351 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-05T22:13:47.683-05:00  INFO 71027 --- [academia-api] [           main] p.e.upn.academia_api.CursoServiceTests   : Starting CursoServiceTests using Java 17.0.12 with PID 71027 (started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2)
+2026-11-05T22:13:47.685-05:00  INFO 71027 --- [academia-api] [           main] p.e.upn.academia_api.CursoServiceTests   : No active profile set, falling back to 1 default profile: "postgres"
+2026-11-05T22:13:48.181-05:00  INFO 71027 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-05T22:13:48.232-05:00  INFO 71027 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interface.
+2026-11-05T22:13:48.898-05:00  INFO 71027 --- [academia-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-05T22:13:48.973-05:00  INFO 71027 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-05T22:13:49.495-05:00  INFO 71027 --- [academia-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-05T22:13:49.532-05:00  INFO 71027 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-05T22:13:49.753-05:00  INFO 71027 --- [academia-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@492fa72a
+2026-11-05T22:13:49.755-05:00  INFO 71027 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-05T22:13:49.842-05:00  INFO 71027 --- [academia-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:5432/academia_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: academia_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-05T22:13:50.869-05:00  INFO 71027 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-05T22:13:50.928-05:00  INFO 71027 --- [academia-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-05T22:13:51.027-05:00  INFO 71027 --- [academia-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-05T22:13:51.897-05:00  INFO 71027 --- [academia-api] [           main] p.e.upn.academia_api.CursoServiceTests   : Started CursoServiceTests in 4.56 seconds (process running for 6.202)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-05T22:13:52.516-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:52.540-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:52.543-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:52.546-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:53.088-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.120-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.149-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : update cursos set activo=?,codigo=?,creditos=?,cupos=?,docente=?,nombre=? where id=?
+2026-11-05T22:13:53.181-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select count(*) from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:53.189-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:53.212-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:13:53.223-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.226-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.229-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.239-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.241-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.245-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.248-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : update cursos set activo=?,codigo=?,creditos=?,cupos=?,docente=?,nombre=? where id=?
+2026-11-05T22:13:53.250-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:53.267-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.269-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.273-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.275-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.279-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.291-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.292-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.294-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : update cursos set activo=?,codigo=?,creditos=?,cupos=?,docente=?,nombre=? where id=?
+2026-11-05T22:13:53.295-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+2026-11-05T22:13:53.306-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.308-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.310-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.312-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.314-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.316-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.318-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : update cursos set activo=?,codigo=?,creditos=?,cupos=?,docente=?,nombre=? where id=?
+2026-11-05T22:13:53.320-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:13:53.322-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:13:53.324-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.activo=true order by c1_0.id
+2026-11-05T22:13:53.333-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where upper(c1_0.codigo)=upper(?)
+2026-11-05T22:13:53.334-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : insert into cursos (activo,codigo,creditos,cupos,docente,nombre) values (?,?,?,?,?,?)
+2026-11-05T22:13:53.336-05:00 DEBUG 71027 --- [academia-api] [           main] org.hibernate.SQL                        : select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre from cursos c1_0 where c1_0.id=?
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.680 s -- in pe.edu.upn.academia_api.CursoServiceTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.192 s
+[INFO] Finished at: 2026-11-05T22:13:53-05:00
+[INFO] ------------------------------------------------------------------------

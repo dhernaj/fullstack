@@ -1,0 +1,5 @@
+ cursos_despues_de_pruebas 
+---------------------------
+                         0
+(1 row)
+

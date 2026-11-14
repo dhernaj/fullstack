@@ -1,0 +1,8 @@
+    tabla    | filas |              huella              
+-------------+-------+----------------------------------
+ cursos      |    14 | e0e838aaaa666cc3383b88ce36ceff63
+ estudiantes |     0 | d41d8cd98f00b204e9800998ecf8427e
+ matriculas  |     0 | d41d8cd98f00b204e9800998ecf8427e
+ usuarios    |     0 | d41d8cd98f00b204e9800998ecf8427e
+(4 rows)
+

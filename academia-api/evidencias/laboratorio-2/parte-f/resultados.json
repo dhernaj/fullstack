@@ -1,0 +1,328 @@
+{
+  "peticiones": 21,
+  "comprobaciones": [
+    {
+      "caso": "Login admin",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": {
+        "accessToken": "[token omitido]",
+        "tokenType": "Bearer",
+        "expiresIn": 3600,
+        "username": "admin",
+        "roles": [
+          "ADMIN",
+          "FACTOR_PASSWORD"
+        ]
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Login docente",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": {
+        "accessToken": "[token omitido]",
+        "tokenType": "Bearer",
+        "expiresIn": 3600,
+        "username": "docente",
+        "roles": [
+          "DOCENTE",
+          "FACTOR_PASSWORD"
+        ]
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Login estudiante",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": {
+        "accessToken": "[token omitido]",
+        "tokenType": "Bearer",
+        "expiresIn": 3600,
+        "username": "estudiante",
+        "roles": [
+          "ESTUDIANTE",
+          "FACTOR_PASSWORD"
+        ]
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Sin token",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Clave incorrecta",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Usuario o contraseña incorrectos",
+        "instance": "/api/v1/auth/login",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Usuario desconocido",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Usuario o contraseña incorrectos",
+        "instance": "/api/v1/auth/login",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Página máxima",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": {
+        "contenido": [
+          {
+            "id": 1,
+            "codigo": "SIS-101",
+            "nombre": "Fundamentos de Programación",
+            "creditos": 4,
+            "docente": "Ana Torres",
+            "cupos": 40,
+            "activo": true
+          },
+          {
+            "id": 2,
+            "codigo": "SIS-205",
+            "nombre": "Base de Datos",
+            "creditos": 4,
+            "docente": "Luis Pérez",
+            "cupos": 35,
+            "activo": true
+          },
+          {
+            "id": 3,
+            "codigo": "SIS-310",
+            "nombre": "Desarrollo Web Full Stack",
+            "creditos": 5,
+            "docente": "Carla Ramos",
+            "cupos": 30,
+            "activo": true
+          }
+        ],
+        "pagina": 0,
+        "tamanio": 50,
+        "totalElementos": 3,
+        "totalPaginas": 1,
+        "ultima": true
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Estudiante no consulta matrículas de curso",
+      "esperado": 403,
+      "obtenido": 403,
+      "resultado": {
+        "detail": "No tiene permisos para esta operación",
+        "status": 403,
+        "title": "Acceso denegado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Docente consulta matrículas de curso",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": [
+        {
+          "id": 1,
+          "estudianteId": 1,
+          "estudianteNombre": "Ana Torres",
+          "cursoId": 1,
+          "cursoNombre": "Fundamentos de Programación",
+          "fecha": "2026-11-11",
+          "estado": "ACTIVA"
+        }
+      ],
+      "cookieSesion": false
+    },
+    {
+      "caso": "Admin consulta estudiantes",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": {
+        "contenido": [
+          {
+            "id": 2,
+            "codigo": "N00987654",
+            "nombres": "Luis",
+            "apellidos": "Pérez",
+            "email": "luis.demo@example.test"
+          },
+          {
+            "id": 1,
+            "codigo": "N00123456",
+            "nombres": "Ana",
+            "apellidos": "Torres",
+            "email": "ana.demo@example.test"
+          }
+        ],
+        "pagina": 0,
+        "tamanio": 10,
+        "totalElementos": 2,
+        "totalPaginas": 1,
+        "ultima": true
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Matrículas propias",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": [
+        {
+          "id": 1,
+          "estudianteId": 1,
+          "estudianteNombre": "Ana Torres",
+          "cursoId": 1,
+          "cursoNombre": "Fundamentos de Programación",
+          "fecha": "2026-11-11",
+          "estado": "ACTIVA"
+        },
+        {
+          "id": 2,
+          "estudianteId": 1,
+          "estudianteNombre": "Ana Torres",
+          "cursoId": 3,
+          "cursoNombre": "Desarrollo Web Full Stack",
+          "fecha": "2026-11-11",
+          "estado": "ACTIVA"
+        }
+      ],
+      "cookieSesion": false
+    },
+    {
+      "caso": "Matrículas de otra persona",
+      "esperado": 403,
+      "obtenido": 403,
+      "resultado": {
+        "detail": "No tiene permisos para esta operación",
+        "instance": "/api/v1/estudiantes/2/matriculas",
+        "status": 403,
+        "title": "Acceso denegado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Estudiante no crea cursos",
+      "esperado": 403,
+      "obtenido": 403,
+      "resultado": {
+        "detail": "No tiene permisos para esta operación",
+        "status": 403,
+        "title": "Acceso denegado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Basic no autentica",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Cookie con token no autentica",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Token vencido",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Emisor incorrecto",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Token sin firma",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "Rol alterado sin firma válida",
+      "esperado": 401,
+      "obtenido": 401,
+      "resultado": {
+        "detail": "Se requiere un token válido",
+        "status": 401,
+        "title": "No autenticado"
+      },
+      "cookieSesion": false
+    },
+    {
+      "caso": "CORS autorizado",
+      "esperado": 200,
+      "obtenido": 200,
+      "resultado": "",
+      "cookieSesion": false
+    },
+    {
+      "caso": "CORS ajeno",
+      "esperado": 403,
+      "obtenido": 403,
+      "resultado": "Invalid CORS request",
+      "cookieSesion": false
+    }
+  ],
+  "sinCookiesDeSesion": true,
+  "catalogoPostgresConservado": true,
+  "credencialesFueraDeGit": true,
+  "permisosArchivoLocal": "600",
+  "secretoJwtSinValorPorDefecto": true,
+  "minimoBitsClaveJwt": 256,
+  "pendientes": [
+    "Límite de intentos de login",
+    "Revocación de tokens",
+    "Prueba de matrículas simultáneas en el reto"
+  ],
+  "sinCambiosFuncionales": true
+}

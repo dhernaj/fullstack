@@ -1,0 +1,1323 @@
+[
+  {
+    "peticion": "Crear curso para cupos",
+    "metodo": "POST",
+    "http": 201,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      }
+    ]
+  },
+  {
+    "peticion": "Crear curso para eliminación",
+    "metodo": "POST",
+    "http": 201,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": true,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Actualizar cupos a 35",
+    "metodo": "PATCH",
+    "http": 200,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": true,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Rechazar cupos 80",
+    "metodo": "PATCH",
+    "http": 400,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": true,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Consultar créditos mínimos 5",
+    "metodo": "GET",
+    "http": 200,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": true,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Desactivar curso",
+    "metodo": "DELETE",
+    "http": 204,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": false,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Repetir desactivación",
+    "metodo": "DELETE",
+    "http": 204,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": false,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Obtener registro conservado",
+    "metodo": "GET",
+    "http": 200,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": false,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Excluir inactivo del listado",
+    "metodo": "GET",
+    "http": 200,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": true,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": false,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  },
+  {
+    "peticion": "Desactivar curso de cupos",
+    "metodo": "DELETE",
+    "http": 204,
+    "cursos": [
+      {
+        "id": 15,
+        "activo": true,
+        "codigo": "SIS-101",
+        "creditos": 4,
+        "cupos": 40,
+        "docente": "Ana Torres",
+        "nombre": "Fundamentos de Programación"
+      },
+      {
+        "id": 16,
+        "activo": true,
+        "codigo": "SIS-205",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Luis Pérez",
+        "nombre": "Base de Datos"
+      },
+      {
+        "id": 17,
+        "activo": true,
+        "codigo": "SIS-310",
+        "creditos": 5,
+        "cupos": 30,
+        "docente": "Carla Ramos",
+        "nombre": "Desarrollo Web Full Stack"
+      },
+      {
+        "id": 46,
+        "activo": false,
+        "codigo": "SIS-400",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 61,
+        "activo": false,
+        "codigo": "PRB-001",
+        "creditos": 4,
+        "cupos": 30,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 62,
+        "activo": false,
+        "codigo": "PRB-002",
+        "creditos": 1,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 63,
+        "activo": false,
+        "codigo": "PRB-003",
+        "creditos": 6,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 64,
+        "activo": false,
+        "codigo": "PRB-004",
+        "creditos": 4,
+        "cupos": 60,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 65,
+        "activo": false,
+        "codigo": "PRB-006",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "José Canchucaja",
+        "nombre": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "id": 66,
+        "activo": false,
+        "codigo": "PRB-005",
+        "creditos": 4,
+        "cupos": 1,
+        "docente": "José Canchucaja",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 67,
+        "activo": false,
+        "codigo": "PRB-007",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "nombre": "Arquitectura de Software"
+      },
+      {
+        "id": 68,
+        "activo": false,
+        "codigo": "SEC-001",
+        "creditos": 4,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Comprobación de seguridad"
+      },
+      {
+        "id": 69,
+        "activo": false,
+        "codigo": "RET-001",
+        "creditos": 4,
+        "cupos": 35,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar cupos"
+      },
+      {
+        "id": 70,
+        "activo": false,
+        "codigo": "RET-002",
+        "creditos": 3,
+        "cupos": 25,
+        "docente": "Prueba local",
+        "nombre": "Curso para verificar eliminación"
+      }
+    ]
+  }
+]

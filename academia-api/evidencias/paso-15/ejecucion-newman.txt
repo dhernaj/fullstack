@@ -1,0 +1,78 @@
+(node:73403) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Academia UPN – Guía 2 – Reto
+
+❏ Preparación
+↳ Crear curso para cupos
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 348B, 48ms]
+  ✓  HTTP 201
+
+↳ Crear curso para eliminación
+  POST http://127.0.0.1:8080/api/v1/cursos [201 Created, 355B, 17ms]
+  ✓  HTTP 201
+
+❏ R1 - PATCH válido
+↳ Actualizar cupos a 35
+  PATCH http://127.0.0.1:8080/api/v1/cursos/69/cupos [200 OK, 286B, 15ms]
+  ✓  HTTP 200
+  ✓  Solo cambian los cupos
+
+❏ R2 - PATCH fuera de rango
+↳ Rechazar cupos 80
+  PATCH http://127.0.0.1:8080/api/v1/cursos/69/cupos [400 Bad Request, 323B, 6ms]
+  ✓  HTTP 400
+  ✓  Validación de cupos
+
+❏ R3 - Filtro por créditos
+↳ Consultar créditos mínimos 5
+  GET http://127.0.0.1:8080/api/v1/cursos?creditosMin=5 [200 OK, 286B, 8ms]
+  ✓  HTTP 200
+  ✓  Solo SIS-310
+
+❏ R4 - DELETE idempotente
+↳ Desactivar curso
+  DELETE http://127.0.0.1:8080/api/v1/cursos/70 [204 No Content, 112B, 9ms]
+  ✓  HTTP 204
+
+↳ Repetir desactivación
+  DELETE http://127.0.0.1:8080/api/v1/cursos/70 [204 No Content, 112B, 7ms]
+  ✓  HTTP 204
+
+❏ R5 - Consultar curso inactivo
+↳ Obtener registro conservado
+  GET http://127.0.0.1:8080/api/v1/cursos/70 [200 OK, 294B, 6ms]
+  ✓  HTTP 200
+  ✓  Registro conservado inactivo
+
+❏ Verificación y cierre
+↳ Excluir inactivo del listado
+  GET http://127.0.0.1:8080/api/v1/cursos [200 OK, 662B, 7ms]
+  ✓  HTTP 200
+  ✓  El curso desactivado no aparece
+
+↳ Desactivar curso de cupos
+  DELETE http://127.0.0.1:8080/api/v1/cursos/69 [204 No Content, 112B, 13ms]
+  ✓  HTTP 204
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │               10 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │               10 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │               15 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 840ms                                     │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 1.34kB (approx)                          │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 13ms [min: 6ms, max: 48ms, s.d.: 12ms] │
+└───────────────────────────────────────────────────────────────┘
+OK: colección aprobada, originales conservados y dos cursos de prueba inactivos.

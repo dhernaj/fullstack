@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Academia UPN – Guía 2 – Reto" tests="10" time="0.136">
+  <testsuite name="Preparación / Crear curso para cupos" id="4c4a560a-f35e-4c69-af40-e0637dbbdc74" timestamp="2026-11-06T03:33:41.383Z" tests="1" failures="0" errors="0" time="0.048">
+    <testcase name="HTTP 201" time="0.048" classname="PreparacionCrearCursoParaCupos"/>
+  </testsuite>
+  <testsuite name="Preparación / Crear curso para eliminación" id="f8336af5-a4c9-43ba-ab60-6371ebb1bd44" timestamp="2026-11-06T03:33:41.383Z" tests="1" failures="0" errors="0" time="0.017">
+    <testcase name="HTTP 201" time="0.017" classname="PreparacionCrearCursoParaEliminacion"/>
+  </testsuite>
+  <testsuite name="R1 - PATCH válido / Actualizar cupos a 35" id="7f6d3437-e264-4e12-9d40-6bc7c45aad1f" timestamp="2026-11-06T03:33:41.383Z" tests="2" failures="0" errors="0" time="0.015">
+    <testcase name="HTTP 200" time="0.015" classname="R1PatchValidoActualizarCuposA35"/>
+    <testcase name="Solo cambian los cupos" time="0.015" classname="R1PatchValidoActualizarCuposA35"/>
+  </testsuite>
+  <testsuite name="R2 - PATCH fuera de rango / Rechazar cupos 80" id="91862821-efbc-44e5-a9df-bfc48332fb6d" timestamp="2026-11-06T03:33:41.383Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="R2PatchFueraDeRangoRechazarCupos80"/>
+    <testcase name="Validación de cupos" time="0.006" classname="R2PatchFueraDeRangoRechazarCupos80"/>
+  </testsuite>
+  <testsuite name="R3 - Filtro por créditos / Consultar créditos mínimos 5" id="efddb507-22d7-48b0-b4f1-b1d48d2770ec" timestamp="2026-11-06T03:33:41.383Z" tests="2" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 200" time="0.008" classname="R3FiltroPorCreditosConsultarCreditosMinimos5"/>
+    <testcase name="Solo SIS-310" time="0.008" classname="R3FiltroPorCreditosConsultarCreditosMinimos5"/>
+  </testsuite>
+  <testsuite name="R4 - DELETE idempotente / Desactivar curso" id="3f1f6c8a-c1c1-47fa-a4bd-a3e68757d532" timestamp="2026-11-06T03:33:41.383Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 204" time="0.009" classname="R4DeleteIdempotenteDesactivarCurso"/>
+  </testsuite>
+  <testsuite name="R4 - DELETE idempotente / Repetir desactivación" id="6cbbe589-0994-4f36-ba06-f341f6fd2f90" timestamp="2026-11-06T03:33:41.383Z" tests="1" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 204" time="0.007" classname="R4DeleteIdempotenteRepetirDesactivacion"/>
+  </testsuite>
+  <testsuite name="R5 - Consultar curso inactivo / Obtener registro conservado" id="8fbdcde6-5a9b-4c7d-b4a0-afb5252e3ff0" timestamp="2026-11-06T03:33:41.383Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="R5ConsultarCursoInactivoObtenerRegistroConservado"/>
+    <testcase name="Registro conservado inactivo" time="0.006" classname="R5ConsultarCursoInactivoObtenerRegistroConservado"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Excluir inactivo del listado" id="69eb109e-1ffe-4e21-b0d1-362ff4be5b50" timestamp="2026-11-06T03:33:41.383Z" tests="2" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 200" time="0.007" classname="VerificacionYCierreExcluirInactivoDelListado"/>
+    <testcase name="El curso desactivado no aparece" time="0.007" classname="VerificacionYCierreExcluirInactivoDelListado"/>
+  </testsuite>
+  <testsuite name="Verificación y cierre / Desactivar curso de cupos" id="9bae3ab6-762a-4195-b401-c28719002862" timestamp="2026-11-06T03:33:41.383Z" tests="1" failures="0" errors="0" time="0.013">
+    <testcase name="HTTP 204" time="0.013" classname="VerificacionYCierreDesactivarCursoDeCupos"/>
+  </testsuite>
+</testsuites>

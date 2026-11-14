@@ -1,0 +1,165 @@
+newman
+
+Academia UPN – Laboratorio 2 – Seguridad
+
+❏ Preparación de tokens
+↳ Login Admin
+  POST http://127.0.0.1:18080/api/v1/auth/login [200 OK, 734B, 157ms]
+  ✓  HTTP 200
+  ✓  Token Bearer
+
+↳ Login Docente
+  POST http://127.0.0.1:18080/api/v1/auth/login [200 OK, 743B, 116ms]
+  ✓  HTTP 200
+  ✓  Token Bearer
+
+↳ Login Estudiante
+  POST http://127.0.0.1:18080/api/v1/auth/login [200 OK, 757B, 120ms]
+  ✓  HTTP 200
+  ✓  Token Bearer
+
+❏ 01 - Sin token
+↳ Listar sin autenticación
+  GET http://127.0.0.1:18080/api/v1/cursos [401 Unauthorized, 538B, 7ms]
+  ✓  HTTP 401
+  ✓  Challenge Bearer
+
+❏ 02 - Login incorrecto
+↳ Rechazar contraseña incorrecta
+  POST http://127.0.0.1:18080/api/v1/auth/login [401 Unauthorized, 557B, 117ms]
+  ✓  HTTP 401
+  ✓  Mensaje genérico
+
+❏ 03 - Lectura como estudiante
+↳ Listar y ordenar cursos
+  GET http://127.0.0.1:18080/api/v1/cursos?size=3&sort=creditos,desc [200 OK, 875B, 99ms]
+  ✓  HTTP 200
+  ✓  Página de tres y SIS-310 primero
+
+❏ 04 - Escritura denegada al estudiante
+↳ Crear como estudiante
+  POST http://127.0.0.1:18080/api/v1/cursos [403 Forbidden, 520B, 9ms]
+  ✓  HTTP 403
+
+❏ 05 - Escritura permitida al administrador
+↳ Crear como administrador
+  POST http://127.0.0.1:18080/api/v1/cursos [201 Created, 605B, 81ms]
+  ✓  HTTP 201
+
+❏ 06 - Datos de matrículas protegidos
+↳ Consultar matrículas ajenas por curso
+  GET http://127.0.0.1:18080/api/v1/cursos/1/matriculas [403 Forbidden, 520B, 6ms]
+  ✓  HTTP 403
+
+❏ Preparación de plazas
+↳ Consultar estudiantes
+  GET http://127.0.0.1:18080/api/v1/estudiantes [200 OK, 705B, 37ms]
+  ✓  HTTP 200
+
+↳ Ocupar la única plaza
+  POST http://127.0.0.1:18080/api/v1/matriculas [201 Created, 633B, 101ms]
+  ✓  HTTP 201
+
+❏ 07 - Sin cupos disponibles
+↳ Rechazar matrícula en curso lleno
+  POST http://127.0.0.1:18080/api/v1/matriculas [409 Conflict, 559B, 26ms]
+  ✓  HTTP 409
+
+❏ 08 - Matrícula repetida
+↳ Rechazar duplicado
+  POST http://127.0.0.1:18080/api/v1/matriculas [409 Conflict, 570B, 16ms]
+  ✓  HTTP 409
+
+❏ 09 - Retiro denegado al docente
+↳ Retirar como docente
+  PATCH http://127.0.0.1:18080/api/v1/matriculas/3/retiro [403 Forbidden, 520B, 7ms]
+  ✓  HTTP 403
+
+❏ 10 - Curso con matrículas
+↳ Rechazar eliminación de curso matriculado
+  DELETE http://127.0.0.1:18080/api/v1/cursos/4 [409 Conflict, 567B, 17ms]
+  ✓  HTTP 409
+
+❏ 11 - CORS permitido
+↳ Preflight Angular local
+  OPTIONS http://127.0.0.1:18080/api/v1/cursos [200 OK, 615B, 21ms]
+  ✓  HTTP 200
+  ✓  Origen permitido
+
+❏ 12 - CORS rechazado
+↳ Preflight origen desconocido
+  OPTIONS http://127.0.0.1:18080/api/v1/cursos [403 Forbidden, 418B, 6ms]
+  ✓  HTTP 403
+  ✓  Origen rechazado
+
+❏ Comprobaciones adicionales
+↳ Usuario desconocido tiene mensaje genérico
+  POST http://127.0.0.1:18080/api/v1/auth/login [401 Unauthorized, 557B, 116ms]
+  ✓  HTTP 401
+  ✓  Mismo mensaje
+
+↳ Rechazar token mal formado
+  GET http://127.0.0.1:18080/api/v1/cursos [401 Unauthorized, 538B, 8ms]
+  ✓  HTTP 401
+
+↳ Rechazar firma alterada
+  GET http://127.0.0.1:18080/api/v1/cursos [401 Unauthorized, 538B, 5ms]
+  ✓  HTTP 401
+
+↳ Login con campos vacíos
+  POST http://127.0.0.1:18080/api/v1/auth/login [400 Bad Request, 632B, 17ms]
+  ✓  HTTP 400
+
+↳ Matrículas propias
+  GET http://127.0.0.1:18080/api/v1/estudiantes/1/matriculas [200 OK, 874B, 51ms]
+  ✓  HTTP 200
+  ✓  Solo matrículas propias
+
+↳ Bloquear acceso a otro estudiante
+  GET http://127.0.0.1:18080/api/v1/estudiantes/2/matriculas [403 Forbidden, 574B, 11ms]
+  ✓  HTTP 403
+
+↳ Docente consulta estudiante
+  GET http://127.0.0.1:18080/api/v1/estudiantes/2/matriculas [200 OK, 416B, 13ms]
+  ✓  HTTP 200
+
+↳ Retiro como administrador
+  PATCH http://127.0.0.1:18080/api/v1/matriculas/3/retiro [200 OK, 569B, 34ms]
+  ✓  HTTP 200
+  ✓  Matrícula retirada
+
+↳ Docente usa la plaza liberada
+  POST http://127.0.0.1:18080/api/v1/matriculas [201 Created, 634B, 19ms]
+  ✓  HTTP 201
+
+↳ Resumen permitido al docente
+  GET http://127.0.0.1:18080/api/v1/cursos/resumen [200 OK, 780B, 31ms]
+  ✓  HTTP 200
+
+↳ Resumen denegado al estudiante
+  GET http://127.0.0.1:18080/api/v1/cursos/resumen [403 Forbidden, 520B, 6ms]
+  ✓  HTTP 403
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                28 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                28 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                39 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 1885ms                                     │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 4.73kB (approx)                           │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 44ms [min: 5ms, max: 157ms, s.d.: 45ms] │
+└────────────────────────────────────────────────────────────────┘
+OK: casos por rol, JWT y CORS aprobados; reporte sin contraseñas ni tokens.
+
+(node:7209) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)

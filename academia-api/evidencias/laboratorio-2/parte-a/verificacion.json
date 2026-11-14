@@ -1,0 +1,29 @@
+{
+  "rama": "laboratorio-2",
+  "etapa": "Parte A: dependencias y configuración",
+  "pruebasH2": {
+    "total": 19,
+    "fallos": 0
+  },
+  "pruebasPostgres": {
+    "total": 19,
+    "fallos": 0
+  },
+  "cursosPostgresConservados": true,
+  "filasPostgres": 14,
+  "perfilServidor": "h2",
+  "peticionSinCredenciales": {
+    "status": 401,
+    "WWW-Authenticate": "Basic realm=\"Realm\", charset=\"UTF-8\""
+  },
+  "jwtImplementado": false,
+  "dependenciasVerificadas": [
+    "h2-2.4.240.jar",
+    "nimbus-jose-jwt-10.9.1.jar",
+    "spring-security-core-7.1.2.jar",
+    "spring-security-oauth2-resource-server-7.1.2.jar"
+  ],
+  "secretoLocalFueraDeGit": true,
+  "claveEjemploGuiaIncluida": false,
+  "notaLogs": "Se omitieron las contraseñas temporales generadas por Spring Security."
+}

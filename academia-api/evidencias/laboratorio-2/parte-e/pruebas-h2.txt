@@ -1,0 +1,3802 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24457 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< pe.edu.upn:academia-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ academia-api ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ academia-api ---
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ academia-api ---
+[INFO] skip non existing resourceDirectory /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ academia-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 9 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ academia-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.upn.academia_api.CursoRepositoryTests
+21:32:39.845 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoRepositoryTests]: CursoRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:32:40.049 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoRepositoryTests
+21:32:40.196 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoRepositoryTests]: CursoRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:32:40.200 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoRepositoryTests
+21:32:40.336 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-11T21:32:40.826-05:00  INFO 6897 --- [academia-api] [           main] p.e.u.academia_api.CursoRepositoryTests  : Starting CursoRepositoryTests using Java 17.0.12 with PID 6897 (started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2)
+2026-11-11T21:32:40.828-05:00  INFO 6897 --- [academia-api] [           main] p.e.u.academia_api.CursoRepositoryTests  : No active profile set, falling back to 1 default profile: "h2"
+2026-11-11T21:32:41.734-05:00  INFO 6897 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T21:32:41.818-05:00  INFO 6897 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2026-11-11T21:32:43.064-05:00  INFO 6897 --- [academia-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-11T21:32:43.155-05:00  INFO 6897 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-11T21:32:43.898-05:00  INFO 6897 --- [academia-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T21:32:43.949-05:00  INFO 6897 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T21:32:44.236-05:00  INFO 6897 --- [academia-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:academia user=SA
+2026-11-11T21:32:44.239-05:00  INFO 6897 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T21:32:44.348-05:00  INFO 6897 --- [academia-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:academia]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ACADEMIA/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-11T21:32:45.925-05:00  INFO 6897 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-11T21:32:45.961-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    drop table if exists cursos cascade 
+2026-11-11T21:32:45.963-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    drop table if exists estudiantes cascade 
+2026-11-11T21:32:45.965-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    drop table if exists matriculas cascade 
+2026-11-11T21:32:45.966-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    drop table if exists usuarios cascade 
+2026-11-11T21:32:45.975-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    create table cursos (
+        activo boolean not null,
+        creditos integer not null,
+        cupos integer not null,
+        codigo varchar(7) not null unique,
+        id bigint generated by default as identity,
+        version bigint not null,
+        docente varchar(80) not null,
+        nombre varchar(100) not null,
+        primary key (id)
+    )
+2026-11-11T21:32:45.993-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    create table estudiantes (
+        id bigint generated by default as identity,
+        codigo varchar(10) not null unique,
+        apellidos varchar(60) not null,
+        nombres varchar(60) not null,
+        email varchar(120) not null unique,
+        primary key (id)
+    )
+2026-11-11T21:32:46.001-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    create table matriculas (
+        fecha date not null,
+        curso_id bigint not null,
+        estudiante_id bigint not null,
+        id bigint generated by default as identity,
+        estado enum ('ACTIVA','RETIRADA') not null,
+        primary key (id),
+        unique (estudiante_id, curso_id)
+    )
+2026-11-11T21:32:46.005-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    create table usuarios (
+        estudiante_id bigint unique,
+        id bigint generated by default as identity,
+        username varchar(50) not null unique,
+        password varchar(100) not null,
+        rol enum ('ADMIN','DOCENTE','ESTUDIANTE') not null,
+        primary key (id)
+    )
+2026-11-11T21:32:46.009-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    alter table if exists matriculas 
+       add constraint FKtgxnkauqy13npoi9q2t9n0ol5 
+       foreign key (curso_id) 
+       references cursos
+2026-11-11T21:32:46.123-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    alter table if exists matriculas 
+       add constraint FKik1axtq6kxfa4tiba11rvwfgs 
+       foreign key (estudiante_id) 
+       references estudiantes
+2026-11-11T21:32:46.126-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    alter table if exists usuarios 
+       add constraint FK5bfc4r4soes48ifqsonpxu0hn 
+       foreign key (estudiante_id) 
+       references estudiantes
+2026-11-11T21:32:46.132-05:00  INFO 6897 --- [academia-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T21:32:46.334-05:00  INFO 6897 --- [academia-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-11T21:32:48.725-05:00  INFO 6897 --- [academia-api] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-11-11T21:32:49.819-05:00  INFO 6897 --- [academia-api] [           main] p.e.u.academia_api.CursoRepositoryTests  : Started CursoRepositoryTests in 9.501 seconds (process running for 11.709)
+2026-11-11T21:32:49.921-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0
+2026-11-11T21:32:50.018-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.038-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.041-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-11T21:32:50.691-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.693-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.695-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.763-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+    order by
+        c1_0.id
+2026-11-11T21:32:50.844-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:50.894-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:50.900-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:50.922-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:50.931-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.42 s -- in pe.edu.upn.academia_api.CursoRepositoryTests
+[INFO] Running pe.edu.upn.academia_api.CursoServiceTests
+2026-11-11T21:32:50.959-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:50.962-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+2026-11-11T21:32:50.965-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:50.968-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+2026-11-11T21:32:51.019-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.026-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.027-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.030-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.040-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.044-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.050-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.052-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.071-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.075-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.076-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.077-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.083-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.087-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.101-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.110-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.119-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.126-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.128-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.151-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.174-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.177-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.178-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.180-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.186-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.188-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.193-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.210-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.217-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.218-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.219-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.222-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.224-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.229-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.233-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.236-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.250-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.254-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.256-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.257-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.260-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.262-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.268-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.270-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.276-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.291-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.294-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.296-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.299-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.303-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.305-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.308-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.310-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:51.328-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.334-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.336-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.337-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.342-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.344-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.349-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.351-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.355-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.358-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.360-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.362-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.368-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.373-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.377-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:51.392-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:51.397-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.398-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.400-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:51.404-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        upper(c1_0.codigo)=upper(?)
+2026-11-11T21:32:51.406-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:51.409-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.462 s -- in pe.edu.upn.academia_api.CursoServiceTests
+[INFO] Running pe.edu.upn.academia_api.JwtServiceTests
+2026-11-11T21:32:51.425-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.JwtServiceTests]: JwtServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:51.426-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.JwtServiceTests
+2026-11-11T21:32:51.427-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.JwtServiceTests]: JwtServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:51.430-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.JwtServiceTests
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.159 s -- in pe.edu.upn.academia_api.JwtServiceTests
+[INFO] Running pe.edu.upn.academia_api.ErroresHttpTests
+2026-11-11T21:32:51.640-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:51.641-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:51.641-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:51.955-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:51.956-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:51.956-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:51.976-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:51.976-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:51.976-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:51.996-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:51.996-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:51.997-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-11T21:32:52.002-05:00  WARN 6897 --- [academia-api] [           main] o.s.web.servlet.PageNotFound             : Request method 'GET' is not supported
+2026-11-11T21:32:52.023-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:52.023-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:52.024-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:52.207-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:52.207-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:52.207-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:52.208-05:00 ERROR 6897 --- [academia-api] [           main] p.e.u.a.e.GlobalExceptionHandler         : Error no controlado
+
+java.lang.IllegalStateException: detalle-interno-http
+	at pe.edu.upn.academia_api.ErroresHttpTests$ControladorDePrueba.general(ErroresHttpTests.java:117) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72) ~[spring-test-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:160) ~[spring-test-7.0.10.jar:7.0.10]
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:127) ~[spring-test-7.0.10.jar:7.0.10]
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199) ~[spring-test-7.0.10.jar:7.0.10]
+	at pe.edu.upn.academia_api.ErroresHttpTests.errorInesperadoDevuelve500SinTraza(ErroresHttpTests.java:77) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+2026-11-11T21:32:52.234-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:52.235-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:52.235-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-11T21:32:52.265-05:00  INFO 6897 --- [academia-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-11T21:32:52.266-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-11T21:32:52.266-05:00  INFO 6897 --- [academia-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.687 s -- in pe.edu.upn.academia_api.ErroresHttpTests
+[INFO] Running pe.edu.upn.academia_api.ServiciosAcademicosTests
+2026-11-11T21:32:52.278-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ServiciosAcademicosTests]: ServiciosAcademicosTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:52.282-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ServiciosAcademicosTests
+2026-11-11T21:32:52.283-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ServiciosAcademicosTests]: ServiciosAcademicosTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:52.285-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ServiciosAcademicosTests
+2026-11-11T21:32:52.294-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.302-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.305-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.308-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.311-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.312-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.313-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.320-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        upper(e1_0.codigo)=upper(?)
+2026-11-11T21:32:52.325-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        upper(e1_0.email)=upper(?)
+2026-11-11T21:32:52.328-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.350-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    order by
+        e1_0.apellidos 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.355-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(e1_0.id) 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.371-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.388-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.391-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.394-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.399-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.400-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.401-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.403-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        usuarios
+        (estudiante_id, password, rol, username, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.409-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.username=?
+2026-11-11T21:32:52.411-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.username=?
+2026-11-11T21:32:52.426-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.428-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.434-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.437-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.441-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.442-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.443-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.447-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.452-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.455-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.459-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.474-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.477-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.482-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.486-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.490-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.492-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.492-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.494-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.499-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.534-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.542-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.553-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.555-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.559-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.565-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.568-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.570-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.587-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.592-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.598-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.602-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.606-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.607-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.608-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.610-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.614-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.617-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.621-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.638-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.642-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.646-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.650-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.653-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.654-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.655-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.656-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.658-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.661-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.665-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.668-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.674-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.687-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.690-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.692-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.695-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.700-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.701-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.702-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.704-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.706-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.709-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.711-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.715-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.717-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.719-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.722-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.724-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.726-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.730-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.736-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:52.742-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=?
+2026-11-11T21:32:52.752-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:52.754-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:52.755-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:52.758-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:52.773-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    join
+        estudiantes e1_0 
+            on e1_0.id=m1_0.estudiante_id 
+    join
+        cursos c1_0 
+            on c1_0.id=m1_0.curso_id 
+    where
+        c1_0.id=? 
+    order by
+        e1_0.apellidos
+CONSULTAS_MATRICULAS: sin_fetch=5, con_fetch=2
+2026-11-11T21:32:52.796-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.801-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.803-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.805-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.808-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.809-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.810-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.812-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.818-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        upper(e1_0.codigo)=upper(?)
+2026-11-11T21:32:52.822-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        upper(e1_0.codigo)=upper(?)
+2026-11-11T21:32:52.825-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        upper(e1_0.email)=upper(?)
+2026-11-11T21:32:52.840-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.843-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.847-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.851-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.854-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.855-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.857-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.858-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.861-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.866-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.869-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.871-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.873-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.876-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:52.878-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    join
+        estudiantes e1_0 
+            on e1_0.id=m1_0.estudiante_id 
+    join
+        cursos c1_0 
+            on c1_0.id=m1_0.curso_id 
+    where
+        c1_0.id=? 
+    order by
+        e1_0.apellidos
+2026-11-11T21:32:52.887-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:52.893-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    join
+        estudiantes e1_0 
+            on e1_0.id=m1_0.estudiante_id 
+    join
+        cursos c1_0 
+            on c1_0.id=m1_0.curso_id 
+    where
+        e1_0.id=? 
+    order by
+        m1_0.fecha desc
+2026-11-11T21:32:52.913-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.918-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:52.921-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:52.923-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:52.926-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.927-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.931-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:52.935-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:52.937-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.941-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.947-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.952-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.954-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.958-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.960-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        matriculas 
+    set
+        curso_id=?,
+        estado=?,
+        estudiante_id=?,
+        fecha=? 
+    where
+        id=?
+2026-11-11T21:32:52.966-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:52.969-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:52.971-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.973-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:52.978-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.983-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:52.995-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:52.999-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:53.002-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:53.004-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:53.007-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.008-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.008-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.010-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.012-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.018-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.021-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.023-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:53.026-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.032-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.047-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:53.050-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:53.052-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:53.054-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:53.057-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.058-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.059-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.061-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.063-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.066-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.072-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=? 
+    order by
+        c1_0.creditos desc 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.079-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and upper(c1_0.docente) like upper(?) escape '\' 
+        and c1_0.creditos>=?
+2026-11-11T21:32:53.094-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:53.101-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:53.103-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:53.106-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:53.109-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.110-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.110-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.111-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.114-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.116-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.119-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.121-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.124-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:53.125-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.127-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.132-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.136-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.138-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:53.141-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.144-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        matriculas 
+    set
+        curso_id=?,
+        estado=?,
+        estudiante_id=?,
+        fecha=? 
+    where
+        id=?
+2026-11-11T21:32:53.161-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.codigo,
+        c1_0.nombre,
+        c1_0.cupos,
+        count(m1_0.id) 
+    from
+        cursos c1_0 
+    left join
+        matriculas m1_0 
+            on c1_0.id=m1_0.curso_id 
+            and m1_0.estado='ACTIVA' 
+    group by
+        c1_0.id,
+        c1_0.codigo,
+        c1_0.nombre,
+        c1_0.cupos 
+    order by
+        c1_0.nombre
+2026-11-11T21:32:53.171-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.activo=true 
+        and c1_0.creditos>=? 
+    order by
+        c1_0.creditos desc,
+        c1_0.nombre
+2026-11-11T21:32:53.185-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:53.188-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:53.190-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:53.192-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:53.195-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.196-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.197-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.200-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.202-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.203-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.205-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.207-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(m1_0.id) 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=? 
+        and m1_0.estado=?
+2026-11-11T21:32:53.208-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.212-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.215-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        matriculas 
+    set
+        curso_id=?,
+        estado=?,
+        estudiante_id=?,
+        fecha=? 
+    where
+        id=?
+2026-11-11T21:32:53.216-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=? 
+        and m1_0.curso_id=? 
+    fetch
+        first ? rows only
+2026-11-11T21:32:53.226-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0
+2026-11-11T21:32:53.228-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0
+2026-11-11T21:32:53.232-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0
+2026-11-11T21:32:53.235-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0
+2026-11-11T21:32:53.238-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.239-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.240-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    delete 
+    from
+        cursos 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:53.241-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.243-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.244-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:53.249-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=? 
+    for
+        update
+2026-11-11T21:32:53.251-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.id=?
+2026-11-11T21:32:53.254-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:53.257-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:53.259-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.990 s -- in pe.edu.upn.academia_api.ServiciosAcademicosTests
+[INFO] Running pe.edu.upn.academia_api.AcademiaApiApplicationTests
+2026-11-11T21:32:53.270-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.AcademiaApiApplicationTests]: AcademiaApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:53.271-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.AcademiaApiApplicationTests
+2026-11-11T21:32:53.273-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.AcademiaApiApplicationTests]: AcademiaApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:53.274-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.AcademiaApiApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in pe.edu.upn.academia_api.AcademiaApiApplicationTests
+[INFO] Running pe.edu.upn.academia_api.CursoDtoTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in pe.edu.upn.academia_api.CursoDtoTests
+[INFO] Running pe.edu.upn.academia_api.GlobalExceptionHandlerTests
+2026-11-11T21:32:53.341-05:00 ERROR 6897 --- [academia-api] [           main] p.e.u.a.e.GlobalExceptionHandler         : Error no controlado
+
+java.lang.IllegalStateException: detalle-interno-de-prueba
+	at pe.edu.upn.academia_api.GlobalExceptionHandlerTests.noExponeDetallesDelErrorInterno(GlobalExceptionHandlerTests.java:14) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+2026-11-11T21:32:53.355-05:00  WARN 6897 --- [academia-api] [           main] p.e.u.a.e.GlobalExceptionHandler         : Violaci?n de integridad de datos
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in pe.edu.upn.academia_api.GlobalExceptionHandlerTests
+[INFO] Running pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-11T21:32:53.360-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ModeloAcademicoTests]: ModeloAcademicoTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:53.364-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-11T21:32:53.366-05:00  INFO 6897 --- [academia-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ModeloAcademicoTests]: ModeloAcademicoTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-11T21:32:53.368-05:00  INFO 6897 --- [academia-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-11T21:32:53.375-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.565-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        usuarios
+        (estudiante_id, password, rol, username, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.568-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        usuarios
+        (estudiante_id, password, rol, username, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.577-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-11-11T21:32:53.577-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de indice de Unicidad ? Clave primaria: "PUBLIC.CONSTRAINT_3 INDEX PUBLIC.CONSTRAINT_INDEX_3 ON PUBLIC.USUARIOS(ESTUDIANTE_ID NULLS FIRST) VALUES ( /* 2 */ CAST(17 AS BIGINT) )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_3 INDEX PUBLIC.CONSTRAINT_INDEX_3 ON PUBLIC.USUARIOS(ESTUDIANTE_ID NULLS FIRST) VALUES ( /* 2 */ CAST(17 AS BIGINT) )"; SQL statement:
+insert into usuarios (estudiante_id,password,rol,username,id) values (?,?,?,?,default) [23505-240]
+2026-11-11T21:32:53.594-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.597-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.599-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.603-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.606-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-11-11T21:32:53.606-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de indice de Unicidad ? Clave primaria: "PUBLIC.CONSTRAINT_A7 INDEX PUBLIC.CONSTRAINT_INDEX_A ON PUBLIC.MATRICULAS(ESTUDIANTE_ID NULLS FIRST, CURSO_ID NULLS FIRST) VALUES ( /* key:11 */ CAST(18 AS BIGINT), CAST(35 AS BIGINT))"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_A7 INDEX PUBLIC.CONSTRAINT_INDEX_A ON PUBLIC.MATRICULAS(ESTUDIANTE_ID NULLS FIRST, CURSO_ID NULLS FIRST) VALUES ( /* key:11 */ CAST(18 AS BIGINT), CAST(35 AS BIGINT))"; SQL statement:
+insert into matriculas (curso_id,estado,estudiante_id,fecha,id) values (?,?,?,?,default) [23505-240]
+2026-11-11T21:32:53.660-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    INSERT 
+    INTO
+        matriculas
+        (curso_id, estudiante_id, fecha, estado) 
+    VALUES
+        (-1, -1, CURRENT_DATE, 'ACTIVA')
+2026-11-11T21:32:53.661-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23506, SQLState: 23506
+2026-11-11T21:32:53.661-05:00  WARN 6897 --- [academia-api] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de una restricci?n de Integridad Referencial: "FKTGXNKAUQY13NPOI9Q2T9N0OL5: PUBLIC.MATRICULAS FOREIGN KEY(CURSO_ID) REFERENCES PUBLIC.CURSOS(ID) (CAST(-1 AS BIGINT))"
+Referential integrity constraint violation: "FKTGXNKAUQY13NPOI9Q2T9N0OL5: PUBLIC.MATRICULAS FOREIGN KEY(CURSO_ID) REFERENCES PUBLIC.CURSOS(ID) (CAST(-1 AS BIGINT))"; SQL statement:
+INSERT INTO matriculas (curso_id, estudiante_id, fecha, estado) VALUES (-1, -1, CURRENT_DATE, 'ACTIVA') [23506-240]
+2026-11-11T21:32:53.673-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.675-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.676-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.820-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        usuarios
+        (estudiante_id, password, rol, username, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.822-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.estudiante_id,
+        u1_0.password,
+        u1_0.rol,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.id=?
+2026-11-11T21:32:53.825-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:53.941-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.id=?
+2026-11-11T21:32:53.943-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        matriculas 
+    set
+        curso_id=?,
+        estado=?,
+        estudiante_id=?,
+        fecha=? 
+    where
+        id=?
+2026-11-11T21:32:53.944-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.id=?
+2026-11-11T21:32:53.955-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.956-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.957-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:53.959-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:53.963-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.curso_id,
+        m1_0.id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.curso_id=?
+2026-11-11T21:32:53.970-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:53.972-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.estudiante_id,
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.estudiante_id=?
+2026-11-11T21:32:53.981-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:53.986-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+2026-11-11T21:32:53.988-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    update
+        cursos 
+    set
+        activo=?,
+        codigo=?,
+        creditos=?,
+        cupos=?,
+        docente=?,
+        nombre=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-11-11T21:32:54.002-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        estudiantes
+        (apellidos, codigo, email, nombres, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:54.003-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        cursos
+        (activo, codigo, creditos, cupos, docente, nombre, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2026-11-11T21:32:54.004-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        matriculas
+        (curso_id, estado, estudiante_id, fecha, id) 
+    values
+        (?, ?, ?, ?, default)
+2026-11-11T21:32:54.006-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.curso_id,
+        m1_0.estado,
+        m1_0.estudiante_id,
+        m1_0.fecha 
+    from
+        matriculas m1_0 
+    where
+        m1_0.id=?
+2026-11-11T21:32:54.008-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.apellidos,
+        e1_0.codigo,
+        e1_0.email,
+        e1_0.nombres 
+    from
+        estudiantes e1_0 
+    where
+        e1_0.id=?
+2026-11-11T21:32:54.009-05:00 DEBUG 6897 --- [academia-api] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.activo,
+        c1_0.codigo,
+        c1_0.creditos,
+        c1_0.cupos,
+        c1_0.docente,
+        c1_0.nombre,
+        c1_0.version 
+    from
+        cursos c1_0 
+    where
+        c1_0.id=?
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.657 s -- in pe.edu.upn.academia_api.ModeloAcademicoTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 52, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ academia-api ---
+[INFO] Building jar: /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/target/academia-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.2:repackage (repackage) @ academia-api ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Replacing main artifact /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/target/academia-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-api-guia2/target/academia-api-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.078 s
+[INFO] Finished at: 2026-11-11T21:32:55-05:00
+[INFO] ------------------------------------------------------------------------

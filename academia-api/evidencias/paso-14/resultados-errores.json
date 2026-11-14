@@ -1,0 +1,200 @@
+{
+  "peticiones": [
+    {
+      "metodo": "GET",
+      "ruta": "/9223372036854775807",
+      "esperado": 404,
+      "obtenido": 404,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Curso 9223372036854775807 no encontrado",
+        "instance": "/api/v1/cursos/9223372036854775807",
+        "status": 404,
+        "title": "Recurso no encontrado"
+      }
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/9223372036854775807",
+      "esperado": 404,
+      "obtenido": 404,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Curso 9223372036854775807 no encontrado",
+        "instance": "/api/v1/cursos/9223372036854775807",
+        "status": 404,
+        "title": "Recurso no encontrado"
+      }
+    },
+    {
+      "metodo": "PATCH",
+      "ruta": "/9223372036854775807/cupos",
+      "esperado": 404,
+      "obtenido": 404,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Curso 9223372036854775807 no encontrado",
+        "instance": "/api/v1/cursos/9223372036854775807/cupos",
+        "status": 404,
+        "title": "Recurso no encontrado"
+      }
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/9223372036854775807",
+      "esperado": 404,
+      "obtenido": 404,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Curso 9223372036854775807 no encontrado",
+        "instance": "/api/v1/cursos/9223372036854775807",
+        "status": 404,
+        "title": "Recurso no encontrado"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 409,
+      "obtenido": 409,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Ya existe un curso con código SIS-101",
+        "instance": "/api/v1/cursos",
+        "status": 409,
+        "title": "Conflicto de datos"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "La solicitud contiene datos inválidos",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Error de validación",
+        "errores": {
+          "creditos": "Máximo 6 créditos",
+          "nombre": "El nombre es obligatorio"
+        }
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "La solicitud contiene datos inválidos",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Error de validación",
+        "errores": {
+          "codigo": "Formato de código: AAA-999"
+        }
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Failed to read request",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Bad Request"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/abc",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Failed to convert 'id' with value: 'abc'",
+        "instance": "/api/v1/cursos/abc",
+        "status": 400,
+        "title": "Bad Request"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "?creditosMin=abc",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Failed to convert 'creditosMin' with value: 'abc'",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Bad Request"
+      }
+    },
+    {
+      "metodo": "PATCH",
+      "ruta": "/15/cupos",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "La solicitud contiene datos inválidos",
+        "instance": "/api/v1/cursos/15/cupos",
+        "status": 400,
+        "title": "Error de validación",
+        "errores": {
+          "cupos": "Máximo 60 cupos"
+        }
+      }
+    },
+    {
+      "metodo": "PATCH",
+      "ruta": "/",
+      "esperado": 405,
+      "obtenido": 405,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Method 'PATCH' is not supported.",
+        "instance": "/api/v1/cursos",
+        "status": 405,
+        "title": "Method Not Allowed"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 415,
+      "obtenido": 415,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "Content-Type 'text/plain;charset=UTF-8' is not supported.",
+        "instance": "/api/v1/cursos",
+        "status": 415,
+        "title": "Unsupported Media Type"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "esperado": 400,
+      "obtenido": 400,
+      "content_type": "application/problem+json",
+      "respuesta": {
+        "detail": "La solicitud contiene datos inválidos",
+        "instance": "/api/v1/cursos",
+        "status": 400,
+        "title": "Error de validación",
+        "errores": {
+          "nombre": "El nombre admite máximo 100 caracteres"
+        }
+      }
+    }
+  ],
+  "datos_conservados": true
+}

@@ -1,0 +1,16 @@
+{
+  "casosGuia": 5,
+  "perfiles": [
+    "h2",
+    "postgres"
+  ],
+  "rondasPorPerfil": 3,
+  "rondasTotales": 6,
+  "solicitudesConcurrentes": 12,
+  "todasLasCarrerasCon201Y409": true,
+  "unaMatriculaActivaPorCurso": true,
+  "publicoPostgresConservado": true,
+  "postgresDosSolicitudesEsperandoLockConfirmadas": true,
+  "esquemaTemporalEliminado": true,
+  "sinCambiosEnCodigoFuncional": true
+}
