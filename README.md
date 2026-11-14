@@ -39,4 +39,27 @@ Para las verificaciones de traslado se usan H2 y puertos alternativos si las apl
 
 El lanzador academia-web/scripts/iniciar-api-postgres.command se adaptó a la carpeta hermana academia-api. Conserva el esquema laboratorio3_angular del laboratorio anterior y requiere PostgreSQL iniciado, las credenciales privadas y el JAR construido; no prepara el futuro entorno Docker del Módulo IV.
 
-Sigue la parte B: pruebas del backend, aislamiento de su configuración y cobertura JaCoCo. Las pruebas anteriores se conservarán y se completarán conforme a la guía.
+La parte B añade pruebas unitarias, de persistencia e integración y cobertura JaCoCo, conservando las pruebas anteriores.
+
+## Parte B — pruebas del backend y cobertura
+
+Las pruebas tienen configuración propia en academia-api/src/test/resources/application.properties. H2 queda únicamente en las dependencias de test; el perfil normal de esta copia cambia a PostgreSQL. Las claves locales no son necesarias para ejecutar la suite. Los datos y usuarios de las pruebas se crean dentro de H2 y las transacciones se revierten.
+
+```sh
+cd academia-api
+./mvnw verify
+```
+
+JaCoCo 0.8.13 genera el reporte HTML en target/site/jacoco/index.html y comprueba un mínimo global del 50 % de líneas, sin exclusiones de clases. El mínimo está parametrizado en jacoco.minimum.line.coverage para que se pueda comprobar también el rechazo de un umbral superior, sin dejar el pom.xml modificado.
+
+Se añadieron CursoServiceTest y MatriculaServiceTest con Mockito, CursoRepositoryTest con @DataJpaTest y CursoApiIntegrationTest con MockMvc y login JWT real. El contexto de aplicación se indica explícitamente en las pruebas que están fuera del paquete del arranque. Las cuentas y la clave JWT de test son ficticias y diferentes de las credenciales locales. La clave se proporciona en Base64, como exige SecurityConfig; los tokens de prueba duran cinco minutos.
+
+La prueba de mutación puede repetirse desde la raíz con python3 scripts/comprobar-mutacion.py. Modifica temporalmente la comparación de cupos, ejecuta su prueba y restaura la fuente en un bloque finally. Después se debe ejecutar ./mvnw clean verify desde academia-api para regenerar clases y cobertura con la regla restaurada.
+
+Las evidencias de esta parte están en evidencias/parte-b/. La siguiente parte de la guía corresponde a las pruebas del frontend.
+
+Para comprobar el límite de cobertura sin repetir las pruebas ni modificar el pom.xml, después de verify se puede ejecutar python3 scripts/comprobar-umbral.py desde la raíz. El script exige un rechazo al 95 % y una aprobación al 50 %. prepare-agent inicia un archivo de cobertura nuevo en cada ejecución para no mezclar datos de intentos anteriores.
+
+Se corrigió también el script de seguridad heredado en academia-web/scripts/verificar-seguridad.py: usa la clave decodificada de Base64, comprueba primero un JWT vigente y después los JWT vencidos o con emisor incorrecto. Acepta LAB_API_URL y LAB_EVIDENCIA_SEGURIDAD para probar una instancia local separada sin sobrescribir la evidencia histórica del Laboratorio 3. El resultado de esta comprobación está en evidencias/parte-b/jwt-http.json.
+
+Resultado de la parte B: 70 pruebas aprobadas, 86,87 % de cobertura global de líneas y 100 % en servicios. El rechazo del umbral del 95 % y la aprobación del 50 % quedaron acreditados. El reporte portable está en evidencias/parte-b/jacoco-reporte.zip; consultar evidencias/parte-b/README.md para el detalle.

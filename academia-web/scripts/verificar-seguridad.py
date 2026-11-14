@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-BASE = 'http://localhost:8080/api/v1'
+BASE = os.environ.get('LAB_API_URL', 'http://localhost:8080/api/v1')
 ORIGEN = 'http://localhost:4200'
 resultados = []
 
@@ -41,7 +41,7 @@ def codificar(datos):
 
 def firmado(claims):
     mensaje = codificar({'alg': 'HS256', 'typ': 'JWT'}) + '.' + codificar(claims)
-    firma = hmac.new(os.environ['JWT_SECRET'].encode(), mensaje.encode(), hashlib.sha256).digest()
+    firma = hmac.new(base64.b64decode(os.environ['JWT_SECRET'], validate=True), mensaje.encode(), hashlib.sha256).digest()
     return mensaje + '.' + base64.urlsafe_b64encode(firma).rstrip(b'=').decode()
 
 
@@ -77,15 +77,16 @@ verificar('Basic no autentica', estado == 401)
 
 original = tokens['admin'].split('.')
 manipulado = '.'.join([original[0], codificar({'sub': 'admin', 'roles': ['ADMIN']}), original[2]])
-claims = {'sub': 'admin', 'roles': ['ADMIN'], 'iss': 'academia-api', 'iat': int(time.time()) - 100, 'exp': int(time.time()) - 1}
-for nombre, token in [
-    ('Firma alterada', manipulado),
-    ('Algoritmo none', codificar({'alg': 'none'}) + '.' + codificar(claims) + '.'),
-    ('JWT firmado pero vencido', firmado(claims)),
-    ('JWT firmado con emisor incorrecto', firmado({**claims, 'iss': 'otro-emisor', 'exp': int(time.time()) + 60})),
+claims = {'sub': 'admin', 'roles': ['ADMIN'], 'iss': 'academia-api', 'iat': int(time.time()) - 600, 'exp': int(time.time()) - 300}
+for nombre, token, esperado in [
+    ('JWT firmado vigente de control', firmado({**claims, 'exp': int(time.time()) + 60}), 200),
+    ('Firma alterada', manipulado, 401),
+    ('Algoritmo none', codificar({'alg': 'none'}) + '.' + codificar(claims) + '.', 401),
+    ('JWT firmado pero vencido', firmado(claims), 401),
+    ('JWT firmado con emisor incorrecto', firmado({**claims, 'iss': 'otro-emisor', 'exp': int(time.time()) + 60}), 401),
 ]:
     estado, _, _ = consultar('/cursos', headers={'Authorization': 'Bearer ' + token})
-    verificar(nombre, estado == 401)
+    verificar(nombre, estado == esperado)
 
 for origen, esperado in [(ORIGEN, 200), ('https://externo.example', 403)]:
     estado, _, _ = consultar('/cursos', 'OPTIONS', headers={
@@ -94,6 +95,6 @@ for origen, esperado in [(ORIGEN, 200), ('https://externo.example', 403)]:
 
 estado, _, pagina = consultar('/cursos', headers={'Authorization': 'Bearer ' + tokens['admin']})
 verificar('Los intentos sin permiso no cambiaron el total de cursos', estado == 200 and pagina['totalElementos'] == antes)
-Path(__file__).resolve().parents[1].joinpath('evidencias/seguridad-http.json').write_text(
+Path(os.environ.get('LAB_EVIDENCIA_SEGURIDAD', str(Path(__file__).resolve().parents[1] / 'evidencias/seguridad-http.json'))).write_text(
     json.dumps({'base': BASE, 'comprobaciones': resultados}, ensure_ascii=False, indent=2) + '\n')
 print(f'{len(resultados)} comprobaciones de seguridad aprobadas; no se guardaron claves ni tokens.')

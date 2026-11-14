@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24474 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< pe.edu.upn:academia-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.13:check (check) @ academia-api ---
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Loading execution data file /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/jacoco.exec
+[INFO] Analyzed bundle 'academia-api' with 35 classes
+[INFO] All coverage checks have been met.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.136 s
+[INFO] Finished at: 2026-11-13T21:37:56-05:00
+[INFO] ------------------------------------------------------------------------

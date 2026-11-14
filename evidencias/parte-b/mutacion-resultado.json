@@ -1,0 +1,8 @@
+{
+  "cambioTemporal": "ocupados >= cupos por ocupados > cupos",
+  "prueba": "MatriculaServiceTest#rechazaCursoSinCupos",
+  "codigoSalida": 1,
+  "mutacionDetectada": true,
+  "fuenteRestaurada": true,
+  "sha256OriginalYRestaurado": "ca631c89aefab98d8308f2d06c619aa3dc9c76bce1534b46fa2baa208ac842ab"
+}

@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")"
 source ./.env.local
 export APP_DEMO_ENABLED="${APP_DEMO_ENABLED:-true}"
-export SPRING_PROFILES_ACTIVE="${SPRING_PROFILES_ACTIVE:-h2}"
+export SPRING_PROFILES_ACTIVE="${SPRING_PROFILES_ACTIVE:-postgres}"
 if [[ "$SPRING_PROFILES_ACTIVE" == "postgres" ]]; then
   PG_BIN=/usr/local/opt/postgresql@17/bin
   PG_DATA=/usr/local/var/postgresql@17

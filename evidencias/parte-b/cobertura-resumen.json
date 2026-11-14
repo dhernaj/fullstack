@@ -1,0 +1,16 @@
+{
+  "lineasCubiertas": 344,
+  "lineasSinCubrir": 52,
+  "coberturaLineasPorcentaje": 86.87,
+  "verificaciones": {
+    "0.95": {
+      "codigoSalida": 1,
+      "resultadoEsperado": true
+    },
+    "0.50": {
+      "codigoSalida": 0,
+      "resultadoEsperado": true
+    }
+  },
+  "minimoConfiguradoEnPom": "0.50"
+}

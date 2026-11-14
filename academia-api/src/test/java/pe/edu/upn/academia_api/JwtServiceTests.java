@@ -27,7 +27,8 @@ class JwtServiceTests {
         var respuesta = service.generar(auth);
         var jwt = decoder.decode(respuesta.accessToken());
         assertEquals("Bearer", respuesta.tokenType());
-        assertEquals(3600, respuesta.expiresIn());
+        assertEquals(300, respuesta.expiresIn());
+        assertEquals(300, java.time.Duration.between(jwt.getIssuedAt(), jwt.getExpiresAt()).getSeconds());
         assertEquals("usuario-prueba", jwt.getSubject());
         assertEquals(List.of("DOCENTE"), jwt.getClaimAsStringList("roles"));
         assertEquals(Set.of("iss", "sub", "iat", "exp", "roles"), jwt.getClaims().keySet());

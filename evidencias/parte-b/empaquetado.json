@@ -1,0 +1,6 @@
+{
+  "postgresqlIncluido": true,
+  "h2Excluido": true,
+  "configuracionTestExcluida": true,
+  "secretoProduccionPorVariable": true
+}

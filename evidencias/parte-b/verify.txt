@@ -1,0 +1,488 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24474 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< pe.edu.upn:academia-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ academia-api ---
+[INFO] Deleting /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (default) @ academia-api ---
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] argLine set to -javaagent:/Users/dannyherreranajar/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/jacoco.exec,append=false
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ academia-api ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ academia-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 39 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ academia-api ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ academia-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 13 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ academia-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.upn.academia.repository.CursoRepositoryTest
+21:35:44.121 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-13T21:35:46.819-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.repository.CursoRepositoryTest   : Starting CursoRepositoryTest using Java 17.0.12 with PID 8729 (started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api)
+2026-11-13T21:35:46.824-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.repository.CursoRepositoryTest   : No active profile set, falling back to 1 default profile: "test"
+2026-11-13T21:35:50.214-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-13T21:35:50.668-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 309 ms. Found 4 JPA repository interfaces.
+2026-11-13T21:35:51.753-05:00  INFO 8729 --- [academia-api-test] [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-11-13T21:35:52.920-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f041545c-f00f-44b3-a567-532502b08386;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-11-13T21:35:55.946-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-13T21:35:56.401-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-13T21:35:59.188-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-13T21:35:59.822-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:f041545c-f00f-44b3-a567-532502b08386]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: F041545C-F00F-44B3-A567-532502B08386/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-13T21:36:04.738-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists cursos cascade 
+Hibernate: drop table if exists estudiantes cascade 
+Hibernate: drop table if exists matriculas cascade 
+Hibernate: drop table if exists usuarios cascade 
+Hibernate: create table cursos (activo boolean not null, creditos integer not null, cupos integer not null, codigo varchar(7) not null unique, id bigint generated by default as identity, version bigint not null, docente varchar(80) not null, nombre varchar(100) not null, primary key (id))
+Hibernate: create table estudiantes (id bigint generated by default as identity, codigo varchar(10) not null unique, apellidos varchar(60) not null, nombres varchar(60) not null, email varchar(120) not null unique, primary key (id))
+Hibernate: create table matriculas (fecha date not null, curso_id bigint not null, estudiante_id bigint not null, id bigint generated by default as identity, estado enum ('ACTIVA','RETIRADA') not null, primary key (id), unique (estudiante_id, curso_id))
+Hibernate: create table usuarios (estudiante_id bigint unique, id bigint generated by default as identity, username varchar(50) not null unique, password varchar(100) not null, rol enum ('ADMIN','DOCENTE','ESTUDIANTE') not null, primary key (id))
+Hibernate: alter table if exists matriculas add constraint FKtgxnkauqy13npoi9q2t9n0ol5 foreign key (curso_id) references cursos
+Hibernate: alter table if exists matriculas add constraint FKik1axtq6kxfa4tiba11rvwfgs foreign key (estudiante_id) references estudiantes
+Hibernate: alter table if exists usuarios add constraint FK5bfc4r4soes48ifqsonpxu0hn foreign key (estudiante_id) references estudiantes
+2026-11-13T21:36:04.988-05:00  INFO 8729 --- [academia-api-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-13T21:36:05.302-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-13T21:36:09.755-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.repository.CursoRepositoryTest   : Started CursoRepositoryTest in 25.707 seconds (process running for 33.539)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Hibernate: insert into cursos (activo,codigo,creditos,cupos,docente,nombre,version,id) values (?,?,?,?,?,?,?,default)
+Hibernate: insert into cursos (activo,codigo,creditos,cupos,docente,nombre,version,id) values (?,?,?,?,?,?,?,default)
+Hibernate: select c1_0.id,c1_0.activo,c1_0.codigo,c1_0.creditos,c1_0.cupos,c1_0.docente,c1_0.nombre,c1_0.version from cursos c1_0 where upper(c1_0.docente) like upper(?) escape '\' fetch first ? rows only
+Hibernate: insert into cursos (activo,codigo,creditos,cupos,docente,nombre,version,id) values (?,?,?,?,?,?,?,default)
+Hibernate: insert into estudiantes (apellidos,codigo,email,nombres,id) values (?,?,?,?,default)
+Hibernate: insert into estudiantes (apellidos,codigo,email,nombres,id) values (?,?,?,?,default)
+Hibernate: insert into matriculas (curso_id,estado,estudiante_id,fecha,id) values (?,?,?,?,default)
+Hibernate: insert into matriculas (curso_id,estado,estudiante_id,fecha,id) values (?,?,?,?,default)
+Hibernate: update matriculas set curso_id=?,estado=?,estudiante_id=?,fecha=? where id=?
+Hibernate: select c1_0.id,c1_0.codigo,c1_0.nombre,c1_0.cupos,count(m1_0.id) from cursos c1_0 left join matriculas m1_0 on c1_0.id=m1_0.curso_id and m1_0.estado='ACTIVA' group by c1_0.id,c1_0.codigo,c1_0.nombre,c1_0.cupos order by c1_0.nombre
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.64 s -- in pe.edu.upn.academia.repository.CursoRepositoryTest
+[INFO] Running pe.edu.upn.academia.api.CursoApiIntegrationTest
+2026-11-13T21:36:12.087-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-13T21:36:12.176-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.api.CursoApiIntegrationTest      : Starting CursoApiIntegrationTest using Java 17.0.12 with PID 8729 (started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api)
+2026-11-13T21:36:12.176-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.api.CursoApiIntegrationTest      : No active profile set, falling back to 1 default profile: "test"
+2026-11-13T21:36:13.014-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-13T21:36:13.039-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
+2026-11-13T21:36:14.498-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-13T21:36:14.554-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-13T21:36:14.555-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-13T21:36:14.610-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn6: url=jdbc:h2:mem:pruebas user=SA
+2026-11-13T21:36:14.616-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-13T21:36:14.651-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:pruebas]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: PRUEBAS/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-13T21:36:14.834-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-13T21:36:14.868-05:00  INFO 8729 --- [academia-api-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-13T21:36:16.232-05:00  INFO 8729 --- [academia-api-test] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-11-13T21:36:17.862-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:17.862-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:17.869-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2026-11-13T21:36:18.216-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.a.api.CursoApiIntegrationTest      : Started CursoApiIntegrationTest in 6.13 seconds (process running for 42.0)
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.63 s -- in pe.edu.upn.academia.api.CursoApiIntegrationTest
+[INFO] Running pe.edu.upn.academia.service.CursoServiceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.248 s -- in pe.edu.upn.academia.service.CursoServiceTest
+[INFO] Running pe.edu.upn.academia.service.MatriculaServiceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.155 s -- in pe.edu.upn.academia.service.MatriculaServiceTest
+[INFO] Running pe.edu.upn.academia_api.CursoRepositoryTests
+2026-11-13T21:36:33.381-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoRepositoryTests]: CursoRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:33.736-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoRepositoryTests
+2026-11-13T21:36:33.761-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoRepositoryTests]: CursoRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:33.782-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoRepositoryTests
+2026-11-13T21:36:33.845-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-13T21:36:34.284-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.academia_api.CursoRepositoryTests  : Starting CursoRepositoryTests using Java 17.0.12 with PID 8729 (started by dannyherreranajar in /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api)
+2026-11-13T21:36:34.286-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.academia_api.CursoRepositoryTests  : No active profile set, falling back to 1 default profile: "test"
+2026-11-13T21:36:36.136-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-13T21:36:36.251-05:00  INFO 8729 --- [academia-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2026-11-13T21:36:37.851-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-13T21:36:38.077-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-13T21:36:38.082-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-13T21:36:38.086-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn16: url=jdbc:h2:mem:pruebas user=SA
+2026-11-13T21:36:38.087-05:00  INFO 8729 --- [academia-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-13T21:36:38.093-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:pruebas]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: PRUEBAS/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-13T21:36:39.370-05:00  INFO 8729 --- [academia-api-test] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-13T21:36:39.712-05:00  INFO 8729 --- [academia-api-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-13T21:36:42.936-05:00  INFO 8729 --- [academia-api-test] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-11-13T21:36:47.495-05:00  INFO 8729 --- [academia-api-test] [           main] p.e.u.academia_api.CursoRepositoryTests  : Started CursoRepositoryTests in 13.656 seconds (process running for 71.28)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.37 s -- in pe.edu.upn.academia_api.CursoRepositoryTests
+[INFO] Running pe.edu.upn.academia_api.CursoServiceTests
+2026-11-13T21:36:48.779-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:48.797-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+2026-11-13T21:36:48.800-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.CursoServiceTests]: CursoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:48.810-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.CursoServiceTests
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.526 s -- in pe.edu.upn.academia_api.CursoServiceTests
+[INFO] Running pe.edu.upn.academia_api.JwtServiceTests
+2026-11-13T21:36:50.329-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.JwtServiceTests]: JwtServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:50.335-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.JwtServiceTests
+2026-11-13T21:36:50.352-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.JwtServiceTests]: JwtServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:50.363-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.JwtServiceTests
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 s -- in pe.edu.upn.academia_api.JwtServiceTests
+[INFO] Running pe.edu.upn.academia_api.ErroresHttpTests
+2026-11-13T21:36:50.778-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:50.779-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:50.780-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-13T21:36:51.002-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.003-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.003-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-13T21:36:51.127-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.128-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.129-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-13T21:36:51.202-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.208-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.210-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-13T21:36:51.232-05:00  WARN 8729 --- [academia-api-test] [           main] o.s.web.servlet.PageNotFound             : Request method 'GET' is not supported
+2026-11-13T21:36:51.318-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.320-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.329-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-13T21:36:51.536-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.536-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.543-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2026-11-13T21:36:51.548-05:00 ERROR 8729 --- [academia-api-test] [           main] p.e.u.a.e.GlobalExceptionHandler         : Error no controlado
+
+java.lang.IllegalStateException: detalle-interno-http
+	at pe.edu.upn.academia_api.ErroresHttpTests$ControladorDePrueba.general(ErroresHttpTests.java:117) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72) ~[spring-test-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:160) ~[spring-test-7.0.10.jar:7.0.10]
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:127) ~[spring-test-7.0.10.jar:7.0.10]
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199) ~[spring-test-7.0.10.jar:7.0.10]
+	at pe.edu.upn.academia_api.ErroresHttpTests.errorInesperadoDevuelve500SinTraza(ErroresHttpTests.java:77) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+2026-11-13T21:36:51.695-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.697-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.697-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-13T21:36:51.796-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-13T21:36:51.797-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-13T21:36:51.798-05:00  INFO 8729 --- [academia-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.195 s -- in pe.edu.upn.academia_api.ErroresHttpTests
+[INFO] Running pe.edu.upn.academia_api.ServiciosAcademicosTests
+2026-11-13T21:36:51.846-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ServiciosAcademicosTests]: ServiciosAcademicosTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:51.850-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ServiciosAcademicosTests
+2026-11-13T21:36:51.858-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ServiciosAcademicosTests]: ServiciosAcademicosTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:51.862-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ServiciosAcademicosTests
+CONSULTAS_MATRICULAS: sin_fetch=5, con_fetch=2
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.355 s -- in pe.edu.upn.academia_api.ServiciosAcademicosTests
+[INFO] Running pe.edu.upn.academia_api.AcademiaApiApplicationTests
+2026-11-13T21:36:53.218-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.AcademiaApiApplicationTests]: AcademiaApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:53.221-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.AcademiaApiApplicationTests
+2026-11-13T21:36:53.226-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.AcademiaApiApplicationTests]: AcademiaApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:53.229-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.AcademiaApiApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in pe.edu.upn.academia_api.AcademiaApiApplicationTests
+[INFO] Running pe.edu.upn.academia_api.CursoDtoTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in pe.edu.upn.academia_api.CursoDtoTests
+[INFO] Running pe.edu.upn.academia_api.GlobalExceptionHandlerTests
+2026-11-13T21:36:53.362-05:00 ERROR 8729 --- [academia-api-test] [           main] p.e.u.a.e.GlobalExceptionHandler         : Error no controlado
+
+java.lang.IllegalStateException: detalle-interno-de-prueba
+	at pe.edu.upn.academia_api.GlobalExceptionHandlerTests.noExponeDetallesDelErrorInterno(GlobalExceptionHandlerTests.java:14) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+2026-11-13T21:36:53.395-05:00  WARN 8729 --- [academia-api-test] [           main] p.e.u.a.e.GlobalExceptionHandler         : Violaci?n de integridad de datos
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in pe.edu.upn.academia_api.GlobalExceptionHandlerTests
+[INFO] Running pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-13T21:36:53.418-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ModeloAcademicoTests]: ModeloAcademicoTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:53.425-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-13T21:36:53.427-05:00  INFO 8729 --- [academia-api-test] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.upn.academia_api.ModeloAcademicoTests]: ModeloAcademicoTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-13T21:36:53.429-05:00  INFO 8729 --- [academia-api-test] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.upn.academia_api.AcademiaApiApplication for test class pe.edu.upn.academia_api.ModeloAcademicoTests
+2026-11-13T21:36:54.579-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-11-13T21:36:54.580-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de indice de Unicidad ? Clave primaria: "PUBLIC.CONSTRAINT_3 INDEX PUBLIC.CONSTRAINT_INDEX_3 ON PUBLIC.USUARIOS(ESTUDIANTE_ID NULLS FIRST) VALUES ( /* 2 */ CAST(17 AS BIGINT) )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_3 INDEX PUBLIC.CONSTRAINT_INDEX_3 ON PUBLIC.USUARIOS(ESTUDIANTE_ID NULLS FIRST) VALUES ( /* 2 */ CAST(17 AS BIGINT) )"; SQL statement:
+insert into usuarios (estudiante_id,password,rol,username,id) values (?,?,?,?,default) [23505-240]
+2026-11-13T21:36:54.734-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-11-13T21:36:54.734-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de indice de Unicidad ? Clave primaria: "PUBLIC.CONSTRAINT_A7 INDEX PUBLIC.CONSTRAINT_INDEX_A ON PUBLIC.MATRICULAS(ESTUDIANTE_ID NULLS FIRST, CURSO_ID NULLS FIRST) VALUES ( /* key:11 */ CAST(18 AS BIGINT), CAST(35 AS BIGINT))"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_A7 INDEX PUBLIC.CONSTRAINT_INDEX_A ON PUBLIC.MATRICULAS(ESTUDIANTE_ID NULLS FIRST, CURSO_ID NULLS FIRST) VALUES ( /* key:11 */ CAST(18 AS BIGINT), CAST(35 AS BIGINT))"; SQL statement:
+insert into matriculas (curso_id,estado,estudiante_id,fecha,id) values (?,?,?,?,default) [23505-240]
+2026-11-13T21:36:55.444-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23506, SQLState: 23506
+2026-11-13T21:36:55.448-05:00  WARN 8729 --- [academia-api-test] [           main] org.hibernate.orm.jdbc.error             : Violaci?n de una restricci?n de Integridad Referencial: "FKTGXNKAUQY13NPOI9Q2T9N0OL5: PUBLIC.MATRICULAS FOREIGN KEY(CURSO_ID) REFERENCES PUBLIC.CURSOS(ID) (CAST(-1 AS BIGINT))"
+Referential integrity constraint violation: "FKTGXNKAUQY13NPOI9Q2T9N0OL5: PUBLIC.MATRICULAS FOREIGN KEY(CURSO_ID) REFERENCES PUBLIC.CURSOS(ID) (CAST(-1 AS BIGINT))"; SQL statement:
+INSERT INTO matriculas (curso_id, estudiante_id, fecha, estado) VALUES (-1, -1, CURRENT_DATE, 'ACTIVA') [23506-240]
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.116 s -- in pe.edu.upn.academia_api.ModeloAcademicoTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 70, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ academia-api ---
+[INFO] Building jar: /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/academia-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.2:repackage (repackage) @ academia-api ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Replacing main artifact /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/academia-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/academia-api-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- jacoco:0.8.13:report (report) @ academia-api ---
+[INFO] Loading execution data file /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/jacoco.exec
+[INFO] Analyzed bundle '' with 35 classes
+[INFO] 
+[INFO] --- jacoco:0.8.13:check (check) @ academia-api ---
+[INFO] Loading execution data file /Users/dannyherreranajar/Documents/Codex/2026-11-05/referenced-chatgpt-conversation-this-is-an/outputs/academia-upn/academia-api/target/jacoco.exec
+[INFO] Analyzed bundle 'academia-api' with 35 classes
+[INFO] All coverage checks have been met.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:42 min
+[INFO] Finished at: 2026-11-13T21:37:02-05:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,109 @@
+{
+  "base": "http://127.0.0.1:8082/api/v1",
+  "comprobaciones": [
+    {
+      "comprobacion": "Login de admin",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de admin sin cookie de sesión",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Lectura de cursos como admin",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de docente",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de docente sin cookie de sesión",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Lectura de cursos como docente",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de estudiante",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login de estudiante sin cookie de sesión",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Lectura de cursos como estudiante",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "POST de cursos rechazado a estudiante",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "PUT de cursos rechazado a estudiante",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "DELETE de cursos rechazado a estudiante",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "POST de cursos rechazado a docente",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "PUT de cursos rechazado a docente",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "DELETE de cursos rechazado a docente",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Sin token",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Token en cookie no autentica",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Basic no autentica",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "JWT firmado vigente de control",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Firma alterada",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Algoritmo none",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "JWT firmado pero vencido",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "JWT firmado con emisor incorrecto",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Preflight de http://localhost:4200",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Preflight de https://externo.example",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Los intentos sin permiso no cambiaron el total de cursos",
+      "resultado": "OK"
+    }
+  ]
+}
