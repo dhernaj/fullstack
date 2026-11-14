@@ -1,0 +1,59 @@
+db-1  | 
+db-1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1  | 
+db-1  | 2026-11-14 03:53:10.541 UTC [1] LOG:  starting PostgreSQL 17.12 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1  | 2026-11-14 03:53:10.541 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1  | 2026-11-14 03:53:10.541 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1  | 2026-11-14 03:53:10.542 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1  | 2026-11-14 03:53:10.544 UTC [29] LOG:  database system was shut down at 2026-11-14 03:53:10 UTC
+db-1  | 2026-11-14 03:53:10.550 UTC [1] LOG:  database system is ready to accept connections
+api-1  | 
+api-1  |   .   ____          _            __ _ _
+api-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-1  |  =========|_|==============|___/=/_/_/_/
+api-1  | 
+api-1  |  :: Spring Boot ::                (v4.1.2)
+api-1  | 
+api-1  | 2026-11-14T03:53:17.347Z  INFO 1 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : Starting AcademiaApiApplication v0.0.1-SNAPSHOT using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-1  | 2026-11-14T03:53:17.353Z  INFO 1 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : The following 1 profile is active: "prod"
+api-1  | 2026-11-14T03:53:18.560Z  INFO 1 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+api-1  | 2026-11-14T03:53:18.609Z  INFO 1 --- [academia-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 4 JPA repository interfaces.
+api-1  | 2026-11-14T03:53:19.774Z  INFO 1 --- [academia-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+api-1  | 2026-11-14T03:53:19.789Z  INFO 1 --- [academia-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-1  | 2026-11-14T03:53:19.789Z  INFO 1 --- [academia-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+api-1  | 2026-11-14T03:53:19.828Z  INFO 1 --- [academia-api] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2380 ms
+api-1  | 2026-11-14T03:53:20.363Z  INFO 1 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-1  | 2026-11-14T03:53:20.628Z  INFO 1 --- [academia-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13dc6649
+api-1  | 2026-11-14T03:53:20.630Z  INFO 1 --- [academia-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-1  | 2026-11-14T03:53:20.651Z  INFO 1 --- [academia-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://db:5432/academia (PostgreSQL 17.12)
+api-1  | 2026-11-14T03:53:20.739Z  INFO 1 --- [academia-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.032s)
+api-1  | 2026-11-14T03:53:20.771Z  INFO 1 --- [academia-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+api-1  | 2026-11-14T03:53:20.775Z  INFO 1 --- [academia-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-1  | 2026-11-14T03:53:20.896Z  INFO 1 --- [academia-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+api-1  | 2026-11-14T03:53:20.987Z  INFO 1 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+api-1  | 2026-11-14T03:53:21.558Z  INFO 1 --- [academia-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+api-1  | 2026-11-14T03:53:21.641Z  INFO 1 --- [academia-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+api-1  | 	Database JDBC URL [jdbc:postgresql://db:5432/academia]
+api-1  | 	Database driver: PostgreSQL JDBC Driver
+api-1  | 	Database dialect: PostgreSQLDialect
+api-1  | 	Database version: 17.12
+api-1  | 	Default catalog/schema: academia/public
+api-1  | 	Autocommit mode: undefined/unknown
+api-1  | 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+api-1  | 	JDBC fetch size: none
+api-1  | 	Pool: DataSourceConnectionProvider
+api-1  | 	Minimum pool size: undefined/unknown
+api-1  | 	Maximum pool size: undefined/unknown
+api-1  | 2026-11-14T03:53:22.607Z  INFO 1 --- [academia-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+api-1  | 2026-11-14T03:53:22.649Z  INFO 1 --- [academia-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+api-1  | 2026-11-14T03:53:22.733Z  INFO 1 --- [academia-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+api-1  | 2026-11-14T03:53:24.287Z  INFO 1 --- [academia-api] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+api-1  | 2026-11-14T03:53:25.091Z  INFO 1 --- [academia-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+api-1  | 2026-11-14T03:53:25.165Z  INFO 1 --- [academia-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+api-1  | 2026-11-14T03:53:25.176Z  INFO 1 --- [academia-api] [           main] p.e.u.a.AcademiaApiApplication           : Started AcademiaApiApplication in 8.411 seconds (process running for 9.041)
+api-1  | 2026-11-14T03:53:26.275Z  INFO 1 --- [academia-api] [0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-1  | 2026-11-14T03:53:26.275Z  INFO 1 --- [academia-api] [0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-1  | 2026-11-14T03:53:26.277Z  INFO 1 --- [academia-api] [0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

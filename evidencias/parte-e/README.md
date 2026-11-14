@@ -1,4 +1,4 @@
-# Parte E — producción y contenedores (en curso)
+# Parte E — producción y contenedores verificados
 
 Se prepararon el perfil prod, la migración V1 de Flyway, el administrador inicial con contraseña BCrypt, el Dockerfile multietapa y Docker Compose con PostgreSQL 17. Las claves se guardan únicamente en archivos ignorados por Git. PostgreSQL del contenedor no publica un puerto en la Mac.
 
@@ -14,9 +14,13 @@ Esta validación utiliza PostgreSQL nativo en el esquema exclusivo `laboratorio4
 
 El lanzador `scripts/iniciar-prod-local.command` requiere ese esquema ya preparado, el JAR construido, las credenciales locales ignoradas del backend y el archivo privado .env de la raíz. `scripts/verificar-prod-local.py` comprueba la API sin guardar contraseñas ni tokens.
 
-## Pendiente
+## Resultado en GitHub
 
-Ejecutar el pipeline de GitHub Actions para construir la imagen, levantar Docker Compose y comprobar salud y persistencia del volumen tras recrear los contenedores. La validación nativa no sustituye estas comprobaciones. El código se publica para poder ejecutarlo; la parte E solo se considerará verificada cuando el job de producción finalice correctamente.
+La ejecución [43553764567](https://github.com/dhernaj/fullstack/actions/runs/43553764567), commit b04a6a4, terminó correctamente el 13 de noviembre de 2026 (hora de Lima). Backend/cobertura, Angular/Vitest y Docker quedaron en verde.
+
+El contenedor superó 15 comprobaciones: Flyway V1, administrador BCrypt, ausencia de datos demo, health, respuestas HTTP, usuario sin root, puertos y persistencia tras down/up. La recreación conservó el curso y la huella del administrador, sin repetir la migración.
+
+El artefacto original se conserva en docker-produccion.zip y su contenido en github/. Esta evidencia acredita Docker en GitHub, adicional a la validación nativa; no se instaló Docker en la Mac. La parte E queda verificada con esta adaptación.
 
 Se adaptan los pasos 23 y 27 a un runner Linux de GitHub para evitar instalar la máquina virtual y las imágenes en la Mac Intel con macOS 13 y poco espacio. Se conservan Dockerfile, Compose y las comprobaciones funcionales de la guía; cambia el lugar de ejecución. No se han eliminado archivos personales ni respaldos.
 

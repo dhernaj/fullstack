@@ -101,10 +101,10 @@ La documentación se comprobó en Chrome: petición sin token 401, login, Author
 
 Sigue la parte E: Flyway, configuración de producción y Docker. La desactivación de Swagger en producción se configurará en esa etapa, como indica la guía.
 
-## Parte E — producción (en curso)
+## Parte E — producción y Docker
 
 Se prepararon Flyway V1, el perfil prod, un administrador inicial con contraseña BCrypt, el Dockerfile multietapa y Docker Compose con PostgreSQL 17. Swagger y los cargadores de demostración quedan desactivados en producción. El perfil de desarrollo conserva Flyway desactivado para no migrar automáticamente la base anterior.
 
 Las 80 pruebas del backend pasan. La ejecución adicional con PostgreSQL nativo en el esquema aislado laboratorio4_prod_prueba confirmó la migración, el login y la escritura de un curso, sin cambios en las tablas public anteriores. Esta ejecución no es una prueba de Docker.
 
-La construcción y ejecución de los contenedores se traslada a GitHub Actions para evitar instalar Docker en la Mac. El workflow ci.yml genera claves temporales y comprueba Docker, Flyway, puertos, usuario sin root y persistencia tras recrear contenedores. Publica las evidencias en el artefacto docker-produccion. Se adelanta esta base de G para poder verificar E; los despliegues se añadirán después. La parte E queda pendiente del primer resultado correcto de ese job; consultar evidencias/parte-e/README.md.
+La construcción y ejecución de los contenedores se traslada a GitHub Actions para evitar instalar Docker en la Mac. El workflow ci.yml genera claves temporales y comprueba Docker, Flyway, puertos, usuario sin root y persistencia tras recrear contenedores. Publica las evidencias en el artefacto docker-produccion. Se adelanta esta base de G para poder verificar E; los despliegues se añadirán después. La ejecución [43553764567](https://github.com/dhernaj/fullstack/actions/runs/43553764567) aprobó los tres jobs y las 15 comprobaciones de Docker. Evidencias descargadas en evidencias/parte-e/github/ y docker-produccion.zip. La parte E queda verificada mediante esta adaptación, sin instalar Docker localmente.

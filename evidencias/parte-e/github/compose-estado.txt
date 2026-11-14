@@ -1,0 +1,3 @@
+NAME                              IMAGE                           COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+academia-ci-43553764567-1-api-1   academia-ci-43553764567-1-api   "java -XX:MaxRAMPerc…"   api       17 seconds ago   Up 11 seconds (healthy)   127.0.0.1:8080->8080/tcp
+academia-ci-43553764567-1-db-1    postgres:17-alpine              "docker-entrypoint.s…"   db        17 seconds ago   Up 16 seconds (healthy)   5432/tcp

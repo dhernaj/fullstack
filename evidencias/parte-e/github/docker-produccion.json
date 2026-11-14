@@ -1,0 +1,87 @@
+{
+  "entorno": "Docker Compose en runner Linux de GitHub Actions",
+  "commit": "b04a6a455d43631d75b425150757fcd2c5aef94e",
+  "runId": "43553764567",
+  "comprobaciones": [
+    {
+      "comprobacion": "Health UP sin información interna",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Cursos sin token 401",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login admin 200",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "/swagger-ui.html desactivado (404)",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "/v3/api-docs desactivado (404)",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Cuenta docente de demostración ausente (401)",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Flyway V1 aplicada una sola vez",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Solo admin con BCrypt; sin datos demo",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "API ejecutada sin root",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "PostgreSQL sin puertos publicados",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "API publicada únicamente en loopback",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Curso creado con 201 y Location",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Login admin 200",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Curso persiste tras recrear contenedores",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Administrador y migración se conservan",
+      "resultado": "OK"
+    }
+  ],
+  "baseAntes": {
+    "migraciones": 1,
+    "version": "1",
+    "usuarios": 1,
+    "estudiantes": 0,
+    "matriculas": 0,
+    "cursos": 0,
+    "adminBcrypt": true,
+    "huellaAdmin": "65b3f55d6c1845290e8d48deb34b38c6"
+  },
+  "baseDespues": {
+    "migraciones": 1,
+    "version": "1",
+    "usuarios": 1,
+    "estudiantes": 0,
+    "matriculas": 0,
+    "cursos": 1,
+    "adminBcrypt": true,
+    "huellaAdmin": "65b3f55d6c1845290e8d48deb34b38c6"
+  }
+}
