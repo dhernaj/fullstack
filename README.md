@@ -63,3 +63,18 @@ Para comprobar el límite de cobertura sin repetir las pruebas ni modificar el p
 Se corrigió también el script de seguridad heredado en academia-web/scripts/verificar-seguridad.py: usa la clave decodificada de Base64, comprueba primero un JWT vigente y después los JWT vencidos o con emisor incorrecto. Acepta LAB_API_URL y LAB_EVIDENCIA_SEGURIDAD para probar una instancia local separada sin sobrescribir la evidencia histórica del Laboratorio 3. El resultado de esta comprobación está en evidencias/parte-b/jwt-http.json.
 
 Resultado de la parte B: 70 pruebas aprobadas, 86,87 % de cobertura global de líneas y 100 % en servicios. El rechazo del umbral del 95 % y la aprobación del 50 % quedaron acreditados. El reporte portable está en evidencias/parte-b/jacoco-reporte.zip; consultar evidencias/parte-b/README.md para el detalle.
+
+## Parte C — pruebas del frontend
+
+Se conservaron las pruebas del Laboratorio 3 y se completaron los pasos 11–13 de la guía. CursoService se prueba con HttpTestingController: parámetros de paginación y orden, docente recortado, filtros vacíos, respuesta paginada y operaciones GET/POST/PUT/DELETE. El contrato Pagina conserva ultima, presente en nuestra API.
+
+El archivo auth.interceptor.spec.ts comprueba el interceptor de forma aislada, con AuthService sustituido por un doble de prueba: Bearer a nuestra API, preservación de cabeceras, ausencia de token y logout ante un 401 ajeno, y cierre de la sesión ante su propio 401. Las pruebas anteriores de sesión e interceptor con el servicio real también se conservaron.
+
+```sh
+cd academia-web
+npm test -- --watch=false
+```
+
+No se necesitan API, base de datos, contraseñas ni tokens reales: los HTTP se atienden con provideHttpClientTesting. Las dependencias ya se habían instalado desde package-lock.json en la parte A, por lo que no se repitió npm install ni se modificó el lockfile. La salida de esta parte está en evidencias/parte-c/vitest.txt.
+
+Resultado de la parte C: 97 pruebas aprobadas en nueve archivos, sin cambiar código de funcionamiento ni dependencias. La salida completa y el detalle de los casos están en evidencias/parte-c/. Sigue la parte D: OpenAPI y Actuator.

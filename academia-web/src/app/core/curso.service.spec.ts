@@ -5,6 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { environment } from '../../environments/environment';
 import { CursoService } from './curso.service';
+import { Curso, Pagina } from './models';
 
 const datos = { codigo: 'SIS-999', nombre: 'Curso de prueba', creditos: 3, docente: 'Docente de prueba', cupos: 30 };
 
@@ -23,6 +24,7 @@ describe('Contrato HTTP de cursos', () => {
   it('envía la paginación y el orden inicial sin un filtro vacío', () => {
     servicio.listar().subscribe();
     const req = http.expectOne((r) => r.url === base);
+    expect(req.request.method).toBe('GET');
     expect(req.request.params.get('page')).toBe('0');
     expect(req.request.params.get('size')).toBe('5');
     expect(req.request.params.get('sort')).toBe('nombre,asc');
@@ -31,13 +33,27 @@ describe('Contrato HTTP de cursos', () => {
   });
 
   it('envía la página, tamaño, orden y docente solicitados', () => {
-    servicio.listar(1, 10, '  Pérez & Torres  ', 'creditos,desc').subscribe();
+    const respuesta: Pagina<Curso> = {
+      contenido: [{ id: 7, ...datos, activo: true }], pagina: 1, tamanio: 10,
+      totalElementos: 11, totalPaginas: 2, ultima: true,
+    };
+    let recibida: Pagina<Curso> | undefined;
+    servicio.listar(1, 10, '  Pérez & Torres  ', 'creditos,desc').subscribe((pagina) => recibida = pagina);
     const req = http.expectOne((r) => r.url === base);
+    expect(req.request.method).toBe('GET');
     expect(req.request.params.get('page')).toBe('1');
     expect(req.request.params.get('size')).toBe('10');
     expect(req.request.params.get('sort')).toBe('creditos,desc');
     expect(req.request.params.get('docente')).toBe('Pérez & Torres');
-    req.flush({});
+    req.flush(respuesta);
+    expect(recibida).toEqual(respuesta);
+  });
+
+  it('omite el filtro cuando solo contiene espacios', () => {
+    servicio.listar(0, 5, '   ').subscribe();
+    const req = http.expectOne((r) => r.url === base);
+    expect(req.request.params.has('docente')).toBe(false);
+    req.flush({ contenido: [], pagina: 0, tamanio: 5, totalElementos: 0, totalPaginas: 0, ultima: true });
   });
 
   it('obtiene un curso por id', () => {
