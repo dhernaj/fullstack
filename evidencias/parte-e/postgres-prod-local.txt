@@ -1,0 +1,15 @@
+ version | success 
+---------+---------
+ 1       | t
+(1 row)
+
+ username |  rol  | bcrypt 
+----------+-------+--------
+ admin    | ADMIN | t
+(1 row)
+
+ estudiantes | matriculas 
+-------------+------------
+           0 |          0
+(1 row)
+

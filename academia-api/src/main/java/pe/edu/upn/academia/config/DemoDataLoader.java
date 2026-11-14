@@ -6,6 +6,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upn.academia.dto.MatriculaRequest;
 import pe.edu.upn.academia.model.*;
@@ -14,6 +15,7 @@ import pe.edu.upn.academia.service.MatriculaService;
 
 /** Cuentas y datos ficticios para las pruebas locales del laboratorio. */
 @Component
+@Profile("!prod")
 @Order(20)
 @ConditionalOnProperty(name = "app.demo.enabled", havingValue = "true")
 public class DemoDataLoader implements CommandLineRunner {

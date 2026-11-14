@@ -1,0 +1,42 @@
+{
+  "instancia": "http://127.0.0.1:8084",
+  "entorno": "PostgreSQL nativo; esquema laboratorio4_prod_prueba; NO es una prueba de Docker",
+  "comprobaciones": [
+    {
+      "comprobacion": "Health público UP",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Health sin detalles internos",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Cursos requieren autenticación",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Administrador de producción puede ingresar",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "/swagger-ui.html desactivado en producción",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "/v3/api-docs desactivado en producción",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "No se cargan cursos demo",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Curso conservado tras reiniciar",
+      "resultado": "OK"
+    },
+    {
+      "comprobacion": "Cuenta docente de demostración ausente",
+      "resultado": "OK"
+    }
+  ]
+}

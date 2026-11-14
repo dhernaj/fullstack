@@ -2,6 +2,7 @@ package pe.edu.upn.academia.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import pe.edu.upn.academia.repository.CursoRepository;
 
 /** Carga los cursos de ejemplo únicamente si la tabla está vacía. */
 @Component
+@Profile("!prod")
 @Order(10)
 public class DataLoader implements CommandLineRunner {
 
