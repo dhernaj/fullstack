@@ -1,0 +1,9 @@
+{
+  "runId": 43554148720,
+  "commit": "00f65e3b5b90a37b3128c6ec6641166e9e5e94bd",
+  "pruebas": 80,
+  "fallos": 0,
+  "lineasCubiertas": 365,
+  "lineasTotales": 417,
+  "coberturaPorcentaje": 87.53
+}

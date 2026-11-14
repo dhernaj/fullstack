@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="8.065282999999999">
+<testsuite name="cursos.spec.ts" timestamp="2026-11-14T03:58:50.813Z" hostname="chromium" tests="3" failures="0" skipped="0" time="3.139" errors="0">
+<testcase name="Academia UPN · flujo principal › sin sesión redirige al login" classname="cursos.spec.ts" time="0.68">
+</testcase>
+<testcase name="Academia UPN · flujo principal › credenciales incorrectas muestran un error" classname="cursos.spec.ts" time="0.968">
+</testcase>
+<testcase name="Academia UPN · flujo principal › el administrador crea un curso y lo encuentra en el listado" classname="cursos.spec.ts" time="1.491">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|cursos-Academia-UPN-·-fluj-17629--lo-encuentra-en-el-listado-chromium/attachments/Curso-creado-en-Angular-c81444636be9c8322e0ce7ec4ea16b4914440471.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
