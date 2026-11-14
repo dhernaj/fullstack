@@ -108,3 +108,9 @@ Se prepararon Flyway V1, el perfil prod, un administrador inicial con contraseñ
 Las 80 pruebas del backend pasan. La ejecución adicional con PostgreSQL nativo en el esquema aislado laboratorio4_prod_prueba confirmó la migración, el login y la escritura de un curso, sin cambios en las tablas public anteriores. Esta ejecución no es una prueba de Docker.
 
 La construcción y ejecución de los contenedores se traslada a GitHub Actions para evitar instalar Docker en la Mac. El workflow ci.yml genera claves temporales y comprueba Docker, Flyway, puertos, usuario sin root y persistencia tras recrear contenedores. Publica las evidencias en el artefacto docker-produccion. Se adelanta esta base de G para poder verificar E; los despliegues se añadirán después. La ejecución [43553764567](https://github.com/dhernaj/fullstack/actions/runs/43553764567) aprobó los tres jobs y las 15 comprobaciones de Docker. Evidencias descargadas en evidencias/parte-e/github/ y docker-produccion.zip. La parte E queda verificada mediante esta adaptación, sin instalar Docker localmente.
+
+## Parte F — pruebas de navegador (en curso)
+
+Playwright controla Chromium contra Angular, la API y PostgreSQL reales del entorno Docker de GitHub. Se comprueban la redirección sin sesión, el error de credenciales y el alta/búsqueda de un curso por el administrador. El reporte HTML incluye una captura del alta y resultados JUnit.
+
+El pipeline instala el navegador en Linux y genera las claves temporales. No se necesita Chromium de Playwright ni Docker en la Mac. Para enumerar los casos sin navegador: ADMIN_PASSWORD=solo-para-enumerar-pruebas npm run e2e -- --list, desde academia-web. Para ejecutarlos se necesita la API del entorno de pruebas y su contraseña correspondiente, nunca una clave de producción. Detalle en evidencias/parte-f/README.md.
